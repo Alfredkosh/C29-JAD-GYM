@@ -1,0 +1,4 @@
+flyway.url=jdbc:postgresql://localhost:5432/c29-gympj
+flyway.user=postgres
+flyway.password=postgres
+flyway.cleanDisabled=false
