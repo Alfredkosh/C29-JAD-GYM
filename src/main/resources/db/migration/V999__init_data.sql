@@ -1,0 +1,1 @@
+INSERT INTO users (username, password, qrcode, age, email, mobile_number, icon, expired_date, status) VALUES ('James', '123', 'test', '30', 'james@tecky.io', '99998888', 'image', '30 Jan 2025', false)
