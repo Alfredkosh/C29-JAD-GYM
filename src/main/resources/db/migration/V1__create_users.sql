@@ -14,10 +14,6 @@ CREATE TABLE users(
      updated_at DATE default NOW()
  );
 
--- ALTER TABLE check_in_records ADD user_id integer not null;
--- ALTER TABLE check_in_records ADD CONSTRAINT fk_check_in_records_users FOREIGN KEY (user_id) references users(id);
 
--- ALTER TABLE class_reservations ADD user_id integer not null;
--- ALTER TABLE class_reservations ADD CONSTRAINT fk_class_reservations_users FOREIGN KEY (user_id) references users(id);
 
 COMMIT
