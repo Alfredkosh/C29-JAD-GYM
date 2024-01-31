@@ -28,5 +28,11 @@ public class PageController {
         return modelAndView;
     }
 
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    public String login(Model model){
+        model.addAttribute("loginNow", "Please login first");
+        return "login";
+    }
+
 
 }

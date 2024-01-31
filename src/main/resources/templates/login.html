@@ -1,6 +1,5 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-
 <head>
     <th:block th:insert="~{common/header :: .header}">
     </th:block>
@@ -8,11 +7,9 @@
 </head>
 
 <body>
-<div> Hellossssss!!!!!!!! </div>
-<div th:text="${message}"> </div>
-
+<div th:text="${loginNow}"></div>
+<th:block th:insert="~{common/content :: .content}"></th:block>
 <th:block th:insert="~{common/footer :: .footer}"></th:block>
 <script type="module" src="js/index.js"></script>
 </body>
-
 </html>
