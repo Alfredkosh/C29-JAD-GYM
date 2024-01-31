@@ -1,7 +1,7 @@
 BEGIN;
     CREATE TABLE course_lists(
          id SERIAL PRIMARY KEY,
-         gym_room_id integer,
+         gym_room_id integer not null,
          name varchar(255),
          tutor varchar(255),
          tutor_icon varchar(255),
