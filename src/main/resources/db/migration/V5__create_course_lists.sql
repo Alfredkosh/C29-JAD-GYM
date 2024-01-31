@@ -10,7 +10,5 @@ BEGIN;
          updated_at DATE default NOW()
      );
 
--- ALTER TABLE class_reservations ADD course_id integer not null;
--- ALTER TABLE class_reservations ADD CONSTRAINT fk_class_reservations_course_lists FOREIGN KEY (course_id) references course_lists(id);
 
 COMMIT

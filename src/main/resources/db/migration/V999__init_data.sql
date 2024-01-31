@@ -6,7 +6,7 @@ INSERT INTO admins (username, password, email) VALUES ('Navy', '123', 'navy@teck
 
 INSERT INTO gym_rooms (map, location_name, location_address, location_contact, location_max_people) VALUES ('map test', 'Hong Kong', 'Mongkok', '2688 8888', '200');
 
-INSERT INTO check_in_records (check_in_date) VALUES ('30 Jan 2024');
+INSERT INTO check_in_records (check_in_date, user_id) VALUES ('30 Jan 2024');
 
 INSERT INTO course_lists (name, tutor, tutor_icon, date, time) VALUES ('yoga', 'Amy', 'Amy image', 'Wednesday', '18:00-20:00');
 
