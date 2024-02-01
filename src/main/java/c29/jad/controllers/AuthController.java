@@ -1,6 +1,7 @@
 package c29.jad.controllers;
 
 import c29.jad.forms.UserForm;
+import c29.jad.models.UserModel;
 import c29.jad.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -14,24 +15,30 @@ import javax.naming.AuthenticationException;
 import java.util.Map;
 
 @RestController
-@RequestMapping(value = "users")
-public class UserController {
+@RequestMapping(value = "auth")
+public class AuthController {
     @Autowired
     private UserService userService;
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public ResponseEntity<Map<String, String>> login(@RequestBody UserForm userForm){
         try{
-            boolean isUSer = userService.login(userForm.getUsername(), userForm.getPassword());
-            if (!isUSer) {
-                throw new AuthenticationException("Login Fail");
-            }
-            return new ResponseEntity<>(Map.of("message", "Login Successful"), HttpStatus.OK);
+            Integer userId = userService.login(userForm.getUsername(), userForm.getPassword());
+            return new ResponseEntity<>(Map.of("message", "Login Successful", "userId", userId.toString()), HttpStatus.OK);
         } catch (AuthenticationException e) {
             return new ResponseEntity<>(Map.of("message", e.getMessage()), HttpStatus.UNAUTHORIZED);
         }
 
     }
 
+    @RequestMapping(value = "/register", method = RequestMethod.POST)
+    public ResponseEntity<Map<String, Object>> register(@RequestBody UserForm userForm){
+        try {
+            UserModel user = userService.register(userForm);
+            return new ResponseEntity<>(Map.of("message", "Register Successful"), HttpStatus.OK);
+        } catch (AuthenticationException e) {
+            return new ResponseEntity<>(Map.of("message", e.getMessage()), HttpStatus.UNAUTHORIZED);
+        }
+    }
 
 }

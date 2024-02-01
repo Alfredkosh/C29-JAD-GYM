@@ -4,9 +4,9 @@ public class UserForm {
     private String username;
     private String password;
     private String qrcode;
-    private int age;
+    private Integer age;
     private String email;
-    private int mobile_number;
+    private Integer mobile_number;
     private String icon;
     private String expired_date;
     private Boolean active;
@@ -50,7 +50,7 @@ public class UserForm {
         this.qrcode = qrcode;
     }
 
-    public int getAge() {
+    public Integer getAge() {
         return age;
     }
 
@@ -66,11 +66,11 @@ public class UserForm {
         this.email = email;
     }
 
-    public int getMobile_number() {
+    public Integer getMobile_number() {
         return mobile_number;
     }
 
-    public void setMobile_number(int mobile_number) {
+    public void setMobile_number(Integer mobile_number) {
         this.mobile_number = mobile_number;
     }
 

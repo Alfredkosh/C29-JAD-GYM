@@ -18,7 +18,7 @@ public class UserModel {
     @Column(name="qrcode")
     private String qrcode;
     @Column(name="age")
-    private int age;
+    private Integer age;
     @Column(name="email")
     private String email;
     @Column(name="mobile_number")
@@ -66,11 +66,11 @@ public class UserModel {
         this.qrcode = qrcode;
     }
 
-    public int getAge() {
+    public Integer getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(Integer age) {
         this.age = age;
     }
 
