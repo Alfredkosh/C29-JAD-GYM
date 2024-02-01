@@ -5,9 +5,8 @@ import jakarta.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name="users")
-public class UserModel {
-
+@Table(name="admins")
+public class AdminModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -15,20 +14,8 @@ public class UserModel {
     private String username;
     @Column(name="password")
     private String password;
-    @Column(name="qrcode")
-    private String qrcode;
-    @Column(name="age")
-    private int age;
     @Column(name="email")
     private String email;
-    @Column(name="mobile_number")
-    private int mobileNumber;
-    @Column(name="icon")
-    private String icon;
-    @Column(name="expired_date")
-    private String expiredDate;
-    @Column(name="status")
-    private boolean status;
     @Column(name="created_at")
     private Date createdAt;
     @Column(name="updated_at")
@@ -58,60 +45,12 @@ public class UserModel {
         this.password = password;
     }
 
-    public String getQrcode() {
-        return qrcode;
-    }
-
-    public void setQrcode(String qrcode) {
-        this.qrcode = qrcode;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
     public String getEmail() {
         return email;
     }
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public int getMobileNumber() {
-        return mobileNumber;
-    }
-
-    public void setMobileNumber(int mobileNumber) {
-        this.mobileNumber = mobileNumber;
-    }
-
-    public String getIcon() {
-        return icon;
-    }
-
-    public void setIcon(String icon) {
-        this.icon = icon;
-    }
-
-    public String getExpiredDate() {
-        return expiredDate;
-    }
-
-    public void setExpiredDate(String expiredDate) {
-        this.expiredDate = expiredDate;
-    }
-
-    public boolean isStatus() {
-        return status;
-    }
-
-    public void setStatus(boolean status) {
-        this.status = status;
     }
 
     public Date getCreatedAt() {
