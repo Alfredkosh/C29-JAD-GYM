@@ -8,3 +8,6 @@ spring.jpa.properties.hibernate.format_sql=true
 
 spring.flyway.baselineOnMigrate=true
 spring.flyway.cleanDisabled=true
+
+spring.session.store-type=jdbc
+spring.session.jdbc.initialize-schema=always

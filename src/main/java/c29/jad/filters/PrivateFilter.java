@@ -15,15 +15,22 @@ import java.util.List;
 
 
 @Component
-public class LoggingFilter extends OncePerRequestFilter {
+public class PrivateFilter extends OncePerRequestFilter {
 
-    final Logger logger = LoggerFactory.getLogger(LoggingFilter.class);
+    final Logger logger = LoggerFactory.getLogger(PrivateFilter.class);
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response,
                                     FilterChain filterChain) throws ServletException, IOException {
         logger.info(request.getRequestURL().toString());
-        filterChain.doFilter(request,response);
+        var session = request.getSession(true);
+        var userId = (Integer) session.getAttribute("userId");
+        if(userId !=null) {
+            filterChain.doFilter(request, response);
+        } else {
+          response.setStatus(401);
+          response.getWriter().write("{\"message\":\"Permission Denied\"}");
+        }
     }
 
     @Override
