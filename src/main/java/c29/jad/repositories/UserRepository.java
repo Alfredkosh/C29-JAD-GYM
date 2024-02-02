@@ -1,5 +1,6 @@
 package c29.jad.repositories;
 
+import c29.jad.models.AdminModel;
 import c29.jad.models.UserModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

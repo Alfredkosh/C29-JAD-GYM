@@ -1,5 +1,6 @@
 package c29.jad.controllers;
 
+import c29.jad.forms.AdminForm;
 import c29.jad.forms.UserForm;
 import c29.jad.models.UserModel;
 import c29.jad.services.UserService;
@@ -41,6 +42,25 @@ public class AuthController {
             String jwt = JWT.create()
                     .withIssuer("c29JADPJ")
                     .withClaim("userId", userId)
+                    .withIssuedAt(new Date())
+                    .sign(Algorithm.HMAC256(env.getProperty("jwt.secret")));
+
+            return new ResponseEntity<>(Map.of("message", "Login Successful", "token", jwt), HttpStatus.OK);
+        } catch (AuthenticationException e) {
+            return new ResponseEntity<>(Map.of("message", e.getMessage()), HttpStatus.UNAUTHORIZED);
+        }
+
+    }
+
+
+    @RequestMapping(value = "/admin", method = RequestMethod.POST)
+    public ResponseEntity<Map<String, String>> login(@RequestBody AdminForm adminForm){
+        try{
+            Integer isAdmin = userService.adminLogin(adminForm.getUsername(), adminForm.getPassword());
+
+            String jwt = JWT.create()
+                    .withIssuer("c29JADPJ")
+                    .withClaim("isAdmin", isAdmin)
                     .withIssuedAt(new Date())
                     .sign(Algorithm.HMAC256(env.getProperty("jwt.secret")));
 

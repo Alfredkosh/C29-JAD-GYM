@@ -33,7 +33,10 @@ public class PrivateFilter extends OncePerRequestFilter {
         logger.info(request.getRequestURL().toString());
         try{
             var header = request.getHeader("Authorization");
-            if (header == null){
+            if (header == null || header.isEmpty()){
+                throw new AuthenticationException("Invalid header");
+            }
+            if (header.split(" ").length != 2){
                 throw new AuthenticationException("Invalid header");
             }
             var token = header.split(" ")[1];
