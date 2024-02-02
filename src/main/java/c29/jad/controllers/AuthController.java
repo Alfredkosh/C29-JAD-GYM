@@ -3,6 +3,7 @@ package c29.jad.controllers;
 import c29.jad.forms.AdminForm;
 import c29.jad.forms.UserForm;
 import c29.jad.models.UserModel;
+import c29.jad.services.AdminService;
 import c29.jad.services.UserService;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
@@ -27,6 +28,10 @@ public class AuthController {
     Environment env;
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private AdminService adminService;
+
 
     @RequestMapping(value = "/logout", method = RequestMethod.POST)
     public ResponseEntity<Map<String, String>> logout(HttpSession httpSession){
@@ -54,9 +59,9 @@ public class AuthController {
 
 
     @RequestMapping(value = "/admin", method = RequestMethod.POST)
-    public ResponseEntity<Map<String, String>> login(@RequestBody AdminForm adminForm){
+    public ResponseEntity<Map<String, String>> adminLogin(@RequestBody AdminForm adminForm){
         try{
-            Integer isAdmin = userService.adminLogin(adminForm.getUsername(), adminForm.getPassword());
+            Integer isAdmin = adminService.adminLogin(adminForm.getUsername(), adminForm.getPassword());
 
             String jwt = JWT.create()
                     .withIssuer("c29JADPJ")
