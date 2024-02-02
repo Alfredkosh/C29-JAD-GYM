@@ -43,8 +43,12 @@ public class PrivateFilter extends OncePerRequestFilter {
 
             var decoded  = JWT.require(Algorithm.HMAC256(env.getProperty("jwt.secret"))).build().verify(token);
             var userId = decoded.getClaim("userId").asInt();
+            var isAdmin = decoded.getClaim("isAdmin").asBoolean();
+
             request.setAttribute("userId", userId);
-            if(userId !=null) {
+            request.setAttribute("isAdmin", isAdmin);
+
+            if(userId !=null || isAdmin) {
                 filterChain.doFilter(request, response);
             } else {
                 response.setStatus(401);
@@ -56,7 +60,6 @@ public class PrivateFilter extends OncePerRequestFilter {
         }
 //        var session = request.getSession(true);
 //        var userId = (Integer) session.getAttribute("userId");
-
     }
 
     @Override
