@@ -15,7 +15,6 @@ import java.util.List;
 public class UserService {
     @Autowired
     UserRepository userRepository;
-    AdminRepository adminRepository;
 
 
     public UserModel register(UserForm userForm) throws AuthenticationException{
@@ -52,21 +51,6 @@ public class UserService {
 
     public Integer login(String username, String password) throws AuthenticationException {
         var users = userRepository.findByUsername(username);
-        if (users.size() == 1) {
-            var user = users.get(0);
-            var result = BCrypt.verifyer().verify(password.getBytes(),
-                    user.getPassword().getBytes());
-
-            if(!result.verified){
-                throw new AuthenticationException("Incorrect username/password");
-            }
-            return user.getId();
-        }
-        throw new AuthenticationException("Account does not find");
-    }
-
-    public Integer adminLogin(String username, String password) throws AuthenticationException {
-        var users = adminRepository.findByUsername(username);
         if (users.size() == 1) {
             var user = users.get(0);
             var result = BCrypt.verifyer().verify(password.getBytes(),
