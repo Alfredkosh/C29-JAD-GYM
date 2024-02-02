@@ -3,9 +3,11 @@ package c29.jad.services;
 import at.favre.lib.crypto.bcrypt.BCrypt;
 import c29.jad.repositories.AdminRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import javax.naming.AuthenticationException;
 
+@Service
 public class AdminService {
     @Autowired
     AdminRepository adminRepository;
