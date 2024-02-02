@@ -15,6 +15,8 @@ import java.util.List;
 public class UserService {
     @Autowired
     UserRepository userRepository;
+
+    @Autowired
     AdminRepository adminRepository;
 
 
