@@ -1,9 +1,12 @@
 package c29.jad.controllers;
 
 import c29.jad.forms.AdminForm;
+import c29.jad.forms.CheckInRecordForm;
 import c29.jad.forms.UserForm;
+import c29.jad.models.CheckInRecordModel;
 import c29.jad.models.UserModel;
 import c29.jad.services.AdminService;
+import c29.jad.services.CheckInRecordService;
 import c29.jad.services.UserService;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
@@ -31,6 +34,9 @@ public class AuthController {
 
     @Autowired
     private AdminService adminService;
+
+    @Autowired
+    private CheckInRecordService checkInRecordService;
 
 
     @RequestMapping(value = "/logout", method = RequestMethod.POST)
@@ -81,6 +87,16 @@ public class AuthController {
         try {
             UserModel user = userService.register(userForm);
             return new ResponseEntity<>(Map.of("message", "Register Successful"), HttpStatus.OK);
+        } catch (AuthenticationException e) {
+            return new ResponseEntity<>(Map.of("message", e.getMessage()), HttpStatus.UNAUTHORIZED);
+        }
+    }
+
+    @RequestMapping(value = "/checkin", method = RequestMethod.POST)
+    public ResponseEntity<Map<String, Object>> checked(@RequestBody CheckInRecordForm checkInRecordForm){
+        try {
+            CheckInRecordModel checkIn = checkInRecordService.checkIn(checkInRecordForm);
+            return new ResponseEntity<>(Map.of("message", "Check In Successful"), HttpStatus.OK);
         } catch (AuthenticationException e) {
             return new ResponseEntity<>(Map.of("message", e.getMessage()), HttpStatus.UNAUTHORIZED);
         }

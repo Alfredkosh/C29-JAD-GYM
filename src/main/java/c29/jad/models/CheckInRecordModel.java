@@ -11,9 +11,9 @@ public class CheckInRecordModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @Column(name="user_id ")
-    private int userId;
+    private Integer userId;
     @Column(name="gym_room_id")
-    private int gymRoomId;
+    private Integer gymRoomId;
     @Column(name="check_in_date")
     private String checkInDate;
     @Column(name="check_in_at")
@@ -25,6 +25,7 @@ public class CheckInRecordModel {
     @Column(name="updated_at")
     private Date updatedAt;
 
+
     public int getId() {
         return id;
     }
@@ -33,19 +34,19 @@ public class CheckInRecordModel {
         this.id = id;
     }
 
-    public int getUserId() {
+    public Integer getUserId() {
         return userId;
     }
 
-    public void setUserId(int userId) {
+    public void setUserId(Integer userId) {
         this.userId = userId;
     }
 
-    public int getGymRoomId() {
+    public Integer getGymRoomId() {
         return gymRoomId;
     }
 
-    public void setGymRoomId(int gymRoomId) {
+    public void setGymRoomId(Integer gymRoomId) {
         this.gymRoomId = gymRoomId;
     }
 

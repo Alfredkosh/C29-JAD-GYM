@@ -76,7 +76,9 @@ public class PrivateFilter extends OncePerRequestFilter {
                 "/page/test*",
                 "/page/test/*",
                 "/record/data",
-                "/auth/register"
+                "/auth/register",
+                "/auth/checkin"
+
 
         );
 
