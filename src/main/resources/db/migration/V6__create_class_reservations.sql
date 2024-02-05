@@ -5,8 +5,8 @@ BEGIN;
          course_id integer not null,
          register_email varchar(255),
          confirm_msg varchar(255),
-         created_at DATE default NOW(),
-         updated_at DATE default NOW()
+         created_at TIMESTAMP default NOW(),
+         updated_at TIMESTAMP default NOW()
      );
 
       ALTER TABLE check_in_records ADD CONSTRAINT fk_check_in_records_users FOREIGN KEY (user_id) references users(id);

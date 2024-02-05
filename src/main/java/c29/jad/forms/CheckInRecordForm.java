@@ -8,8 +8,8 @@ public class CheckInRecordForm {
     private Integer userId;
     private Integer gymRoomId;
     private String checkInDate;
-    private Date checkInAt;
-    private Date checkOutAt;
+    private String checkInAt;
+    private String checkOutAt;
 
     @Override
     public String toString() {
@@ -44,19 +44,19 @@ public class CheckInRecordForm {
         this.checkInDate = checkInDate;
     }
 
-    public Date getCheckInAt() {
+    public String getCheckInAt() {
         return checkInAt;
     }
 
-    public void setCheckInAt(Date checkInAt) {
+    public void setCheckInAt(String checkInAt) {
         this.checkInAt = checkInAt;
     }
 
-    public Date getCheckOutAt() {
+    public String getCheckOutAt() {
         return checkOutAt;
     }
 
-    public void setCheckOutAt(Date checkOutAt) {
+    public void setCheckOutAt(String checkOutAt) {
         this.checkOutAt = checkOutAt;
     }
 }

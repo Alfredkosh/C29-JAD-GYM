@@ -92,14 +92,4 @@ public class AuthController {
         }
     }
 
-    @RequestMapping(value = "/checkin", method = RequestMethod.POST)
-    public ResponseEntity<Map<String, Object>> checked(@RequestBody CheckInRecordForm checkInRecordForm){
-        try {
-            CheckInRecordModel checkIn = checkInRecordService.checkIn(checkInRecordForm);
-            return new ResponseEntity<>(Map.of("message", "Check In Successful"), HttpStatus.OK);
-        } catch (AuthenticationException e) {
-            return new ResponseEntity<>(Map.of("message", e.getMessage()), HttpStatus.UNAUTHORIZED);
-        }
-    }
-
 }

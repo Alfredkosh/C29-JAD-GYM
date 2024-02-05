@@ -7,8 +7,8 @@ BEGIN;
          tutor_icon varchar(255),
          date varchar(255),
          time varchar(255),
-         created_at DATE default NOW(),
-         updated_at DATE default NOW()
+         created_at TIMESTAMP default NOW(),
+         updated_at TIMESTAMP default NOW()
      );
 
 

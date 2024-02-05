@@ -19,9 +19,9 @@ public class CheckInRecordModel {
     @Column(name="check_in_date")
     private String checkInDate;
     @Column(name="check_in_at")
-    private Date checkInAt;
+    private String checkInAt;
     @Column(name="check_out_at")
-    private Date checkOutAt;
+    private String checkOutAt;
 
     @CreationTimestamp
     @Column(name="created_at")
@@ -63,19 +63,19 @@ public class CheckInRecordModel {
         this.checkInDate = checkInDate;
     }
 
-    public Date getCheckInAt() {
+    public String getCheckInAt() {
         return checkInAt;
     }
 
-    public void setCheckInAt(Date checkInAt) {
+    public void setCheckInAt(String checkInAt) {
         this.checkInAt = checkInAt;
     }
 
-    public Date getCheckOutAt() {
+    public String getCheckOutAt() {
         return checkOutAt;
     }
 
-    public void setCheckOutAt(Date checkOutAt) {
+    public void setCheckOutAt(String checkOutAt) {
         this.checkOutAt = checkOutAt;
     }
 
