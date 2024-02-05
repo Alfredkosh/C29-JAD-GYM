@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity
@@ -21,15 +23,15 @@ public class CourseListModel {
     @Column(name="tutor_icon")
     private String tutor_icon;
     @Column(name="date")
-    private String date;
+    private LocalDate date;
     @Column(name="time")
-    private String time;
+    private LocalDateTime time;
     @CreationTimestamp
     @Column(name="created_at")
-    private Date createdAt;
+    private LocalDateTime createdAt;
     @UpdateTimestamp
     @Column(name="updated_at")
-    private Date updatedAt;
+    private LocalDateTime updatedAt;
 
     public int getId() {
         return id;
@@ -71,35 +73,35 @@ public class CourseListModel {
         this.tutor_icon = tutor_icon;
     }
 
-    public String getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 
-    public String getTime() {
+    public LocalDateTime getTime() {
         return time;
     }
 
-    public void setTime(String time) {
+    public void setTime(LocalDateTime time) {
         this.time = time;
     }
 
-    public Date getCreatedAt() {
+    public LocalDateTime getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(Date createdAt) {
+    public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
     }
 
-    public Date getUpdatedAt() {
+    public LocalDateTime getUpdatedAt() {
         return updatedAt;
     }
 
-    public void setUpdatedAt(Date updatedAt) {
+    public void setUpdatedAt(LocalDateTime updatedAt) {
         this.updatedAt = updatedAt;
     }
 }

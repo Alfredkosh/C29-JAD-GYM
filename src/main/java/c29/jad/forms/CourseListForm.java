@@ -2,13 +2,16 @@ package c29.jad.forms;
 
 import jakarta.persistence.Column;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 public class CourseListForm {
     private int gymRoomId;
     private String name;
     private String tutor;
     private String tutor_icon;
-    private String date;
-    private String time;
+    private LocalDate date;
+    private LocalDateTime time;
 
     @Override
     public String toString() {
@@ -54,19 +57,19 @@ public class CourseListForm {
         this.tutor_icon = tutor_icon;
     }
 
-    public String getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 
-    public String getTime() {
+    public LocalDateTime getTime() {
         return time;
     }
 
-    public void setTime(String time) {
+    public void setTime(LocalDateTime time) {
         this.time = time;
     }
 }

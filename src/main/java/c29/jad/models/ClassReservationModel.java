@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity
@@ -22,10 +23,10 @@ public class ClassReservationModel {
     private String confirmMsg;
     @CreationTimestamp
     @Column(name="created_at")
-    private Date createdAt;
+    private LocalDateTime createdAt;
     @UpdateTimestamp
     @Column(name="updated_at")
-    private Date updatedAt;
+    private LocalDateTime updatedAt;
 
     public int getId() {
         return id;
@@ -67,19 +68,19 @@ public class ClassReservationModel {
         this.confirmMsg = confirmMsg;
     }
 
-    public Date getCreatedAt() {
+    public LocalDateTime getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(Date createdAt) {
+    public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
     }
 
-    public Date getUpdatedAt() {
+    public LocalDateTime getUpdatedAt() {
         return updatedAt;
     }
 
-    public void setUpdatedAt(Date updatedAt) {
+    public void setUpdatedAt(LocalDateTime updatedAt) {
         this.updatedAt = updatedAt;
     }
 }
