@@ -21,11 +21,13 @@ public class CourseListModel {
     @Column(name="tutor")
     private String tutor;
     @Column(name="tutor_icon")
-    private String tutor_icon;
-    @Column(name="date")
-    private LocalDate date;
-    @Column(name="time")
-    private LocalDateTime time;
+    private String tutorIcon;
+    @Column(name="max_people_limit")
+    private Integer maxPeopleLimit;
+    @Column(name="open_datetime")
+    private LocalDateTime openDatetime;
+    @Column(name="end_datetime")
+    private LocalDateTime endDatetime;
     @CreationTimestamp
     @Column(name="created_at")
     private LocalDateTime createdAt;
@@ -65,28 +67,36 @@ public class CourseListModel {
         this.tutor = tutor;
     }
 
-    public String getTutor_icon() {
-        return tutor_icon;
+    public String getTutorIcon() {
+        return tutorIcon;
     }
 
-    public void setTutor_icon(String tutor_icon) {
-        this.tutor_icon = tutor_icon;
+    public void setTutorIcon(String tutorIcon) {
+        this.tutorIcon = tutorIcon;
     }
 
-    public LocalDate getDate() {
-        return date;
+    public Integer getMaxPeopleLimit() {
+        return maxPeopleLimit;
     }
 
-    public void setDate(LocalDate date) {
-        this.date = date;
+    public void setMaxPeopleLimit(Integer maxPeopleLimit) {
+        this.maxPeopleLimit = maxPeopleLimit;
     }
 
-    public LocalDateTime getTime() {
-        return time;
+    public LocalDateTime getOpenDatetime() {
+        return openDatetime;
     }
 
-    public void setTime(LocalDateTime time) {
-        this.time = time;
+    public void setOpenDatetime(LocalDateTime openDatetime) {
+        this.openDatetime = openDatetime;
+    }
+
+    public LocalDateTime getEndDatetime() {
+        return endDatetime;
+    }
+
+    public void setEndDatetime(LocalDateTime endDatetime) {
+        this.endDatetime = endDatetime;
     }
 
     public LocalDateTime getCreatedAt() {

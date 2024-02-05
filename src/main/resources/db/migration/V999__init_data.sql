@@ -11,6 +11,8 @@ INSERT INTO check_in_records (user_id, gym_room_id, check_in_date) VALUES (1, 1,
 INSERT INTO check_in_records (user_id, gym_room_id, check_in_date) VALUES (2, 1, '02 Feb 2024');
 --
 
-INSERT INTO course_lists (name, tutor, tutor_icon, date, time, gym_room_id) VALUES ('yoga', 'Amy', 'Amy image', 'Wednesday', '18:00-20:00', 1);
+INSERT INTO course_lists (name, tutor, tutor_icon, max_people_limit, open_datetime, end_datetime, gym_room_id) VALUES
+('yoga', 'Amy', 'Amy Icon', 8, '2024-02-05T17:00:00Z+08:00', '2024-02-05T10:00:00Z+00:00', 1),
+('Program', 'Amy', 'Amy Icon', 8, '2024-02-05T17:00:00Z+08:00', '2024-02-05T10:00:00Z+00:00', 1);
 --
 INSERT INTO class_reservations (register_email, confirm_msg, user_id, course_id) VALUES ('james@tecky.io', 'Please click thee link to complete the reservation', 1, 1);

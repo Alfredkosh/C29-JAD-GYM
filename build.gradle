@@ -31,6 +31,8 @@ dependencies {
     implementation 'org.springframework.session:spring-session-jdbc'
     implementation 'com.auth0:java-jwt:4.4.0'
     compileOnly 'org.projectlombok:lombok:1.18.30'
+    implementation 'org.mapstruct:mapstruct:1.5.5.Final'
+    annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.5.Final'
 }
 
 test {
