@@ -2,14 +2,16 @@ package c29.jad.forms;
 
 import jakarta.persistence.Column;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 public class CheckInRecordForm {
     private Integer userId;
     private Integer gymRoomId;
-    private String checkInDate;
-    private String checkInAt;
-    private String checkOutAt;
+    private LocalDate checkInDate;
+    private LocalDateTime checkInAt;
+    private LocalDateTime checkOutAt;
 
     @Override
     public String toString() {
@@ -36,27 +38,27 @@ public class CheckInRecordForm {
         this.gymRoomId = gymRoomId;
     }
 
-    public String getCheckInDate() {
+    public LocalDate getCheckInDate() {
         return checkInDate;
     }
 
-    public void setCheckInDate(String checkInDate) {
+    public void setCheckInDate(LocalDate checkInDate) {
         this.checkInDate = checkInDate;
     }
 
-    public String getCheckInAt() {
+    public LocalDateTime getCheckInAt() {
         return checkInAt;
     }
 
-    public void setCheckInAt(String checkInAt) {
+    public void setCheckInAt(LocalDateTime checkInAt) {
         this.checkInAt = checkInAt;
     }
 
-    public String getCheckOutAt() {
+    public LocalDateTime getCheckOutAt() {
         return checkOutAt;
     }
 
-    public void setCheckOutAt(String checkOutAt) {
+    public void setCheckOutAt(LocalDateTime checkOutAt) {
         this.checkOutAt = checkOutAt;
     }
 }

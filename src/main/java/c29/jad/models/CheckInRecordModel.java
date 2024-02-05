@@ -1,9 +1,14 @@
 package c29.jad.models;
 
 import jakarta.persistence.*;
+import lombok.Data;
+import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
+import lombok.Getter;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity
@@ -17,18 +22,17 @@ public class CheckInRecordModel {
     @Column(name="gym_room_id")
     private Integer gymRoomId;
     @Column(name="check_in_date")
-    private String checkInDate;
+    private LocalDate checkInDate;
     @Column(name="check_in_at")
-    private String checkInAt;
+    private LocalDateTime checkInAt;
     @Column(name="check_out_at")
-    private String checkOutAt;
-
+    private LocalDateTime checkOutAt;
     @CreationTimestamp
     @Column(name="created_at")
-    private Date createdAt;
+    private LocalDateTime createdAt;
     @UpdateTimestamp
     @Column(name="updated_at")
-    private Date updatedAt;
+    private LocalDateTime updatedAt;
 
 
     public int getId() {
@@ -55,43 +59,43 @@ public class CheckInRecordModel {
         this.gymRoomId = gymRoomId;
     }
 
-    public String getCheckInDate() {
+    public LocalDate getCheckInDate() {
         return checkInDate;
     }
 
-    public void setCheckInDate(String checkInDate) {
+    public void setCheckInDate(LocalDate checkInDate) {
         this.checkInDate = checkInDate;
     }
 
-    public String getCheckInAt() {
+    public LocalDateTime getCheckInAt() {
         return checkInAt;
     }
 
-    public void setCheckInAt(String checkInAt) {
+    public void setCheckInAt(LocalDateTime checkInAt) {
         this.checkInAt = checkInAt;
     }
 
-    public String getCheckOutAt() {
+    public LocalDateTime getCheckOutAt() {
         return checkOutAt;
     }
 
-    public void setCheckOutAt(String checkOutAt) {
+    public void setCheckOutAt(LocalDateTime checkOutAt) {
         this.checkOutAt = checkOutAt;
     }
 
-    public Date getCreatedAt() {
+    public LocalDateTime getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(Date createdAt) {
+    public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
     }
 
-    public Date getUpdatedAt() {
+    public LocalDateTime getUpdatedAt() {
         return updatedAt;
     }
 
-    public void setUpdatedAt(Date updatedAt) {
+    public void setUpdatedAt(LocalDateTime updatedAt) {
         this.updatedAt = updatedAt;
     }
 }

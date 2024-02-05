@@ -30,6 +30,7 @@ dependencies {
     implementation 'at.favre.lib:bcrypt:0.10.2'
     implementation 'org.springframework.session:spring-session-jdbc'
     implementation 'com.auth0:java-jwt:4.4.0'
+    compileOnly 'org.projectlombok:lombok:1.18.30'
 }
 
 test {
