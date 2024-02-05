@@ -1,6 +1,10 @@
 package c29.jad.models;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
+import java.util.Date;
 
 @Entity
 @Table(name="gym_rooms")
@@ -19,6 +23,29 @@ public class GymRoomModel {
     private String locationContact;
     @Column(name="location_max_people")
     private int locationMaxPeople;
+
+    @CreationTimestamp
+    @Column(name="created_at")
+    private Date createdAt;
+    @UpdateTimestamp
+    @Column(name="updated_at")
+    private Date updatedAt;
+
+    public Date getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public Date getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(Date updatedAt) {
+        this.updatedAt = updatedAt;
+    }
 
     public int getId() {
         return id;

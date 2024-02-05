@@ -1,6 +1,8 @@
 package c29.jad.models;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import java.util.Date;
 
@@ -18,8 +20,10 @@ public class ClassReservationModel {
     private String registerEmail;
     @Column(name="confirm_msg")
     private String confirmMsg;
+    @CreationTimestamp
     @Column(name="created_at")
     private Date createdAt;
+    @UpdateTimestamp
     @Column(name="updated_at")
     private Date updatedAt;
 

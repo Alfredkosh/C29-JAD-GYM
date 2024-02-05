@@ -4,10 +4,10 @@ BEGIN;
          user_id Integer not null,
          gym_room_id Integer not null,
          check_in_date varchar(255),
-         check_in_at DATE default NOW(),
-         check_out_at DATE default NOW(),
-         created_at DATE default NOW(),
-         updated_at DATE default NOW()
+         check_in_at TIMESTAMP default NOW(),
+         check_out_at TIMESTAMP default NOW(),
+         created_at TIMESTAMP default NOW(),
+         updated_at TIMESTAMP default NOW()
      );
 
 COMMIT

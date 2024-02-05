@@ -1,6 +1,8 @@
 package c29.jad.models;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import java.util.Date;
 
@@ -20,8 +22,11 @@ public class CheckInRecordModel {
     private Date checkInAt;
     @Column(name="check_out_at")
     private Date checkOutAt;
+
+    @CreationTimestamp
     @Column(name="created_at")
     private Date createdAt;
+    @UpdateTimestamp
     @Column(name="updated_at")
     private Date updatedAt;
 
