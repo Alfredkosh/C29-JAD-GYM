@@ -38,3 +38,7 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+
+tasks.bootJar {
+        archiveFileName.set("c29-jad-gympj.jar")
+    }
