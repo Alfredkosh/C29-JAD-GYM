@@ -1,1 +1,55 @@
 
+name: C29-JAD-GYMPJ
+on:
+  push:
+    branches:
+      - "production"
+  workflow_dispatch:
+
+# env:
+#   TEST__DB_NAME: memo_wall_testing
+#   TEST__DB_USERNAME: wall
+#   TEST__DB_PASSWORD: postgres
+#   TEST__DB_HOSTNAME: postgres
+#   TEST__DB_PORT: 5432
+
+jobs:
+  test-and-build-dockerize-server:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: corretto
+          java-version: 17
+      - name: Setup Gradle
+        uses: gradle/gradle-build-action@v2
+      - run: |
+          ./gradlew clean test bootJar --refresh-dependencies
+      - name: Login to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Docker Build and Push
+        run: |
+          ls -la
+          pwd
+          docker build -t koshunnxxz/c29-jad-gympj:latest .
+          docker push koshunnxxz/c29-jad-gympj:latest
+  # deploy-server:
+  #   needs: test-and-build-dockerize-server
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Executing remote ssh
+  #       uses: appleboy/ssh-action@master
+  #       with:
+  #         host: jad.jameslam.me
+  #         key: ${{ secrets.SSH_PRIVATE_KEY }}
+  #         username: ubuntu
+  #         script: |
+  #           cd docker
+  #           sudo docker compose pull
+  #           sudo docker compose up -d
+  #           sudo docker image prune -f 
