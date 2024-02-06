@@ -11,13 +11,13 @@
   <meta name="author" content="">
   <meta name="keywords" content="">
   <meta name="description" content="">
-  <link rel="stylesheet" type="text/css" href="/css/vendor.css">
-  <link rel="stylesheet" type="text/css" href="/fonts/icomoon.css">
+  <link rel="stylesheet" type="text/css" href="/src/main/resources/public/css/vendor.css">
+  <link rel="stylesheet" type="text/css" href="/src/main/resources/public/fonts/icomoon.css">
 
   <link href="https://cdn.staticfile.org/twitter-bootstrap/5.3.1/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 
-  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <link rel="stylesheet" type="text/css" href="/src/main/resources/public/css/style.css">
   <link rel="stylesheet" href="https://cdn.staticfile.org/Swiper/11.0.5/swiper-bundle.min.css">
 
 </head>
@@ -33,7 +33,7 @@
     <div class="container-fluid">
       <div class="main-logo">
         <a href="index.html">
-          <img src="/images/main-logo.png" alt="logo">
+          <img src="/src/main/resources/public/images/main-logo.png" alt="logo">
         </a>
       </div>
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
@@ -48,7 +48,7 @@
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-end align-items-center flex-grow-1 pe-3 gap-4">
             <li class="nav-item text-uppercase">
-              <a href="/index.html" class="nav-link active">Home</a>
+              <a href="index.html" class="nav-link active">Home</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="dropdownPages" data-bs-toggle="dropdown"
@@ -97,16 +97,13 @@
   </nav>
 
   <section id="hero-section" class="text-center jarallax mt-5 py-5">
-    <img src="images/dance-banner3.jpg" alt="dancer" class="jarallax-img">
+    <img src="/src/main/resources/public/images/dance-banner3.jpg" alt="dancer" class="jarallax-img">
     <div class="banner-content py-5 my-5">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-md-6">
-            <h1 class="text-white display-1 mt-5">Jazz Dance Academy</h1>
-            <span class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, exercitationem
-              dolorem
-              at delectus laborum dolores obcaecati ad aperiam saepe quo tempora culpa maxime a minima ducimus eius, cum
-              aliquid atque.</span>
+            <h1 class="text-white display-1 mt-5">Power Fitness</h1>
+            <span class="text-white">如果您想加入一個有幫助的、熱情的健身房，和那些想要看到您成功的人一起，您就來對了地方。</span>
             <div class="buttons d-flex flex-wrap justify-content-center gap-3 my-4">
               <a href="#" class="btn btn-medium btn-primary rounded-pill">Class Schedule</a>
               <a href="#" class="btn btn-medium btn-dark rounded-pill">Register Now</a>
@@ -126,17 +123,77 @@
             <span class="text-primary">Join</span> Our Classes
           </h2>
         </div>
-        <div class="row course-container" id="course-container">
-
+        <div class="row">
+          <div class="col-md-6">
+            <div class="class-item" data-aos="fade" data-aos-delay="0">
+              <figure>
+                <img src="/src/main/resources/public/images/video-item.jpg" alt="video">
+                <figcaption class="p-5 text-white">
+                  <h2 class="text-white m-0">Gym</h2>
+                  <p class="m-0">擁有頂尖的健身器材，在全市場中最為堅固耐用， 適合不同用家徹底發揮你的運動潛能，為你達成持久高效的鍛鍊目標。</p>
+                  <a href="#" class="btn btn-outline-light rounded-pill">Register Now</a>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="class-item" data-aos="fade" data-aos-delay="100">
+              <figure>
+                <img src="/src/main/resources/public/images/video-item1.jpg" alt="video">
+                <figcaption class="p-5 text-white">
+                  <h2 class="text-white m-0">Yoga</h2>
+                  <p class="m-0">場地寬敞，配合落地玻璃的開揚設計，用戶可享受戶外景觀，而引入的自然光令整體運動表現更佳，給你愉悅的運動體驗</p>
+                  <a href="#" class="btn btn-outline-light rounded-pill">Register Now</a>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
         </div>
-
+        <div class="row">
+          <div class="col-md-4">
+            <div class="class-item" data-aos="fade" data-aos-delay="200">
+              <figure>
+                <img src="/src/main/resources/public/images/video-item2.jpg" alt="video">
+                <figcaption class="p-5 text-white">
+                  <h2 class="text-white m-0">Dance</h2>
+                  <p class="m-0">深層次的舞蹈技巧訓練</p>
+                  <a href="#" class="btn btn-outline-light rounded-pill">Register Now</a>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="class-item" data-aos="fade" data-aos-delay="300">
+              <figure>
+                <img src="/src/main/resources/public/images/video-item3.jpg" alt="video">
+                <figcaption class="p-5 text-white">
+                  <h2 class="text-white m-0">Trainers</h2>
+                  <p class="m-0">度身制訂個人健體計劃</p>
+                  <a href="#" class="btn btn-outline-light rounded-pill">Register Now</a>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="class-item" data-aos="fade" data-aos-delay="400">
+              <figure>
+                <img src="/src/main/resources/public/images/video-item4.jpg" alt="video">
+                <figcaption class="p-5 text-white">
+                  <h2 class="text-white m-0">Body Pump</h2>
+                  <p class="m-0">激活沉睡的肌肉群</p>
+                  <a href="#" class="btn btn-outline-light rounded-pill">Register Now</a>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <section class="my-2 py-2 my-lg-5 py-lg-5">
     <div class="container">
-      <h2>Ongoing Classes for Kids</h2>
+      <h2>Ongoing Classes</h2>
       <div class="table-responsive">
         <table class="table table-striped
         table-hover	
@@ -154,34 +211,34 @@
           </thead>
           <tbody class="table-group-divider">
             <tr>
-              <td><strong>Junior Ballet</strong></td>
+              <td><strong>Gym</strong></td>
               <td>August 15-29</td>
               <td>9:00 AM to 11:00 AM</td>
-              <td>7-9</td>
+              <td>16-29</td>
               <td>$150</td>
               <td><a href="#" class="btn btn-outline-dark rounded-pill">Register</a></td>
             </tr>
             <tr>
-              <td><strong>Fun Workshop</strong></td>
+              <td><strong>Gym</strong></td>
               <td>August 15-29</td>
               <td>9:00 AM to 11:00 AM</td>
-              <td>7-9</td>
+              <td>30-45</td>
               <td>$150</td>
               <td><a href="#" class="btn btn-outline-dark rounded-pill">Register</a></td>
             </tr>
             <tr>
-              <td><strong>PlayGroup</strong></td>
+              <td><strong>Dance</strong></td>
               <td>August 15-29</td>
               <td>9:00 AM to 11:00 AM</td>
-              <td>7-9</td>
+              <td>16-29</td>
               <td>$150</td>
               <td><a href="#" class="btn btn-outline-dark rounded-pill">Register</a></td>
             </tr>
             <tr>
-              <td><strong>Story Ballet</strong></td>
+              <td><strong>Dance</strong></td>
               <td>August 15-29</td>
               <td>9:00 AM to 11:00 AM</td>
-              <td>7-9</td>
+              <td>30-45</td>
               <td>$150</td>
               <td><a href="#" class="btn btn-outline-dark rounded-pill">Register</a></td>
             </tr>
@@ -220,7 +277,7 @@
         </div>
         <div class="col-md-4">
           <div class="footer-logo align-center">
-            <img src="/images/main-logo.png" alt="logo">
+            <img src="/src/main/resources/public/images/main-logo.png" alt="logo">
           </div>
         </div>
         <div class="col-md-4">
@@ -248,14 +305,14 @@
     </div>
   </footer>
 
-  <script src="/js/jquery-1.11.0.min.js"></script>
+  <script src="/src/main/resources/public/js/jquery-1.11.0.min.js"></script>
   <script src="https://cdn.staticfile.org/twitter-bootstrap/5.3.1/js/bootstrap.bundle.min.js"
     integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
     crossorigin="anonymous"></script>
   <script src="https://cdn.staticfile.org/Swiper/11.0.5/swiper-bundle.min.js"></script>
-  <script src="/js/plugins.js"></script>
-  <script src="/js/script.js"></script>
-  <script src="/js/index.js"></script>
+  <script src="/src/main/resources/public/js/plugins.js"></script>
+  <script src="/src/main/resources/public/js/script.js"></script>
+  <script type="module" src="/src/main/resources/public/js/auth.js"></script>
 </body>
 
 </html>
