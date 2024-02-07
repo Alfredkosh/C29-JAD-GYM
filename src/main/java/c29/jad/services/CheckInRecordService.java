@@ -1,13 +1,15 @@
 package c29.jad.services;
 
-import at.favre.lib.crypto.bcrypt.BCrypt;
 import c29.jad.forms.CheckInRecordForm;
 import c29.jad.models.CheckInRecordModel;
 import c29.jad.repositories.CheckInRecordRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import javax.naming.AuthenticationException;
+import java.util.List;
 
 @Service
 public class CheckInRecordService {
@@ -39,6 +41,10 @@ public class CheckInRecordService {
         return checkInRecordRepository.saveAndFlush(newCheckInRecord);
 
 
+    }
 
+    public List<CheckInRecordModel> getAllRecords(@PathVariable Integer gymRoomId) {
+
+        return checkInRecordRepository.getVisitor(gymRoomId);
     }
 }

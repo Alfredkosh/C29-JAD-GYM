@@ -30,4 +30,6 @@ public class CourseController {
         return new ResponseEntity<>(Map.of("message", "Successful", "data", coursesDto), HttpStatus.OK);
     }
 
+
+
 }
