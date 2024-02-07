@@ -43,8 +43,7 @@ public class CheckInRecordService {
 
     }
 
-    public List<CheckInRecordModel> getAllRecords(Integer gymRoomId) {
-
-        return checkInRecordRepository.getVisitor(gymRoomId);
+    public int getAllRecords() {
+        return checkInRecordRepository.getVisitor().size();
     }
 }

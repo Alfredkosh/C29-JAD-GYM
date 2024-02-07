@@ -9,9 +9,9 @@ import java.util.Date;
 public class CheckInRecordForm {
     private Integer userId;
     private Integer gymRoomId;
-    private LocalDate checkInDate;
-    private LocalDateTime checkInAt;
-    private LocalDateTime checkOutAt;
+    private Date checkInDate;
+    private Date checkInAt;
+    private Date checkOutAt;
 
     @Override
     public String toString() {
@@ -38,27 +38,27 @@ public class CheckInRecordForm {
         this.gymRoomId = gymRoomId;
     }
 
-    public LocalDate getCheckInDate() {
+    public Date getCheckInDate() {
         return checkInDate;
     }
 
-    public void setCheckInDate(LocalDate checkInDate) {
+    public void setCheckInDate(Date checkInDate) {
         this.checkInDate = checkInDate;
     }
 
-    public LocalDateTime getCheckInAt() {
+    public Date getCheckInAt() {
         return checkInAt;
     }
 
-    public void setCheckInAt(LocalDateTime checkInAt) {
+    public void setCheckInAt(Date checkInAt) {
         this.checkInAt = checkInAt;
     }
 
-    public LocalDateTime getCheckOutAt() {
+    public Date getCheckOutAt() {
         return checkOutAt;
     }
 
-    public void setCheckOutAt(LocalDateTime checkOutAt) {
+    public void setCheckOutAt(Date checkOutAt) {
         this.checkOutAt = checkOutAt;
     }
 }

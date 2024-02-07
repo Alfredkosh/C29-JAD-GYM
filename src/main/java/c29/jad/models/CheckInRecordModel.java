@@ -22,17 +22,17 @@ public class CheckInRecordModel {
     @Column(name="gym_room_id")
     private Integer gymRoomId;
     @Column(name="check_in_date")
-    private LocalDate checkInDate;
+    private Date checkInDate;
     @Column(name="check_in_at")
-    private LocalDateTime checkInAt;
+    private Date checkInAt;
     @Column(name="check_out_at")
-    private LocalDateTime checkOutAt;
+    private Date checkOutAt;
     @CreationTimestamp
     @Column(name="created_at")
-    private LocalDateTime createdAt;
+    private Date createdAt;
     @UpdateTimestamp
     @Column(name="updated_at")
-    private LocalDateTime updatedAt;
+    private Date updatedAt;
 
 
     public int getId() {
@@ -59,43 +59,43 @@ public class CheckInRecordModel {
         this.gymRoomId = gymRoomId;
     }
 
-    public LocalDate getCheckInDate() {
+    public Date getCheckInDate() {
         return checkInDate;
     }
 
-    public void setCheckInDate(LocalDate checkInDate) {
+    public void setCheckInDate(Date checkInDate) {
         this.checkInDate = checkInDate;
     }
 
-    public LocalDateTime getCheckInAt() {
+    public Date getCheckInAt() {
         return checkInAt;
     }
 
-    public void setCheckInAt(LocalDateTime checkInAt) {
+    public void setCheckInAt(Date checkInAt) {
         this.checkInAt = checkInAt;
     }
 
-    public LocalDateTime getCheckOutAt() {
+    public Date getCheckOutAt() {
         return checkOutAt;
     }
 
-    public void setCheckOutAt(LocalDateTime checkOutAt) {
+    public void setCheckOutAt(Date checkOutAt) {
         this.checkOutAt = checkOutAt;
     }
 
-    public LocalDateTime getCreatedAt() {
+    public Date getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(LocalDateTime createdAt) {
+    public void setCreatedAt(Date createdAt) {
         this.createdAt = createdAt;
     }
 
-    public LocalDateTime getUpdatedAt() {
+    public Date getUpdatedAt() {
         return updatedAt;
     }
 
-    public void setUpdatedAt(LocalDateTime updatedAt) {
+    public void setUpdatedAt(Date updatedAt) {
         this.updatedAt = updatedAt;
     }
 }

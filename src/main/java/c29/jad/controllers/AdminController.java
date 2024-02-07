@@ -24,8 +24,7 @@ public class AdminController {
     @Autowired
     CheckInRecordService checkInRecordService;
 
-    @Autowired
-    CheckInRecordForm checkInRecordForm;
+
 
     @RequestMapping(value = "", method = RequestMethod.GET)
     public String admin(Model model){
@@ -35,16 +34,16 @@ public class AdminController {
 
     @RequestMapping(value = "/visitor", method = RequestMethod.GET)
     public ResponseEntity<Map<String, Object>> visitor (HttpServletRequest request){
-        Integer gymRoomId = checkInRecordForm.getGymRoomId();
+//        Integer gymRoomId = new CheckInRecordForm().getGymRoomId();
+//
+        int numberOfPeople = checkInRecordService.getAllRecords();
+//        int usersNumber = checkInRecords.size();
+//
+//        Map<String, Object> response = new HashMap<>();
+//        response.put("Users number", usersNumber);
+//        response.put("Check-In Records", checkInRecords);
 
-        List<CheckInRecordModel> checkInRecords = checkInRecordService.getAllRecords(gymRoomId);
-        int usersNumber = checkInRecords.size();
-
-        Map<String, Object> response = new HashMap<>();
-        response.put("Users number", usersNumber);
-        response.put("Check-In Records", checkInRecords);
-
-        return new ResponseEntity<>(response, HttpStatus.OK);
+        return new ResponseEntity<>(Map.of("Number of people", numberOfPeople), HttpStatus.OK);
     }
 
 }

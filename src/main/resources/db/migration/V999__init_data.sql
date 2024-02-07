@@ -7,8 +7,12 @@ INSERT INTO admins (username, password, email) VALUES ('Navy', '$2a$10$IpU.rTE7O
 --
 INSERT INTO gym_rooms (map, location_name, location_address, location_contact, location_max_people) VALUES ('map test', 'Hong Kong', 'Mongkok', '2688 8888', '200');
 --
-INSERT INTO check_in_records (user_id, gym_room_id, check_in_date) VALUES (1, 1, '30 Jan 2024');
-INSERT INTO check_in_records (user_id, gym_room_id, check_in_date) VALUES (2, 1, '02 Feb 2024');
+INSERT INTO check_in_records (user_id, gym_room_id, check_in_date, check_in_at, check_out_at) VALUES (1, 1, '2024-01-20', '2024-01-20T10:00:00Z+00:00', '2024-01-20T11:00:00Z+00:00');
+INSERT INTO check_in_records (user_id, gym_room_id, check_in_date, check_in_at, check_out_at) VALUES (2, 1, '2024-01-20', '2024-01-20T10:00:00Z+00:00', '2024-01-20T11:00:00Z+00:00');
+
+INSERT INTO check_in_records (user_id, gym_room_id, check_in_date, check_in_at, check_out_at) VALUES (1, 1, '2024-02-02', '2024-02-02T10:00:00Z+00:00', '2024-02-02T11:00:00Z+00:00');
+INSERT INTO check_in_records (user_id, gym_room_id, check_in_date, check_in_at, check_out_at) VALUES (2, 1, '2024-02-02', '2024-02-02T10:00:00Z+00:00', '2024-02-02T11:00:00Z+00:00');
+
 --
 
 INSERT INTO course_lists (name, tutor, tutor_icon, max_people_limit, open_datetime, end_datetime, gym_room_id) VALUES
