@@ -34,6 +34,32 @@ public class PageController {
         return "login";
     }
 
+    @RequestMapping(value = "/index", method = RequestMethod.GET)
+    public String index(Model model){
+        return "index";
+    }
+
+    @RequestMapping(value = "/about", method = RequestMethod.GET)
+    public String about(Model model){
+        return "about";
+    }
+
+    @RequestMapping(value = "/classes", method = RequestMethod.GET)
+    public String classes(Model model){
+        return "classes";
+    }
+    @RequestMapping(value = "/contact", method = RequestMethod.GET)
+    public String contact(Model model){
+        return "contact";
+    }
+
+    @RequestMapping(value = "/shop", method = RequestMethod.GET)
+    public String shop(Model model){
+        return "shop";
+    }
+
+
+
 
 
 }
