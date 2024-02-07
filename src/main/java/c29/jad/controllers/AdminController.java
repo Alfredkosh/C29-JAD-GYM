@@ -1,6 +1,7 @@
 package c29.jad.controllers;
 
 import c29.jad.forms.CheckInRecordForm;
+import c29.jad.models.CheckInRecordModel;
 import c29.jad.services.CheckInRecordService;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -32,8 +35,16 @@ public class AdminController {
 
     @RequestMapping(value = "/visitor", method = RequestMethod.GET)
     public ResponseEntity<Map<String, Object>> visitor (HttpServletRequest request){
-        var checkInRecord = checkInRecordService.getAllRecords();
-        return new ResponseEntity<>(Map.of("Users number",  checkInRecord), HttpStatus.OK);
+        Integer gymRoomId = checkInRecordForm.getGymRoomId();
+
+        List<CheckInRecordModel> checkInRecords = checkInRecordService.getAllRecords(gymRoomId);
+        int usersNumber = checkInRecords.size();
+
+        Map<String, Object> response = new HashMap<>();
+        response.put("Users number", usersNumber);
+        response.put("Check-In Records", checkInRecords);
+
+        return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
 }

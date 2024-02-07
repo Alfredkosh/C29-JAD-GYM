@@ -12,7 +12,7 @@ public interface CheckInRecordRepository extends JpaRepository<CheckInRecordMode
     List<CheckInRecordModel> findByUserId(int userId);
 
     @Query(value = """
-            SELECT * from user where check_out_at >= : 
-            """)
+            SELECT * from check_in_records where gym_room_id = :gymRoomId AND check_out_at BETWEEN 2024-02-01T00:00:00Z AND 2024-02-29T00:00:00Z
+            """, nativeQuery = true)
     List<CheckInRecordModel> getVisitor (@Param("gymRoomId") Integer gymRoomId);
 }

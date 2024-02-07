@@ -43,7 +43,7 @@ public class CheckInRecordService {
 
     }
 
-    public List<CheckInRecordModel> getAllRecords(@PathVariable Integer gymRoomId) {
+    public List<CheckInRecordModel> getAllRecords(Integer gymRoomId) {
 
         return checkInRecordRepository.getVisitor(gymRoomId);
     }
