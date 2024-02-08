@@ -5,7 +5,7 @@ window.addEventListener('load', () => {
 async function login() {
     document.querySelector("#login-form").addEventListener('submit', async (e) => {
         e.preventDefault()
-        console.log(e)
+        console.log("show me", e)
         const loginForm = e.target
         const username = loginForm.username.value
         const password = loginForm.password.value
@@ -21,9 +21,23 @@ async function login() {
             body: JSON.stringify(body)
         })
         if(res.ok) {
-            window.location.replace("/page");
+
+         Swal.fire({
+           icon: "success",
+           title: "Login success",
+           showConfirmButton: true
+         }).then(() => {
+           console.log("Swal.fire() resolved successfully");
+           window.location.replace("/");
+         });
         } else {
             console.log("fail to login")
+            Swal.fire({
+              icon: "error",
+              title: "Login fail",
+              text: "Wrong username / password"
+
+            });
         }
 
     })

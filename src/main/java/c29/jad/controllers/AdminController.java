@@ -43,14 +43,14 @@ public class AdminController {
     public ResponseEntity<Map<String, Object>> visitor (HttpServletRequest request){
 //        Integer gymRoomId = new CheckInRecordForm().getGymRoomId();
 //
-        int numberOfPeople = checkInRecordService.getAllRecords();
+        List<CheckInRecordModel> numberOfPeople = checkInRecordService.getAllRecords();
 //        int usersNumber = checkInRecords.size();
 //
 //        Map<String, Object> response = new HashMap<>();
 //        response.put("Users number", usersNumber);
 //        response.put("Check-In Records", checkInRecords);
 
-        return new ResponseEntity<>(Map.of("Number of people", numberOfPeople), HttpStatus.OK);
+        return new ResponseEntity<>(Map.of("numberOfPeople", numberOfPeople), HttpStatus.OK);
     }
 
     @RequestMapping(value = "/newcourse", method = RequestMethod.POST)

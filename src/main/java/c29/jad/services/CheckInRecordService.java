@@ -4,9 +4,7 @@ import c29.jad.forms.CheckInRecordForm;
 import c29.jad.models.CheckInRecordModel;
 import c29.jad.repositories.CheckInRecordRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PathVariable;
 
 import javax.naming.AuthenticationException;
 import java.util.List;
@@ -43,7 +41,7 @@ public class CheckInRecordService {
 
     }
 
-    public int getAllRecords() {
-        return checkInRecordRepository.getVisitor().size();
+    public List<CheckInRecordModel> getAllRecords() {
+        return checkInRecordRepository.getVisitor();
     }
 }
