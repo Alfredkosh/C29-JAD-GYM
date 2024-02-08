@@ -25,15 +25,15 @@ public class CourseListModel {
     @Column(name="max_people_limit")
     private Integer maxPeopleLimit;
     @Column(name="open_datetime")
-    private LocalDateTime openDatetime;
+    private Date openDatetime;
     @Column(name="end_datetime")
-    private LocalDateTime endDatetime;
+    private Date endDatetime;
     @CreationTimestamp
     @Column(name="created_at")
-    private LocalDateTime createdAt;
+    private Date createdAt;
     @UpdateTimestamp
     @Column(name="updated_at")
-    private LocalDateTime updatedAt;
+    private Date updatedAt;
 
     public int getId() {
         return id;
@@ -83,35 +83,35 @@ public class CourseListModel {
         this.maxPeopleLimit = maxPeopleLimit;
     }
 
-    public LocalDateTime getOpenDatetime() {
+    public Date getOpenDatetime() {
         return openDatetime;
     }
 
-    public void setOpenDatetime(LocalDateTime openDatetime) {
+    public void setOpenDatetime(Date openDatetime) {
         this.openDatetime = openDatetime;
     }
 
-    public LocalDateTime getEndDatetime() {
+    public Date getEndDatetime() {
         return endDatetime;
     }
 
-    public void setEndDatetime(LocalDateTime endDatetime) {
+    public void setEndDatetime(Date endDatetime) {
         this.endDatetime = endDatetime;
     }
 
-    public LocalDateTime getCreatedAt() {
+    public Date getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(LocalDateTime createdAt) {
+    public void setCreatedAt(Date createdAt) {
         this.createdAt = createdAt;
     }
 
-    public LocalDateTime getUpdatedAt() {
+    public Date getUpdatedAt() {
         return updatedAt;
     }
 
-    public void setUpdatedAt(LocalDateTime updatedAt) {
+    public void setUpdatedAt(Date updatedAt) {
         this.updatedAt = updatedAt;
     }
 }

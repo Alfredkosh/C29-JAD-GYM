@@ -1,8 +1,11 @@
 package c29.jad.controllers;
 
 import c29.jad.forms.CheckInRecordForm;
+import c29.jad.forms.CourseListForm;
 import c29.jad.models.CheckInRecordModel;
+import c29.jad.models.CourseListModel;
 import c29.jad.services.CheckInRecordService;
+import c29.jad.services.CourseListService;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -13,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import javax.naming.AuthenticationException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -23,6 +27,9 @@ public class AdminController {
 
     @Autowired
     CheckInRecordService checkInRecordService;
+
+    @Autowired
+    CourseListService courseListService;
 
 
 
@@ -45,5 +52,16 @@ public class AdminController {
 
         return new ResponseEntity<>(Map.of("Number of people", numberOfPeople), HttpStatus.OK);
     }
+
+    @RequestMapping(value = "/newcourse", method = RequestMethod.POST)
+    public ResponseEntity<Map<String, Object>> addCourse(@RequestBody CourseListForm courseListForm){
+        try{
+            CourseListModel newCourse = courseListService.newCourse(courseListForm);
+            return new ResponseEntity<>(Map.of("message", "New course added", "course",newCourse ), HttpStatus.OK);
+        } catch (AuthenticationException e) {
+            return new ResponseEntity<>(Map.of("message",  e.getMessage()), HttpStatus.UNAUTHORIZED);
+        }
+    }
+
 
 }

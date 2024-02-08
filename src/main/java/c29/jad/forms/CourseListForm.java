@@ -1,17 +1,16 @@
 package c29.jad.forms;
 
-import jakarta.persistence.Column;
-
-import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Date;
 
 public class CourseListForm {
-    private int gymRoomId;
+    private Integer gymRoomId;
     private String name;
     private String tutor;
-    private String tutor_icon;
-    private LocalDate date;
-    private LocalDateTime time;
+    private String tutorIcon;
+    private Integer maxPeopleLimit;
+    private Date openDatetime;
+    private Date endDatetime;
 
     @Override
     public String toString() {
@@ -19,17 +18,18 @@ public class CourseListForm {
                 "gymRoomId=" + gymRoomId +
                 ", name='" + name + '\'' +
                 ", tutor='" + tutor + '\'' +
-                ", tutor_icon='" + tutor_icon + '\'' +
-                ", date='" + date + '\'' +
-                ", time='" + time + '\'' +
+                ", tutorIcon='" + tutorIcon + '\'' +
+                ", maxPeopleLimit=" + maxPeopleLimit +
+                ", openDatetime=" + openDatetime +
+                ", endDatetime=" + endDatetime +
                 '}';
     }
 
-    public int getGymRoomId() {
+    public Integer getGymRoomId() {
         return gymRoomId;
     }
 
-    public void setGymRoomId(int gymRoomId) {
+    public void setGymRoomId(Integer gymRoomId) {
         this.gymRoomId = gymRoomId;
     }
 
@@ -49,27 +49,37 @@ public class CourseListForm {
         this.tutor = tutor;
     }
 
-    public String getTutor_icon() {
-        return tutor_icon;
+    public String getTutorIcon() {
+        return tutorIcon;
     }
 
-    public void setTutor_icon(String tutor_icon) {
-        this.tutor_icon = tutor_icon;
+    public void setTutorIcon(String tutorIcon) {
+        this.tutorIcon = tutorIcon;
     }
 
-    public LocalDate getDate() {
-        return date;
+    public Integer getMaxPeopleLimit() {
+        return maxPeopleLimit;
     }
 
-    public void setDate(LocalDate date) {
-        this.date = date;
+    public void setMaxPeopleLimit(Integer maxPeopleLimit) {
+        this.maxPeopleLimit = maxPeopleLimit;
     }
 
-    public LocalDateTime getTime() {
-        return time;
+    public Date getOpenDatetime() {
+        return openDatetime;
     }
 
-    public void setTime(LocalDateTime time) {
-        this.time = time;
+    public void setOpenDatetime(Date openDatetime) {
+        this.openDatetime = openDatetime;
+    }
+
+    public Date getEndDatetime() {
+        return endDatetime;
+    }
+
+    public void setEndDatetime(Date endDatetime) {
+        this.endDatetime = endDatetime;
     }
 }
+
+
