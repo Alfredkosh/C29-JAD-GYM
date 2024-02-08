@@ -6,30 +6,65 @@ async function getAllVisitor() {
     const res = await fetch("/admin/visitor")
     const data = await res.json()
     if (res.ok) {
-        const visitor = data.numberOfPeople
-        console.log(message)
+        const visitors = data.numberOfPeople;
+        console.log(visitors);
 
-        const gymRoomId1 = visitor.reduce((count, obj) => {
-        if (obj.gymRoomId === 1) {
-            return count + 1;
+
+        let gymRoomId1 = 0;
+
+        for(let visitor of visitors){
+        if (visitor.gymRoomId == 1) {
+            gymRoomId1 = gymRoomId1 + 1
           }
-        else {
-            alert("Fail to fetch getAllVisitor")
-          }
-        }, 0);
 
-        const gymRoomId2 = visitor.reduce((count, obj) => {
-        if (obj.gymRoomId === 2) {
-                    return count + 1;
-                  }
-                else {
-                    alert("Fail to fetch getAllVisitor")
-                  }
-                }, 0);
+        };
 
-        const AllVisitor = visitor.gymRoomId.size();
+        console.log(gymRoomId1)
+        
+//
+        let gymRoomId2 = 0;
 
-        //
+        for(let visitor of visitors){
+          if (visitor.gymRoomId == 2) {
+              gymRoomId2 = gymRoomId2 + 1
+            }
+  
+          };
+  
+          console.log(gymRoomId2)
+
+        const AllVisitor = visitors.length;
+
+        console.log(AllVisitor)
+
+        const gymRoom1 = document.querySelector("#hk")
+
+        gymRoom1.innerHTML = `<div class="agileits-social">
+        <h3>Gym - Hong Kong</h3>
+    </div>
+    <div class="send-w3layouts">
+        <h3>人流</h3>
+        ${gymRoomId1}
+     </div>`
+
+     const gymRoom2 = document.querySelector("#mk")
+
+     gymRoom2.innerHTML = `<div class="agileits-social">
+                          <h3>Gym - Mongkok</h3>
+                      </div>
+                      <div class="send-w3layouts">
+                          <h3>人流</h3>
+                          ${gymRoomId2}
+                      </div>`
+
+      const totalNumber = document.querySelector("#totalNo")
+
+      totalNumber.innerHTML = `<p>總人流</p>
+                                           <br>
+                                          ${AllVisitor}`
+
+
+
     } else {
         alert("Fail to fetch getAllVisitor")
     }
