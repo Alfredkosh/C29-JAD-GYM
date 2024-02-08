@@ -53,9 +53,9 @@ public class PageController {
         return "contact";
     }
 
-    @RequestMapping(value = "/shop", method = RequestMethod.GET)
-    public String shop(Model model){
-        return "shop";
+    @RequestMapping(value = "/register", method = RequestMethod.GET)
+    public String register(Model model){
+        return "register";
     }
 
 
