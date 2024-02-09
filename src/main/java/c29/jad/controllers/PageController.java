@@ -58,7 +58,10 @@ public class PageController {
         return "register";
     }
 
-
+    @RequestMapping(value = "/gym", method = RequestMethod.GET)
+    public String gym(Model model){
+        return "gym";
+    }
 
 
 
