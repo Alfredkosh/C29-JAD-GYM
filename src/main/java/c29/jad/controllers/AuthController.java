@@ -10,15 +10,13 @@ import c29.jad.services.CheckInRecordService;
 import c29.jad.services.UserService;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.naming.AuthenticationException;
 import java.util.Date;
@@ -44,6 +42,18 @@ public class AuthController {
         httpSession.removeAttribute("userId");
         return new ResponseEntity<>(Map.of("message", "Logout Successful"), HttpStatus.OK);
     }
+
+//    @RequestMapping(value = "/username", method = RequestMethod.GET)
+//    public ResponseEntity<Map<String, String>> getUsername(HttpServletRequest request){
+//        HttpSession session = request.getSession(false);
+//        if (session != null && session.getAttribute("username") != null) {
+//            String username = (String) session.getAttribute("username");
+//            return ResponseEntity.ok().body(Map.of("message", "get username success", "data", username));
+//        } else {
+//            return ResponseEntity.badRequest().body(Map.of("message", "you are not logged in"));
+//        }
+//      }
+//    }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public ResponseEntity<Map<String, String>> login(@RequestBody UserForm userForm){
