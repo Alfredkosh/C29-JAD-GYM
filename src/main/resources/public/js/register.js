@@ -7,11 +7,11 @@ async function register() {
         e.preventDefault()
         console.log(e)
         const registerForm = e.target
-        const username = loginForm.username.value
-        const password = loginForm.password.value
-        const password = loginForm.age.value
-        const password = loginForm.email.value
-        const password = loginForm.mobileNumber.value
+        const username = registerForm.username.value
+        const password = registerForm.password.value
+        const age = registerForm.age.value
+        const email = registerForm.email.value
+        const mobileNumber = registerForm.mobileNumber.value
 
 
         const body = {

@@ -7,6 +7,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name="course_lists")
@@ -34,6 +35,12 @@ public class CourseListModel {
     @UpdateTimestamp
     @Column(name="updated_at")
     private Date updatedAt;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="gym_room_id", updatable = false, insertable = false)
+    private GymRoomModel gymRoom;
+
+
 
     public int getId() {
         return id;

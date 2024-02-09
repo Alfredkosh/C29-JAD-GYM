@@ -102,40 +102,40 @@
 
 <!-- [ Main Content ] start -->
 <div class="main-content">
-    <div class="contact-w3">
+    <div class="contact-w3" >
 
-        <form action="#" method="post">
+        <form id="new-course">
             <br>
             <br>
             <h2>Create New Course</h2>
             <label>Class Name</label>
-            <input type="text" name="Name" placeholder="Class name" required>
+            <input type="text" name="name" placeholder="Class name" required>
             <div class="row">
                 <div class="contact-left-w3">
                     <label>Tutor</label>
-                    <input type="text" name="Tutor" placeholder="Tutor name" required>
+                    <input type="text" name="tutor" placeholder="Tutor name" required>
                 </div>
                 <div class="contact-right-w3l">
                     <label>Max people limit</label>
-                    <input type="number" name="max_people_limit" placeholder="Max people limit" required>
+                    <input type="number" name="maxPeopleLimit" placeholder="Max people limit" required>
                 </div>
                 <div class="contact-right-w3l">
                     <label>Location</label>
-                <select class="form-select" aria-label="Default select example">
+                <select class="form-select" name="location" aria-label="Default select example">
                     <option selected>Please select location</option>
-                    <option value="1">Causeway Bay</option>
-                    <option value="2">Mongkok</option>
+                    <option value="1">Hysan Place - Causeway Bay</option>
+                    <option value="2">MOKO - Mongkok</option>
                 </select>
                 </div>
                 <div class="clear"></div>
             </div>
 
             <label>Open datetime</label>
-            <input type="datetime-local" name="open_datetime" placeholder="Open datetime" required>
+            <input type="datetime-local" name="openDatetime" placeholder="Open datetime" required>
 
             <div class="row1">
                 <label>End datetime</label>
-                <input type="datetime-local" name="end_datetime" placeholder="End datetime" required>
+                <input type="datetime-local" name="endDatetime" placeholder="End datetime" required>
 
             </div>
             <input type="submit" value="Submit">
@@ -255,9 +255,11 @@
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
         crossorigin="anonymous"></script>
 <script src="https://cdn.staticfile.org/Swiper/11.0.5/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="/js/plugins.js"></script>
 <script src="/js/script.js"></script>
 <script src="/js/visitor.js"></script>
+<script src="/js/newCourse.js"></script>
 </body>
 
 </html>

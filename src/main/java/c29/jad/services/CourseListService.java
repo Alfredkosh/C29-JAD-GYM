@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.naming.AuthenticationException;
+import java.util.Optional;
 
 @Service
 public class CourseListService {
@@ -38,6 +39,17 @@ public class CourseListService {
             newCourseList.setEndDatetime(courseListForm.getEndDatetime());
         }
         return courseListRepository.saveAndFlush(newCourseList);
+    }
+
+//    public CourseListService(CourseListRepository courseListRepository) {
+//        this.courseListRepository = courseListRepository;
+//    }
+
+    public int getNextAvailableGymRoomId() {
+        // Retrieve the minimum available gym_room_id that is greater than 0
+        Optional<Integer> nextGymRoomId = courseListRepository.findNextAvailableGymRoomId();
+
+        return nextGymRoomId.orElse(0); // Return 0 if no available gym_room_id found
     }
 
 }

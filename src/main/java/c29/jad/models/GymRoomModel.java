@@ -5,6 +5,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name="gym_rooms")
@@ -30,6 +31,17 @@ public class GymRoomModel {
     @UpdateTimestamp
     @Column(name="updated_at")
     private Date updatedAt;
+
+    @OneToMany(mappedBy = "gymRoom")
+    private List<CourseListModel> courseLists;
+
+    public List<CourseListModel> getCourseLists() {
+        return courseLists;
+    }
+
+    public void setCourseLists(List<CourseListModel> courseLists) {
+        this.courseLists = courseLists;
+    }
 
     public Date getCreatedAt() {
         return createdAt;
