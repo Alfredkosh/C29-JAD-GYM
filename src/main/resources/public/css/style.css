@@ -2563,14 +2563,14 @@ img.commentor-image {
     color: #fff;
     font-size: 15px;
     margin-bottom: 5px;
-    background: rgb(116, 85, 89);
+    background: rgb(222, 184, 147);
     padding: 10px;
     font-weight: 500;
 }
 .left-form-w3-agile {
     width: 50%;
     float: left;
-    background: rgba(16, 16, 16, 0.74);
+    background: rgb(222, 184, 147);
     background-size: cover;
     -webkit-box-shadow: 0px 35px 44px -22px rgba(0,0,0,0.72);
     -moz-box-shadow: 0px 35px 44px -22px rgba(0,0,0,0.72);
@@ -2709,7 +2709,7 @@ input[type="submit"] {
 }
 .right-map-w3-agile {
     float: right;
-    width: 47%;
+    width: 30%;
 }
 .add a {
     text-decoration: none;
@@ -3309,4 +3309,37 @@ h3 {
 		bottom: 6.8em;
 	}
 }
+.container {
+    justify-content: center;
+    align-items: center;
+}
+
+.row {
+    display: flex;
+        justify-content: center;
+        align-items: center;
+}
+
+.col-sm-6 {
+    flex-grow: 1;
+        justify-content: center;
+        align-items: center;
+
+}
+
+.right-map-w3-agile {
+    position: relative;
+    margin-right: 50px;
+}
+
+.right-map-w3-agile:first-child {
+    margin-left:10px;
+
+}
+
+.right-map-w3-agile:last-child {
+    margin-left: 10px;
+}
 /*--gym design-ends-here--*/
+
+

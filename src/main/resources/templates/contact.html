@@ -15,7 +15,7 @@
   <link rel="stylesheet" type="text/css" href="/fonts/icomoon.css">
 
   <link href="https://cdn.staticfile.org/twitter-bootstrap/5.3.1/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 
   <link rel="stylesheet" type="text/css" href="/css/style.css">
   <link rel="stylesheet" href="https://cdn.staticfile.org/Swiper/11.0.5/swiper-bundle.min.css">
@@ -24,80 +24,74 @@
 
 <body>
 
-  <div class="preloader-wrapper">
-    <div class="preloader">
+<div class="preloader-wrapper">
+  <div class="preloader">
+  </div>
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top py-4">
+  <div class="container-fluid">
+    <div class="main-logo">
+      <a href="/index">
+        <img src="/images/main-logo.png" alt="logo">
+      </a>
+    </div>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end align-items-center flex-grow-1 pe-3 gap-4">
+          <li class="nav-item text-uppercase">
+            <a href="/index" class="nav-link active">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdownPages" data-bs-toggle="dropdown"
+               aria-haspopup="true" aria-expanded="false">Pages</a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownPages">
+              <li>
+                <a href="/about" class="dropdown-item text-uppercase">About Us </a>
+              </li>
+              <li>
+                <a href="/classes" class="dropdown-item text-uppercase">Class Schedule </a>
+              </li>
+              <li>
+                <a href="/contact" class="dropdown-item text-uppercase">Contact </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item text-uppercase">
+            <a href="/gym" class="nav-link">Gym</a>
+          </li>
+          <li class="nav-item text-uppercase">
+            <a href="/contact" class="nav-link">Contact</a>
+          </li>
+          <li class="nav-item text-uppercase">
+            <a href="/login" class="item-anchor btn btn-outline-primary rounded-pill">Login</a>
+          </li>
+          <li class="user-items">
+            <div class="search-bar">
+              <a href="#" class="search-button search-toggle" data-selector=".primary-nav">
+                <i class="icon icon-search"></i>
+              </a>
+              <form role="search" method="get" class="search-box" action="index.html">
+                <input class="search-field search-input" placeholder="Search" type="search">
+              </form>
+            </div>
+            <a href="#" class="shopping-cart">
+              <i class="icon icon-shopping-cart"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
-
-  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top py-4">
-    <div class="container-fluid">
-      <div class="main-logo">
-        <a href="/index">
-          <img src="images/main-logo.png" alt="logo">
-        </a>
-      </div>
-      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
-        aria-controls="offcanvasNavbar">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-        <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
-          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body">
-          <ul class="navbar-nav justify-content-end align-items-center flex-grow-1 pe-3 gap-4">
-            <li class="nav-item text-uppercase">
-              <a href="/index" class="nav-link active">Home</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="dropdownPages" data-bs-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">Pages</a>
-              <ul class="dropdown-menu" aria-labelledby="dropdownPages">
-                <li>
-                  <a href="/about" class="dropdown-item text-uppercase">About Us </a>
-                </li>
-                <li>
-                  <a href="/classes" class="dropdown-item text-uppercase">Class Schedule </a>
-                </li>
-                <li>
-                  <a href="/gym" class="dropdown-item text-uppercase">Gym</a>
-                </li>
-                <li>
-                  <a href="/contact" class="dropdown-item text-uppercase">Contact </a>
-                </li>
-                <li>
-                  <a href="thank-you.html" class="dropdown-item text-uppercase">Thank You </a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item text-uppercase">
-              <a href="/register" class="nav-link">Register</a>
-            </li>
-            <li class="nav-item text-uppercase">
-              <a href="/contact" class="nav-link">Contact</a>
-            </li>
-            <li class="nav-item text-uppercase">
-              <a href="/login" class="item-anchor btn btn-outline-primary rounded-pill">Login</a>
-            </li>
-            <li class="user-items">
-              <div class="search-bar">
-                <a href="#" class="search-button search-toggle" data-selector=".primary-nav">
-                  <i class="icon icon-search"></i>
-                </a>
-                <form role="search" method="get" class="search-box" action="/index">
-                  <input class="search-field search-input" placeholder="Search" type="search">
-                </form>
-              </div>
-              <a href="#" class="shopping-cart">
-                <i class="icon icon-shopping-cart"></i>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </nav>
+</nav>
 
   <section class="site-banner jarallax padding-large" style="background: url(images/hero-image.jpg) no-repeat;">
     <div class="container">
@@ -157,17 +151,16 @@
             </div>
             <form name="contactform" action="contact.php" method="post" class="contact-form">
               <div class="form-item">
-                <input type="text" minlength="2" name="name" placeholder="Name" class="u-full-width bg-light" required>
-                <input type="email" name="email" placeholder="E-mail" class="u-full-width bg-light" required>
-                <textarea class="u-full-width bg-light" name="message" placeholder="Message" style="height: 180px;"
-                  required></textarea>
+                <input type="text" minlength="2" name="name" placeholder="Name" class="u-full-width bg-light" required><br>
+                <input type="email" minlength="2" name="email" placeholder="Email" class="u-full-width bg-light" required><br>
+                <textarea class="u-full-width bg-light" name="message" placeholder="Message" style="height: 180px;" required></textarea>
               </div>
               <label>
                 <input type="checkbox" required>
                 <span class="label-body">I agree all the <a href="#">terms and conditions</a>
                 </span>
               </label>
-              <button type="submit" name="submit" class="btn btn-full btn-medium btn-primary">Submit</button>
+              <button type="submit" name="submit" class="btn btn-full btn-medium btn-primary"> <a href="/thank-you" class="dropdown-item text-uppercase"> Submit </button>
             </form>
           </div>
         </div>

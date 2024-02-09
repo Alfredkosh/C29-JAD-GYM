@@ -63,6 +63,10 @@ public class PageController {
         return "gym";
     }
 
+    @RequestMapping(value = "/thank-you", method = RequestMethod.GET)
+    public String thankyou(Model model){
+        return "thank-you";
+    }
 
 
 }
