@@ -1,0 +1,20 @@
+/*--qr code--*/
+#qrReader {
+  width: 500px;
+}
+
+.qrResult {
+  background-color: green;
+  color: #fff;
+  padding: 20px;
+}
+
+.qrRow {
+  display: flex;
+}
+
+#reader__scan_region {
+  background: white;
+}
+
+/*--qr code-end-*/

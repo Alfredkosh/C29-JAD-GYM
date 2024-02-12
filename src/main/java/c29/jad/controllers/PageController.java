@@ -68,5 +68,13 @@ public class PageController {
         return "thank-you";
     }
 
+    @RequestMapping(value = "/checkin", method = RequestMethod.GET)
+    public String checkin(Model model){
+        return "checkin";
+    }
 
+    @RequestMapping(value = "/profile", method = RequestMethod.GET)
+    public String profile(Model model){
+        return "profile";
+    }
 }
