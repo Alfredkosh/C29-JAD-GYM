@@ -1,10 +1,12 @@
 package c29.jad.forms;
 
 public class UserForm {
+    private String fullname;
     private String username;
     private String password;
     private String qrcode;
     private Integer age;
+    private String gender;
     private String email;
     private Integer mobile_number;
     private String icon;
@@ -14,16 +16,26 @@ public class UserForm {
     @Override
     public String toString() {
         return "UserForm{" +
-                "username='" + username + '\'' +
+                "fullname='" + fullname + '\'' +
+                ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", qrcode='" + qrcode + '\'' +
                 ", age=" + age +
+                ", gender='" + gender + '\'' +
                 ", email='" + email + '\'' +
                 ", mobile_number=" + mobile_number +
                 ", icon='" + icon + '\'' +
                 ", expired_date='" + expired_date + '\'' +
                 ", active=" + active +
                 '}';
+    }
+
+    public String getFullname() {
+        return fullname;
+    }
+
+    public void setFullname(String fullname) {
+        this.fullname = fullname;
     }
 
     public String getUsername() {
@@ -56,6 +68,18 @@ public class UserForm {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
     public String getEmail() {

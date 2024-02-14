@@ -14,6 +14,8 @@ public class UserModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @Column(name="fullname")
+    private String fullname;
     @Column(name="username")
     private String username;
     @Column(name="password")
@@ -22,6 +24,8 @@ public class UserModel {
     private String qrcode;
     @Column(name="age")
     private Integer age;
+    @Column(name="gender")
+    private String gender;
     @Column(name="email")
     private String email;
     @Column(name="mobile_number")
@@ -45,6 +49,14 @@ public class UserModel {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getFullname() {
+        return fullname;
+    }
+
+    public void setFullname(String fullname) {
+        this.fullname = fullname;
     }
 
     public String getUsername() {
@@ -77,6 +89,14 @@ public class UserModel {
 
     public void setAge(Integer age) {
         this.age = age;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
     public String getEmail() {

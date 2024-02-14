@@ -93,7 +93,6 @@
   </div>
 </nav>
 
-<body>
 
 <div class="content">
   <div class="container">
@@ -104,11 +103,11 @@
           <h2>會員登記</h2>
           <p>設定基本個人資料</p>
         </div>
-        <form>
+        <form id="register-form">
           <div class="form-group row">
             <label for="name" class="col-sm-2 control-label">Full Name</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="name" placeholder="">
+              <input type="text" class="form-control" id="name" name="fullname" placeholder="">
             </div>
           </div>
           <br>
@@ -116,22 +115,29 @@
           <div class="form-group row">
             <label for="name" class="col-sm-2 control-label">Username</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="address" placeholder="">
+              <input type="text" class="form-control" id="username" name="username" placeholder="">
             </div>
           </div>
           <br>
 
           <div class="form-group row">
+            <label for="phone" class="col-sm-2 control-label">Password</label>
+            <div class="col-sm-10">
+              <input type="password" class="form-control" id="password" name="password" placeholder="">
+            </div>
+            <br> <br>
+
+          <div class="form-group row">
             <label for="phone" class="col-sm-2 control-label">Age</label>
             <div class="col-sm-10">
-              <input type="number" class="form-control" id="age" placeholder="">
+              <input type="number" class="form-control" id="age" name="age" placeholder="">
             </div>
             <br> <br>
 
           <div class="form-group row">
             <label for="phone" class="col-sm-2 control-label">Phone</label>
             <div class="col-sm-10">
-              <input type="number" class="form-control" id="phone" placeholder="">
+              <input type="text" class="form-control" id="phone" name="mobileNumber" placeholder="">
             </div>
           </div>
             <br> <br>
@@ -139,33 +145,20 @@
           <div class="form-group row">
             <label for="email" class="col-sm-2 control-label">E-mail</label>
             <div class="col-sm-10">
-              <input type="email" class="form-control" id="email" placeholder="">
+              <input type="email" class="form-control" id="email" name="email" placeholder="">
             </div>
           </div>
             <br>
 
           <div class="form-group row">
+            <div class="col-sm-2 control-label">Gender</div>
             <div class="col-sm-10 pt-2 mb10 ">
-            <label for="phone" class="col-sm-2 control-label">Gender</label>
-
               <span>
-                <input id="question1" name="question" type="radio" class="with-font" value="sel" /><label for="question1">Male</label></span>
+                <input id="gender1" name="gender" type="radio" class="with-font" value="male" /><label for="question1">Male</label></span>
               <span>
-                <input id="question2" name="question" type="radio" class="with-font" value="sel"/><label for="question2">Female</label></span>
+                <input id="gender2" name="gender" type="radio" class="with-font" value="female"/><label for="question2">Female</label></span>
             </div>
           </div>
-<!--          <div class="form-group row">-->
-<!--            <label for="name" class="col-sm-2 control-label">Subscription</label>-->
-<!--            <div class="col-sm-10">-->
-<!--              <div class="select">-->
-<!--                <select id="state" name="state" placeholder="" type="text" class="form-control">-->
-<!--                  <option value="1">3 Month - $300</option>-->
-<!--                  <option value="2">3 Month - $300</option>-->
-<!--                  <option value="3">3 Month - $300</option>-->
-<!--                </select>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--          </div>-->
           <div class="col-md-6 form-group">
             <div class="offset-sm-2 col-sm-10">
               <button type="submit" class="btn btn-primary px-5 py-2">Submit Form</button>
@@ -245,13 +238,15 @@
 <script src="https://cdn.staticfile.org/Swiper/11.0.5/swiper-bundle.min.js"></script>
 <script src="/js/plugins.js"></script>
 <script src="/js/script.js"></script>
-<script src="/js/checkin.js"></script>
+<!-- <script src="/js/checkin.js"></script> -->
 
-<script src="./node_modules/html5-qrcode/html5-qrcode.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html5-qrcode/2.3.4/html5-qrcode.min.js" integrity="sha512-k/KAe4Yff9EUdYI5/IAHlwUswqeipP+Cp5qnrsUjTPCgl51La2/JhyyjNciztD7mWNKLSXci48m7cctATKfLlQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<!-- <script src="./node_modules/html5-qrcode/html5-qrcode.min.js"></script> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html5-qrcode/2.3.4/html5-qrcode.min.js" integrity="sha512-k/KAe4Yff9EUdYI5/IAHlwUswqeipP+Cp5qnrsUjTPCgl51La2/JhyyjNciztD7mWNKLSXci48m7cctATKfLlQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
 
 
-<script type="module" src="/js/auth.js"></script>
+<!-- <script type="module" src="/js/auth.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script type="module" src="/js/register.js"></script>
 
 </body>
 

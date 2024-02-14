@@ -25,6 +25,9 @@ public class UserService {
         }
 
         var newUser = new UserModel();
+        if(userForm.getFullname() != null){
+            newUser.setFullname((userForm.getFullname()));
+        }
         if(userForm.getUsername() != null){
             newUser.setUsername((userForm.getUsername()));
         }
@@ -35,15 +38,16 @@ public class UserService {
         if(userForm.getAge() != null){
             newUser.setAge((userForm.getAge()));
         }
-        if(userForm.getEmail() != null){
-            newUser.setEmail((userForm.getEmail()));
-        }
-        if(userForm.getIcon() != null){
-            newUser.setIcon((userForm.getIcon()));
-        }
         if(userForm.getMobile_number() != null){
             newUser.setMobileNumber((userForm.getMobile_number()));
         }
+        if(userForm.getEmail() != null){
+            newUser.setEmail((userForm.getEmail()));
+        }
+        if(userForm.getGender() != null){
+            newUser.setGender((userForm.getGender()));
+        }
+
 
         newUser.setStatus(true);
         return userRepository.saveAndFlush(newUser);
