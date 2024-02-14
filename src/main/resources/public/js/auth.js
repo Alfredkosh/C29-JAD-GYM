@@ -1,6 +1,5 @@
 window.addEventListener('load', () => {
     login()
-    getUsername()
 })
 
 async function login() {
@@ -22,7 +21,9 @@ async function login() {
             body: JSON.stringify(body)
         })
         if(res.ok) {
-
+        const data = await res.json()
+        const token = data.token
+        localStorage.setItem("token", token)
          Swal.fire({
            icon: "success",
            title: "Login success",
@@ -42,34 +43,4 @@ async function login() {
         }
 
     })
-}
-
-async function getUsername() {
-  // console.log(httpResponse);
-  const httpResponse = await fetch("/auth/login", {
-    method: "GET",
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(body)
-})
-  let result = null;
-  
-  console.log("Hi");
-
-  if (httpResponse.status == 200) {
-    result = await httpResponse.json();
-
-    console.log("name", result);
-
-    document.querySelector(
-      "#username-display"
-    ).innerHTML = `<button class="btn btn-outline-success" type="submit"> Welcome ${result.data} </button>`;
-
-  //   document.querySelector(
-  //     "#logout-area"
-  //   ).innerHTML = `<button class="btn btn-outline-success" type="submit">
-  //   Log out
-  // </button>`;
-  } else {
-    result = await httpResponse.json();
-  }
 }

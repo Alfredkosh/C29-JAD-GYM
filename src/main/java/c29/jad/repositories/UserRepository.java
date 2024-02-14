@@ -10,6 +10,11 @@ import java.util.List;
 
 public interface UserRepository extends JpaRepository<UserModel, Integer> {
 
+    UserModel findUsernameById(Integer id);
+    boolean existsByEmail(String email);
+
+    boolean existsByUsername(String username);
+
     List<UserModel> findByUsername(String username);
 
     @Query(value = """

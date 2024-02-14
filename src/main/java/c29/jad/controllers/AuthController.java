@@ -73,6 +73,40 @@ public class AuthController {
 
     }
 
+    @GetMapping("/username")
+    public ResponseEntity<Object> getUsername(HttpServletRequest request) {
+        var userId = request.getAttribute("userId");
+        if (userId == null) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ApiResponse("you are not logged in", null));
+        }
+        Integer intUserId = (Integer) userId;
+        String username = userService.getUsernameById(intUserId);
+
+        if (username != null) {
+            return ResponseEntity.ok().body(new ApiResponse("get username success", username));
+        } else {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ApiResponse("you are not logged in", null));
+        }
+    }
+
+    private static class ApiResponse {
+        private final String message;
+        private final Object data;
+
+        public ApiResponse(String message, Object data) {
+            this.message = message;
+            this.data = data;
+        }
+
+        public String getMessage() {
+            return message;
+        }
+
+        public Object getData() {
+            return data;
+        }
+    }
+
 
     @RequestMapping(value = "/admin", method = RequestMethod.POST)
     public ResponseEntity<Map<String, String>> adminLogin(@RequestBody AdminForm adminForm){
@@ -103,12 +137,8 @@ public class AuthController {
     }
 
     @PostMapping("/checkUser")
-    public ResponseEntity<String> checkUser(@RequestBody UserRequest userRequest) {
-        System.out.println("input: " + userRequest.getUsername());
-
-        // Perform the database query to check if the username exists
-        boolean usernameExists = performDatabaseQuery(userRequest.getUsername());
-
+    public ResponseEntity<String> checkUser(@RequestBody UserForm userForm) {
+        boolean usernameExists = userService.checkIfUsernameExists(userForm.getUsername());
         if (usernameExists) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("exists");
         } else {
@@ -116,24 +146,13 @@ public class AuthController {
         }
     }
 
-    private boolean performDatabaseQuery(String username) {
-        // Implement your database query logic here
-        // Example code:
-        // Connect to the database and execute the query
-        // If the username exists, return true; otherwise, return false
-        return false; // Placeholder value, replace with your actual logic
-    }
-
-    // Define a class to represent the user request body
-    public static class UserRequest {
-        private String username;
-
-        public String getUsername() {
-            return username;
-        }
-
-        public void setUsername(String username) {
-            this.username = username;
+    @PostMapping("/checkEmail")
+    public ResponseEntity<String> checkEmail(@RequestBody UserForm userForm) {
+        boolean emailExists = userService.checkIfEmailExists(userForm.getEmail());
+        if (emailExists) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("exists");
+        } else {
+            return ResponseEntity.ok("available");
         }
     }
 

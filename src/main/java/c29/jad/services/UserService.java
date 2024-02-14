@@ -5,6 +5,9 @@ import c29.jad.forms.UserForm;
 import c29.jad.models.UserModel;
 import c29.jad.repositories.AdminRepository;
 import c29.jad.repositories.UserRepository;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -67,4 +70,20 @@ public class UserService {
         }
         throw new AuthenticationException("Account does not find");
     }
+
+    public boolean checkIfUsernameExists(String username) {
+        return userRepository.existsByUsername(username);
+    }
+
+    public boolean checkIfEmailExists(String email) {
+        return userRepository.existsByEmail(email);
+    }
+
+    public String getUsernameById(Integer userId) {
+        UserModel result =  userRepository.findUsernameById(userId);
+
+        return result.getUsername();
+    }
+
+
 }

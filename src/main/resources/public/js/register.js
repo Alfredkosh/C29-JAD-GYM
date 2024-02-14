@@ -1,8 +1,86 @@
 // import QRCode from "qrcode";
 
 window.addEventListener("load", () => {
-  register();
+    register();
+    checkUsernameAvailable();
+    checkEmailAvailable();
+    enableSubmitButton();
 });
+
+let flag1 = false;
+let flag2 = false;
+
+
+function enableSubmitButton() {
+  let submit = document.querySelector("#submit-button");
+
+  if (flag1 == true && flag2 == true) {
+    submit.disabled = false;
+    // $('#sumbit-button').removeAttr('disabled');
+  } else {
+    submit.disabled = true;
+  }
+}
+
+function checkUsernameAvailable() {
+  let target = document.querySelector("#check-user-available");
+
+  target.addEventListener("click", async (e) => {
+    console.log("you have click the user check button");
+    e.preventDefault();
+    const username = document.querySelector("#username").value;
+    // checkUsernameAvailable(username);
+    console.log("this is my username", username);
+
+    let checkUsernameRes = await fetch("/auth/checkUser", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ username }),
+    });
+
+    if (checkUsernameRes.status == 200) {
+      document.querySelector("#check-user-available").innerHTML = "&#10004;";
+      flag1 = true;
+      enableSubmitButton();
+    } else {
+      document.querySelector("#check-user-available").innerHTML = "&#10006;";
+      flag1 = false;
+      enableSubmitButton();
+    }
+  });
+}
+
+function checkEmailAvailable() {
+  let target = document.querySelector("#check-email-available");
+
+  target.addEventListener("click", async (e) => {
+    console.log("you have click the email check button");
+    e.preventDefault();
+    const email = document.querySelector("#email").value;
+    // checkUsernameAvailable(username);
+    console.log("this is my email", email);
+
+    let checkEmailRes = await fetch("/auth/checkEmail", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email }),
+    });
+
+    if (checkEmailRes.status == 200) {
+      document.querySelector("#check-email-available").innerHTML = "&#10004;";
+      flag2 = true;
+      enableSubmitButton();
+    } else {
+      document.querySelector("#check-email-available").innerHTML = "&#10006;";
+      flag2 = false;
+      enableSubmitButton();
+    }
+  });
+}
 
 async function register() {
   document
@@ -67,4 +145,6 @@ async function register() {
         });
       }
     });
+
+
 }
