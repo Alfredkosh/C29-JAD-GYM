@@ -12,6 +12,7 @@ CREATE TABLE users(
      icon varchar(255),
      expired_date varchar(255),
      status boolean,
+     is_admin boolean,
      created_at TIMESTAMP WITH TIME ZONE default NOW(),
      updated_at TIMESTAMP WITH TIME ZONE default NOW()
  );

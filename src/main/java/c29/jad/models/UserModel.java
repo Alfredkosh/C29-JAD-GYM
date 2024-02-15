@@ -36,12 +36,24 @@ public class UserModel {
     private String expiredDate;
     @Column(name="status")
     private boolean status;
+
+    @Column(name="is_admin")
+    private boolean isAdmin;
+
     @CreationTimestamp
     @Column(name="created_at")
     private Date createdAt;
     @UpdateTimestamp
     @Column(name="updated_at")
     private Date updatedAt;
+
+    public boolean isAdmin() {
+        return isAdmin;
+    }
+
+    public void setAdmin(boolean admin) {
+        isAdmin = admin;
+    }
 
     public int getId() {
         return id;

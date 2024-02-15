@@ -1,7 +1,7 @@
 
-
-INSERT INTO users (fullname, username, password, qrcode, age, gender, email, mobile_number, icon, expired_date, status) VALUES ('James Lam','James', '$2a$10$IpU.rTE7Olsdr.X.ku2TzeioQLJySdeuOHy5jH8ULEzkTvq1yQ0sm', 'test', '30', 'male', 'james@tecky.io', '99998888', 'image', '30 Jan 2025', false);
-INSERT INTO users (fullname, username, password, qrcode, age, gender, email, mobile_number, icon, expired_date, status) VALUES ('Alfred Ko','Alfred', '$2a$10$IpU.rTE7Olsdr.X.ku2TzeioQLJySdeuOHy5jH8ULEzkTvq1yQ0sm', 'test', '30', 'male', 'james@tecky.io', '99998888', 'image', '30 Jan 2025', true);
+INSERT INTO users (fullname, username, password, qrcode, age, gender, email, mobile_number, icon, expired_date, status, is_admin) VALUES ('James Lam','James', '$2a$10$IpU.rTE7Olsdr.X.ku2TzeioQLJySdeuOHy5jH8ULEzkTvq1yQ0sm', 'test', '30', 'male', 'james@tecky.io', '99998888', 'image', '30 Jan 2025', false, false);
+INSERT INTO users (fullname, username, password, qrcode, age, gender, email, mobile_number, icon, expired_date, status, is_admin) VALUES ('Alfred Ko','Alfred', '$2a$10$IpU.rTE7Olsdr.X.ku2TzeioQLJySdeuOHy5jH8ULEzkTvq1yQ0sm', 'test', '30', 'male', 'james@tecky.io', '99998888', 'image', '30 Jan 2025', true, false);
+INSERT INTO users (fullname, username, password, qrcode, age, gender, email, mobile_number, icon, expired_date, status, is_admin) VALUES ('Navy','Navy', '$2a$10$IpU.rTE7Olsdr.X.ku2TzeioQLJySdeuOHy5jH8ULEzkTvq1yQ0sm', 'test', '30', 'male', 'james@tecky.io', '99998888', 'image', '30 Jan 2025', true, true);
 
 INSERT INTO admins (username, password, email) VALUES ('Navy', '$2a$10$IpU.rTE7Olsdr.X.ku2TzeioQLJySdeuOHy5jH8ULEzkTvq1yQ0sm', 'navy@tecky.io');
 --

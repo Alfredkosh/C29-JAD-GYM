@@ -39,7 +39,7 @@ public class AdminController {
         return "admin";
     }
 
-    @RequestMapping(value = "/visitor", method = RequestMethod.GET)
+//    @RequestMapping(value = "/visitor", method = RequestMethod.GET)
     public ResponseEntity<Map<String, Object>> visitor (HttpServletRequest request){
 //        Integer gymRoomId = new CheckInRecordForm().getGymRoomId();
 //
