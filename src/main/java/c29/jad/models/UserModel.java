@@ -38,10 +38,10 @@ public class UserModel {
     private boolean status;
     @CreationTimestamp
     @Column(name="created_at")
-    private LocalDateTime createdAt;
+    private Date createdAt;
     @UpdateTimestamp
     @Column(name="updated_at")
-    private LocalDateTime updatedAt;
+    private Date updatedAt;
 
     public int getId() {
         return id;
@@ -139,19 +139,19 @@ public class UserModel {
         this.status = status;
     }
 
-    public LocalDateTime getCreatedAt() {
+    public Date getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(LocalDateTime createdAt) {
+    public void setCreatedAt(Date createdAt) {
         this.createdAt = createdAt;
     }
 
-    public LocalDateTime getUpdatedAt() {
+    public Date getUpdatedAt() {
         return updatedAt;
     }
 
-    public void setUpdatedAt(LocalDateTime updatedAt) {
+    public void setUpdatedAt(Date updatedAt) {
         this.updatedAt = updatedAt;
     }
 }
