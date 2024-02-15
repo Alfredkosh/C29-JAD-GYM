@@ -60,32 +60,38 @@ public class CheckInRecordModel {
         this.gymRoomId = gymRoomId;
     }
 
-    public Date getCheckInDate() {
-        return checkInDate;
+    public String getCheckInDate() {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String formattedDate = sdf.format(checkInDate);
+        return formattedDate;
     }
 
     public void setCheckInDate(Date checkInDate) {
         this.checkInDate = checkInDate;
     }
 
-    public Date getCheckInAt() {
-        return checkInAt;
+    public String getCheckInAt() {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String formattedDate = sdf.format(checkInAt);
+        return formattedDate;
     }
 
-    public void setCheckInAt(Date checkInAt) {
-        this.checkInAt = checkInAt;
-    }
+    public void setCheckInAt(Date checkInAt) {this.checkInAt = checkInAt;}
 
-    public Date getCheckOutAt() {
-        return checkOutAt;
+    public String getCheckOutAt() {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String formattedDate = sdf.format(checkOutAt);
+        return formattedDate;
     }
 
     public void setCheckOutAt(Date checkOutAt) {
         this.checkOutAt = checkOutAt;
     }
 
-    public Date getCreatedAt() {
-        return createdAt;
+    public String getCreatedAt() {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String formattedDate = sdf.format(createdAt);
+        return formattedDate;
     }
 
     public void setCreatedAt(Date createdAt) {

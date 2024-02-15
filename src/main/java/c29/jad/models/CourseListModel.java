@@ -91,6 +91,7 @@ public class CourseListModel {
     }
 
     public Date getOpenDatetime() {
+
         return openDatetime;
     }
 
