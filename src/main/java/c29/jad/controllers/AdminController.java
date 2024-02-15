@@ -53,6 +53,14 @@ public class AdminController {
         return new ResponseEntity<>(Map.of("numberOfPeople", numberOfPeople), HttpStatus.OK);
     }
 
+    @RequestMapping(value = "/ownrecord", method = RequestMethod.GET)
+    public ResponseEntity<Map<String, Object>> visitor (HttpServletRequest request){
+
+        List<CheckInRecordModel> ownRecord = checkInRecordService.getOwnRecord();
+
+        return new ResponseEntity<>(Map.of("Total Check-in times", ownRecord), HttpStatus.OK);
+    }
+
     @RequestMapping(value = "/newcourse", method = RequestMethod.POST)
     public ResponseEntity<Map<String, Object>> addCourse(@RequestBody CourseListForm courseListForm){
         try{
