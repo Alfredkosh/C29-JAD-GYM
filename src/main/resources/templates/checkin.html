@@ -78,9 +78,7 @@
                             <li>
                                 <a href="/contact" class="dropdown-item text-uppercase">Contact </a>
                             </li>
-                            <li>
-                                <a href="/thank-you" class="dropdown-item text-uppercase">Thank You </a>
-                            </li>
+
                         </ul>
                     </li>
                     <li class="nav-item text-uppercase">
@@ -165,8 +163,61 @@
 </script>
 
 
+<br>
+<br>
+<br>
 
 
+
+<div class="container-fluid">
+    <div class="text-center">
+
+        <!-- Get a Placeholder image initially,
+         this will change according to the
+         data entered later -->
+        <img src=
+                     "https://chart.googleapis.com/chart?cht=qr&chl=Hello+World&chs=160x160&chld=L|0"
+             class="qr-code img-thumbnail img-responsive" />
+    </div>
+
+    <div class="form-horizontal">
+        <div class="form-group">
+            <label class="control-label col-sm-2"
+                   for="content">
+                Member ID:
+            </label>
+            <div class="col-sm-10">
+
+                <!-- Input box to enter the
+                    required data -->
+                <input type="text" size="60"
+                       maxlength="60" class="form-control"
+                       id="content" placeholder="Enter content" />
+            </div>
+        </div>
+        <br>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+
+                <!-- Button to generate QR Code for
+                 the entered data -->
+                <button type="button" class=
+                        "btn btn-primary px-5 py-2" id="generate">
+                    Generate
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src=
+                "https://code.jquery.com/jquery-3.5.1.js">
+</script>
+
+<br>
+<br>
+<br>
+<br>
 
 <footer id="footer" class="padding-large">
     <div class="container">
@@ -229,9 +280,14 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="/js/plugins.js"></script>
 <script src="/js/script.js"></script>
+<<<<<<< Updated upstream
 <script src="/js/visitor.js"></script>
 <script src="/js/newCourse.js"></script>
 <script type="module" src="/js/loggedIn.js"></script>
+=======
+<!--<script src="/js/visitor.js"></script>-->
+<!--<script src="/js/newCourse.js"></script>-->
+>>>>>>> Stashed changes
 
 
 
