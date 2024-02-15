@@ -5,6 +5,7 @@ import c29.jad.forms.CheckInRecordForm;
 import c29.jad.forms.UserForm;
 import c29.jad.models.CheckInRecordModel;
 import c29.jad.models.UserModel;
+import c29.jad.responses.ApiResponse;
 import c29.jad.services.AdminService;
 import c29.jad.services.CheckInRecordService;
 import c29.jad.services.UserService;
@@ -41,7 +42,6 @@ public class AuthController {
     public ResponseEntity<Map<String, String>> login(@RequestBody UserForm userForm){
         try{
             Integer userId = userService.login(userForm.getUsername(), userForm.getPassword());
-//            httpSession.setAttribute("userId", userId);
             String jwt = JWT.create()
                     .withIssuer("c29JADPJ")
                     .withClaim("userId", userId)
@@ -56,7 +56,7 @@ public class AuthController {
     }
 
     @GetMapping("/username")
-    public ResponseEntity<Object> getUsername(HttpServletRequest request) {
+    public ResponseEntity<ApiResponse> getUsername(HttpServletRequest request) {
         var userId = request.getAttribute("userId");
         if (userId == null) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ApiResponse("you are not logged in", null));
@@ -70,26 +70,6 @@ public class AuthController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ApiResponse("you are not logged in", null));
         }
     }
-
-    private static class ApiResponse {
-        private final String message;
-        private final Object data;
-
-        public ApiResponse(String message, Object data) {
-            this.message = message;
-            this.data = data;
-        }
-
-        public String getMessage() {
-            return message;
-        }
-
-        public Object getData() {
-            return data;
-        }
-    }
-
-
 
     @RequestMapping(value = "/admin", method = RequestMethod.POST)
     public ResponseEntity<Map<String, String>> adminLogin(@RequestBody AdminForm adminForm){
