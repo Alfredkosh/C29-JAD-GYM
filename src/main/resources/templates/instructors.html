@@ -74,9 +74,12 @@
             <li class="nav-item text-uppercase">
               <a href="contact.html" class="nav-link">Contact</a>
             </li>
-            <li class="nav-item text-uppercase">
-              <a href="login.html" class="item-anchor btn btn-outline-primary rounded-pill">Login</a>
-            </li>
+            <div id="username-display">
+              <li class="nav-item text-uppercase" id="username-display">
+                <a href="/login" class="item-anchor btn btn-outline-primary rounded-pill">Login</a>
+              </li>
+            </div>
+            <div id="logout-area"></div>
             <li class="user-items">
               <div class="search-bar">
                 <a href="#" class="search-button search-toggle" data-selector=".primary-nav">
@@ -235,6 +238,7 @@
   <script src="https://cdn.staticfile.org/Swiper/11.0.5/swiper-bundle.min.js"></script>
   <script src="js/plugins.js"></script>
   <script src="js/script.js"></script>
+  <script type="module" src="/js/loggedIn.js"></script>
 </body>
 
 </html>

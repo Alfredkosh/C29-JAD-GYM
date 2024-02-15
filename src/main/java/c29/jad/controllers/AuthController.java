@@ -107,6 +107,30 @@ public class AuthController {
         }
     }
 
+    @GetMapping("/logout")
+    public ResponseEntity<Object> logout(HttpServletRequest request) {
+        if (request.getSession().getAttribute("username") != null) {
+            request.getSession().invalidate();
+            return ResponseEntity.ok().body(new ApiResponse("logout success", null));
+        } else {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+                    .body(new ApiResponse("you are not logged in", null));
+        }
+    }
+
+    private static class ApiResponse2 {
+        private final String message;
+
+        public ApiResponse2(String message) {
+            this.message = message;
+        }
+
+        public String getMessage() {
+            return message;
+        }
+    }
+
+
 
     @RequestMapping(value = "/admin", method = RequestMethod.POST)
     public ResponseEntity<Map<String, String>> adminLogin(@RequestBody AdminForm adminForm){

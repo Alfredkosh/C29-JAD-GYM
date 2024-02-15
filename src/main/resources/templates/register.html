@@ -71,9 +71,12 @@
           <li class="nav-item text-uppercase">
             <a href="/contact" class="nav-link">Contact</a>
           </li>
-          <li class="nav-item text-uppercase">
-            <a href="/login" class="item-anchor btn btn-outline-primary rounded-pill">Login</a>
-          </li>
+          <div id="username-display">
+            <li class="nav-item text-uppercase" id="username-display">
+              <a href="/login" class="item-anchor btn btn-outline-primary rounded-pill">Login</a>
+            </li>
+          </div>
+          <div id="logout-area"></div>
           <li class="user-items">
             <div class="search-bar">
               <a href="#" class="search-button search-toggle" data-selector=".primary-nav">
@@ -258,6 +261,7 @@
 <!-- <script type="module" src="/js/auth.js"></script> -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script type="module" src="/js/register.js"></script>
+<script type="module" src="/js/loggedIn.js"></script>
 
 </body>
 
