@@ -37,8 +37,5 @@ async function getUsername() {
 
 
   async function addlogoutEventListener() {
-    document.querySelector("#logout-area").addEventListener("click", async () => {
-      await fetch("/logout");
-      window.location.reload();
-    });
+    localStorage.removeItem("token")
   }

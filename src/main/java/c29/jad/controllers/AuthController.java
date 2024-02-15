@@ -37,24 +37,6 @@ public class AuthController {
     private CheckInRecordService checkInRecordService;
 
 
-    @RequestMapping(value = "/logout", method = RequestMethod.POST)
-    public ResponseEntity<Map<String, String>> logout(HttpSession httpSession){
-        httpSession.removeAttribute("userId");
-        return new ResponseEntity<>(Map.of("message", "Logout Successful"), HttpStatus.OK);
-    }
-
-//    @RequestMapping(value = "/username", method = RequestMethod.GET)
-//    public ResponseEntity<Map<String, String>> getUsername(HttpServletRequest request){
-//        HttpSession session = request.getSession(false);
-//        if (session != null && session.getAttribute("username") != null) {
-//            String username = (String) session.getAttribute("username");
-//            return ResponseEntity.ok().body(Map.of("message", "get username success", "data", username));
-//        } else {
-//            return ResponseEntity.badRequest().body(Map.of("message", "you are not logged in"));
-//        }
-//      }
-//    }
-
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public ResponseEntity<Map<String, String>> login(@RequestBody UserForm userForm){
         try{
@@ -104,29 +86,6 @@ public class AuthController {
 
         public Object getData() {
             return data;
-        }
-    }
-
-    @GetMapping("/logout")
-    public ResponseEntity<Object> logout(HttpServletRequest request) {
-        if (request.getSession().getAttribute("username") != null) {
-            request.getSession().invalidate();
-            return ResponseEntity.ok().body(new ApiResponse("logout success", null));
-        } else {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
-                    .body(new ApiResponse("you are not logged in", null));
-        }
-    }
-
-    private static class ApiResponse2 {
-        private final String message;
-
-        public ApiResponse2(String message) {
-            this.message = message;
-        }
-
-        public String getMessage() {
-            return message;
         }
     }
 
