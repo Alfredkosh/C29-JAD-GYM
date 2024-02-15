@@ -83,6 +83,7 @@ public class PrivateFilter extends OncePerRequestFilter {
 //                "/admin",
 //                "/admin*",
 //                "/admin/*"
+                "/auth/profile",
                 "/auth/username",
                 "/auth/username*",
                 "/auth/username/*"

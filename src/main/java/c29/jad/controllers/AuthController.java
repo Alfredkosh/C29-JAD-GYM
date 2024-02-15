@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.naming.AuthenticationException;
 import java.util.Date;
 import java.util.Map;
+import java.util.Optional;
 
 @RestController
 @RequestMapping(value = "auth")
@@ -70,7 +71,17 @@ public class AuthController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ApiResponse("you are not logged in", null));
         }
     }
+    @GetMapping("/profile")
+    public ResponseEntity<ApiResponse> getProfile(HttpServletRequest request) {
+        var userId = request.getAttribute("userId");
+        if (userId == null) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ApiResponse("you are not logged in", null));
+        }
+        Integer intUserId = (Integer) userId;
+        Optional<UserModel> user = userService.getProfileById(intUserId);
 
+        return user.map(userModel -> ResponseEntity.ok().body(new ApiResponse("get username success", userModel))).orElseGet(() -> ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ApiResponse("you are not logged in", null)));
+    }
     @RequestMapping(value = "/admin", method = RequestMethod.POST)
     public ResponseEntity<Map<String, String>> adminLogin(@RequestBody AdminForm adminForm){
         try{

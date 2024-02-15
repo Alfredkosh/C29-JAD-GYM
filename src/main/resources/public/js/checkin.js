@@ -3,14 +3,40 @@ window.addEventListener("load", async () => {
   if (token) {
     const payload = parseJwt(token)
     const userId = payload.userId
-    generateQrCode(userId)
-    console.log({userId})
+    await generateQrCode(userId)
+    await getUserProfile(token)
   } else {
-    location.href.replace = "/login"
+    window.location.href = "/login"
   }
 })
 
-function generateQrCode(userId) {
+async function updateProfileElement(username, userId) {
+    console.log({
+        userId,
+        username
+    })
+  document.querySelector(".client-name").innerHTML = username
+  document.querySelector(".client-id").innerHTML = `Member Id: ${userId}`
+
+}
+
+async function getUserProfile(token) {
+  const res = await fetch("/auth/profile", {
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
+  })
+  if (res.ok) {
+    const data = await res.json()
+    const userProfile = data.data
+    const userId = userProfile.id
+    const username = userProfile.username
+
+    await updateProfileElement(username, userId)
+  }
+}
+
+async function generateQrCode(userId) {
   let finalURL =
   'https://chart.googleapis.com/chart?cht=qr&chl=' +
        userId +
@@ -31,32 +57,7 @@ function parseJwt (token) {
   return JSON.parse(jsonPayload);
 }
 
-
 function htmlEncode(value) {
   return $('<div/>').text(value)
     .html();
 }
-
-//qr code js//
-
-// When scan is successful function will produce data
-function onScanSuccess(qrCodeMessage) {
-  document.getElementById("qrResult").innerHTML =
-    '<span class="qrResult">' + qrCodeMessage + "</span>";
-}
-
-// When scan is unsuccessful function will produce error message
-function onScanError(errorMessage) {
-  // Handle Scan Error
-}
-
-// Setting up Qr Scanner properties
-var html5QrCodeScanner = new Html5QrcodeScanner("qrReader", {
-  fps: 10,
-  qrBox: 250
-});
-
-// in
-html5QrCodeScanner.render(onScanSuccess, onScanError);
-
-//qr code js end//
