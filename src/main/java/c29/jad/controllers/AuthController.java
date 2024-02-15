@@ -42,9 +42,12 @@ public class AuthController {
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public ResponseEntity<Map<String, String>> login(@RequestBody UserForm userForm){
         try{
-            Integer userId = userService.login(userForm.getUsername(), userForm.getPassword());
+            Map<String, Object> user = userService.login(userForm.getUsername(), userForm.getPassword());
+            boolean isAdmin = (boolean) user.get("isAdmin");
+            Integer userId = (Integer) user.get("userId");
             String jwt = JWT.create()
                     .withIssuer("c29JADPJ")
+                    .withClaim("isAdmin", isAdmin)
                     .withClaim("userId", userId)
                     .withIssuedAt(new Date())
                     .sign(Algorithm.HMAC256(env.getProperty("jwt.secret")));
@@ -82,23 +85,23 @@ public class AuthController {
 
         return user.map(userModel -> ResponseEntity.ok().body(new ApiResponse("get username success", userModel))).orElseGet(() -> ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ApiResponse("you are not logged in", null)));
     }
-    @RequestMapping(value = "/admin", method = RequestMethod.POST)
-    public ResponseEntity<Map<String, String>> adminLogin(@RequestBody AdminForm adminForm){
-        try{
-            Integer isAdmin = adminService.adminLogin(adminForm.getUsername(), adminForm.getPassword());
-
-            String jwt = JWT.create()
-                    .withIssuer("c29JADPJ")
-                    .withClaim("isAdmin", isAdmin)
-                    .withIssuedAt(new Date())
-                    .sign(Algorithm.HMAC256(env.getProperty("jwt.secret")));
-
-            return new ResponseEntity<>(Map.of("message", "Login Successful", "token", jwt), HttpStatus.OK);
-        } catch (AuthenticationException e) {
-            return new ResponseEntity<>(Map.of("message", e.getMessage()), HttpStatus.UNAUTHORIZED);
-        }
-
-    }
+//    @RequestMapping(value = "/admin", method = RequestMethod.POST)
+//    public ResponseEntity<Map<String, String>> adminLogin(@RequestBody AdminForm adminForm){
+//        try{
+//            Integer isAdmin = adminService.adminLogin(adminForm.getUsername(), adminForm.getPassword());
+//
+//            String jwt = JWT.create()
+//                    .withIssuer("c29JADPJ")
+//                    .withClaim("isAdmin", isAdmin)
+//                    .withIssuedAt(new Date())
+//                    .sign(Algorithm.HMAC256(env.getProperty("jwt.secret")));
+//
+//            return new ResponseEntity<>(Map.of("message", "Login Successful", "token", jwt), HttpStatus.OK);
+//        } catch (AuthenticationException e) {
+//            return new ResponseEntity<>(Map.of("message", e.getMessage()), HttpStatus.UNAUTHORIZED);
+//        }
+//
+//    }
 
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     public ResponseEntity<Map<String, Object>> register(@RequestBody UserForm userForm){

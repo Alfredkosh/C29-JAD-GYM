@@ -3,7 +3,16 @@ window.addEventListener('load', async () => {
 } )
 
 async function getAllVisitor() {
-    const res = await fetch("/admin/visitor")
+    const token = localStorage.getItem("token")
+    console.log(token)
+    if (!token) {
+        window.location.replace("/login");
+    }
+    const res = await fetch("/admin/visitor", {
+        headers: {
+            Authorization: `Bearer ${token}`
+        }
+    })
     const data = await res.json()
     if (res.ok) {
         const visitors = data.numberOfPeople;

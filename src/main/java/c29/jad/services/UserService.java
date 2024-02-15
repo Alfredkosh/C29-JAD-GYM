@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 
 import javax.naming.AuthenticationException;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @Service
@@ -57,7 +58,7 @@ public class UserService {
         return userRepository.saveAndFlush(newUser);
     }
 
-    public Integer login(String username, String password) throws AuthenticationException {
+    public Map<String, Object> login(String username, String password) throws AuthenticationException {
         var users = userRepository.findByUsername(username);
         if (users.size() == 1) {
             var user = users.get(0);
@@ -67,7 +68,7 @@ public class UserService {
             if(!result.verified){
                 throw new AuthenticationException("Incorrect username/password");
             }
-            return user.getId();
+            return Map.of("userId", user.getId(), "isAdmin", user.isAdmin());
         }
         throw new AuthenticationException("Account does not find");
     }

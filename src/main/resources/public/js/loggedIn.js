@@ -1,8 +1,14 @@
 window.addEventListener('load', async () => {
    await getUsername();
-   addlogoutEventListener();
+   await addlogoutEventListener();
 } )
-
+async function addlogoutEventListener() {
+  document.querySelector("#logoutBtn").addEventListener("click", (e) => {
+    localStorage.removeItem("token")
+    window.location.reload()
+  })
+  
+}
 
 async function getUsername() {
     // console.log(httpResponse);
@@ -28,14 +34,10 @@ async function getUsername() {
       document.querySelector(
         "#logout-area"
       ).innerHTML = `<li class="nav-item text-uppercase" id="username-display">
-      <a href="/" class="item-anchor btn btn-outline-primary rounded-pill">Log out</a>
+      <div  id="logoutBtn" class="item-anchor btn btn-outline-primary rounded-pill">Log out</div>
     </li>`;
     } else {
       result = await httpResponse.json();
     }
   }
 
-
-  async function addlogoutEventListener() {
-    localStorage.removeItem("token")
-  }
