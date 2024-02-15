@@ -69,23 +69,26 @@ public class PrivateFilter extends OncePerRequestFilter {
     protected boolean shouldNotFilter(HttpServletRequest request) throws ServletException {
         var pathMatcher = new AntPathMatcher();
         List<String> matchedPatterns = List.of(
-//                "/model",
-//                "/model*",
-//                "/model/*",
-//                "/test",
-//                "/test*",
-//                "/test/*",
+                "/model",
+                "/model*",
+                "/model/*",
+                "/test",
+                "/test*",
+                "/test/*",
 
-//                "/record/data",
-//                "/auth/register",
-//                "/auth/checkin",
-//                "/record/checkin",
-//                "/admin",
-//                "/admin*",
-//                "/admin/*"
+                "/record/data",
+                "/auth/register",
+                "/auth/checkin",
+                "/record/checkin",
+                "/admin",
+                "/admin*",
+                "/admin/*",
                 "/auth/username",
                 "/auth/username*",
-                "/auth/username/*"
+                "/auth/username/*",
+                "/record/ownrecord",
+                "/record/ownrecord*",
+                "/record/ownrecord/*"
 
 
         );

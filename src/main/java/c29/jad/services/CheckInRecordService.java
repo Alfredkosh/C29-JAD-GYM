@@ -44,4 +44,8 @@ public class CheckInRecordService {
     public List<CheckInRecordModel> getAllRecords() {
         return checkInRecordRepository.getVisitor();
     }
+
+    public List<CheckInRecordModel> getOwnRecord(Integer userId) {
+        return checkInRecordRepository.getCheckInTime(userId);
+    }
 }

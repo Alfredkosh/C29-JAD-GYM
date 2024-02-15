@@ -15,4 +15,11 @@ public interface CheckInRecordRepository extends JpaRepository<CheckInRecordMode
             SELECT * from check_in_records WHERE check_out_at BETWEEN '2024-02-01 00:00:00' AND '2024-02-29 23:59:59'
             """, nativeQuery = true)
     List<CheckInRecordModel> getVisitor ();
+
+
+    @Query(value = """
+            SELECT * from check_in_records WHERE user_id = :id
+            """, nativeQuery = true)
+    List<CheckInRecordModel> getCheckInTime (@Param("id") Integer id);
+
 }
