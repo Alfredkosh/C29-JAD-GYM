@@ -1,5 +1,6 @@
 package c29.jad.dtos;
 
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.util.Date;
 
@@ -61,16 +62,20 @@ public class CourseDto {
         this.maxPeopleLimit = maxPeopleLimit;
     }
 
-    public Date getOpenDatetime() {
-        return openDatetime;
+    public String getOpenDatetime() {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String formattedDate = sdf.format(openDatetime);
+        return formattedDate;
     }
 
     public void setOpenDatetime(Date openDatetime) {
         this.openDatetime = openDatetime;
     }
 
-    public Date getEndDatetime() {
-        return endDatetime;
+    public String getEndDatetime() {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String formattedDate = sdf.format(endDatetime);
+        return formattedDate;
     }
 
     public void setEndDatetime(Date endDatetime) {

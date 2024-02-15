@@ -12,8 +12,8 @@ CREATE TABLE users(
      icon varchar(255),
      expired_date varchar(255),
      status boolean,
-     created_at TIMESTAMP default NOW(),
-     updated_at TIMESTAMP default NOW()
+     created_at TIMESTAMP WITH TIME ZONE default NOW(),
+     updated_at TIMESTAMP WITH TIME ZONE default NOW()
  );
 
 
