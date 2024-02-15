@@ -30,7 +30,7 @@ async function login() {
            showConfirmButton: true
          }).then(() => {
            console.log("Swal.fire() resolved successfully");
-           window.location.replace("/profile");
+           window.location.href = "/profile";
          });
         } else {
             console.log("fail to login")
