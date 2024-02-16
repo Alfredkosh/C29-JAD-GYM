@@ -24,11 +24,11 @@ console.log("Hi");
     result = await httpResponse.json();
 
       console.log("name", result);
-
-    document.querySelector(
-      "#username-display"
-    ).innerHTML = `<li class="nav-item text-uppercase" id="username-display">
-      <div class="item-anchor btn btn-outline-primary rounded-pill">Welcome ${result.data}</div>
+  
+      document.querySelector(
+        "#username-display"
+      ).innerHTML = `<li class="nav-item text-uppercase" id="username-display">
+      <a href="/profile" class="item-anchor btn btn-outline-primary rounded-pill">Welcome ${result.data}</a>
     </li>`;
 
     document.querySelector(

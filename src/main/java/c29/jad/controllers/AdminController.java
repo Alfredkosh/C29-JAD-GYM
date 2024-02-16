@@ -33,12 +33,6 @@ public class AdminController {
 
 
 
-    @RequestMapping(value = "", method = RequestMethod.GET)
-    public String admin(Model model){
-        model.addAttribute("message","Welcome Admin");
-        return "admin";
-    }
-
     @RequestMapping(value = "/visitor", method = RequestMethod.GET)
     public ResponseEntity<Map<String, Object>> visitor (HttpServletRequest request){
 //        Integer gymRoomId = new CheckInRecordForm().getGymRoomId();

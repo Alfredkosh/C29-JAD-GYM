@@ -5,6 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
+import java.util.Date;
 import java.util.List;
 
 
@@ -21,5 +22,11 @@ public interface CheckInRecordRepository extends JpaRepository<CheckInRecordMode
             SELECT * from check_in_records WHERE user_id = :id
             """, nativeQuery = true)
     List<CheckInRecordModel> getCheckInTime (@Param("id") Integer id);
+
+    @Query(value = """
+            SELECT check_in_records.check_in_date from check_in_records WHERE user_id = :id
+            """, nativeQuery = true)
+    List<String> getLastCheckIn (@Param("id") Integer id);
+
 
 }

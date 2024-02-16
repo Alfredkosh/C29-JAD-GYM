@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.naming.AuthenticationException;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -47,5 +48,9 @@ public class CheckInRecordService {
 
     public List<CheckInRecordModel> getOwnRecord(Integer userId) {
         return checkInRecordRepository.getCheckInTime(userId);
+    }
+
+    public List<String> getLastCheckInDate(Integer userId) {
+        return checkInRecordRepository.getLastCheckIn(userId);
     }
 }
