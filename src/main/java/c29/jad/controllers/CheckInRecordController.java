@@ -49,17 +49,6 @@ public class CheckInRecordController {
         }
     }
 
-    @RequestMapping(value = "/ownrecord", method = RequestMethod.GET)
-    public ResponseEntity<Map<String, Object>> OwnCheckInRecord (HttpServletRequest request){
-        Integer userId = (Integer) request.getAttribute("userId");
 
-        if (userId == null) {
-            return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
-        }
-
-        List<CheckInRecordModel> ownRecord = checkInRecordService.getOwnRecord(userId);
-
-        return new ResponseEntity<>(Map.of("Total Check-in times", ownRecord), HttpStatus.OK);
-    }
 
 }

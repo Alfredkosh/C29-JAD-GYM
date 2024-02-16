@@ -36,6 +36,31 @@ async function getUserProfile(token) {
   }
 }
 
+
+async function updateOwnRecordElement(totalCheckInTime) {
+    console.log({
+        totalCheckInTime
+    })
+  document.querySelector(".twitt-left").innerHTML = `<h5>Total Check-in times</h5>
+                                                                     <p>${totalCheckInTime.reduce}</p>`
+
+}
+
+async function getUserVisitTime(token) {
+  const res = await fetch("/auth/ownrecord", {
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
+  })
+  if (res.ok) {
+    const data = await res.json()
+    const OwnCheckInRecord = data.data
+    const totalCheckInTime = OwnCheckInRecord.userId
+
+    await updateOwnRecordElement(totalCheckInTime)
+  }
+}
+
 async function generateQrCode(userId) {
   let finalURL =
   'https://chart.googleapis.com/chart?cht=qr&chl=' +

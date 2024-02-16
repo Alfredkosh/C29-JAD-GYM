@@ -94,9 +94,9 @@ public class PrivateFilter extends OncePerRequestFilter {
                 "/auth/username",
                 "/auth/username*",
                 "/auth/username/*",
-                "/record/ownrecord",
-                "/record/ownrecord*",
-                "/record/ownrecord/*"
+                "/auth/ownrecord",
+                "/auth/ownrecord*",
+                "/auth/ownrecord/*"
 
 
         );

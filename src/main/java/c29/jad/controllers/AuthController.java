@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.naming.AuthenticationException;
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
@@ -84,6 +85,19 @@ public class AuthController {
         Optional<UserModel> user = userService.getProfileById(intUserId);
 
         return user.map(userModel -> ResponseEntity.ok().body(new ApiResponse("get username success", userModel))).orElseGet(() -> ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ApiResponse("you are not logged in", null)));
+    }
+
+    @RequestMapping(value = "/ownrecord", method = RequestMethod.GET)
+    public ResponseEntity<Map<String, Object>> OwnCheckInRecord (HttpServletRequest request){
+        Integer userId = (Integer) request.getAttribute("userId");
+
+        if (userId == null) {
+            return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+        }
+
+        List<CheckInRecordModel> ownRecord = checkInRecordService.getOwnRecord(userId);
+
+        return new ResponseEntity<>(Map.of("Total Check-in times", ownRecord), HttpStatus.OK);
     }
 //    @RequestMapping(value = "/admin", method = RequestMethod.POST)
 //    public ResponseEntity<Map<String, String>> adminLogin(@RequestBody AdminForm adminForm){
