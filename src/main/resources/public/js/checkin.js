@@ -5,6 +5,8 @@ window.addEventListener("load", async () => {
     const userId = payload.userId
     await generateQrCode(userId)
     await getUserProfile(token)
+    await getUserVisitTime(token)
+    await getLastCheckInDate(token)
   } else {
     window.location.href = "/login"
   }
@@ -42,7 +44,7 @@ async function updateOwnRecordElement(totalCheckInTime) {
         totalCheckInTime
     })
   document.querySelector(".twitt-left").innerHTML = `<h5>Total Check-in times</h5>
-                                                                     <p>${totalCheckInTime.reduce}</p>`
+                                                                     <p>${totalCheckInTime}</p>`
 
 }
 
@@ -54,10 +56,37 @@ async function getUserVisitTime(token) {
   })
   if (res.ok) {
     const data = await res.json()
-    const OwnCheckInRecord = data.data
-    const totalCheckInTime = OwnCheckInRecord.userId
+    const OwnCheckInRecord = data.totalCheckInTimes
+    const totalCheckInTime = OwnCheckInRecord.length
+
+    console.log(OwnCheckInRecord);
 
     await updateOwnRecordElement(totalCheckInTime)
+  }
+}
+
+async function updateLastCheckInRecordElement(lastCheckIn) {
+    console.log({
+        lastCheckIn
+    })
+  document.querySelector(".twitt-right").innerHTML = `<h5>Latest Check-in Date</h5>
+                                                                     <p>${lastCheckIn}</p>`
+
+}
+async function getLastCheckInDate(token) {
+  const res = await fetch("/auth/lastcheckindate", {
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
+  })
+  if (res.ok) {
+    const data = await res.json()
+    const LastCheckInRecord = data.lastCheckInDate
+    const lastCheckIn = LastCheckInRecord[LastCheckInRecord.length-1]
+
+    console.log(LastCheckInRecord);
+
+    await updateLastCheckInRecordElement(lastCheckIn)
   }
 }
 

@@ -91,13 +91,30 @@ public class AuthController {
     public ResponseEntity<Map<String, Object>> OwnCheckInRecord (HttpServletRequest request){
         Integer userId = (Integer) request.getAttribute("userId");
 
+        System.out.println(userId);
+
         if (userId == null) {
             return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
         }
 
         List<CheckInRecordModel> ownRecord = checkInRecordService.getOwnRecord(userId);
 
-        return new ResponseEntity<>(Map.of("Total Check-in times", ownRecord), HttpStatus.OK);
+        return new ResponseEntity<>(Map.of("totalCheckInTimes", ownRecord), HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/lastcheckindate", method = RequestMethod.GET)
+    public ResponseEntity<Map<String, Object>> LastCheckInDate (HttpServletRequest request){
+        Integer userId = (Integer) request.getAttribute("userId");
+
+        System.out.println(userId);
+
+        if (userId == null) {
+            return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+        }
+
+        List<String> lastDate = checkInRecordService.getLastCheckInDate(userId);
+
+        return new ResponseEntity<>(Map.of("lastCheckInDate", lastDate), HttpStatus.OK);
     }
 //    @RequestMapping(value = "/admin", method = RequestMethod.POST)
 //    public ResponseEntity<Map<String, String>> adminLogin(@RequestBody AdminForm adminForm){
