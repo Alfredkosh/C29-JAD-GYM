@@ -28,7 +28,7 @@ async function getUsername() {
       document.querySelector(
         "#username-display"
       ).innerHTML = `<li class="nav-item text-uppercase" id="username-display">
-      <div class="item-anchor btn btn-outline-primary rounded-pill">Welcome ${result.data}</div>
+      <a href="/profile" class="item-anchor btn btn-outline-primary rounded-pill">Welcome ${result.data}</a>
     </li>`;
   
       document.querySelector(

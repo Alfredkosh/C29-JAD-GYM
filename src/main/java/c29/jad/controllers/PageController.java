@@ -77,4 +77,10 @@ public class PageController {
     public String profile(Model model){
         return "profile";
     }
+
+    @RequestMapping(value = "/adminpage", method = RequestMethod.GET)
+    public String admin(Model model){
+        model.addAttribute("message","Welcome Admin");
+        return "admin";
+    }
 }
