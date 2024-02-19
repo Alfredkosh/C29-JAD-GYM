@@ -59,7 +59,7 @@ async function getUserVisitTime(token) {
     const OwnCheckInRecord = data.totalCheckInTimes
     const totalCheckInTime = OwnCheckInRecord.length
 
-    console.log(OwnCheckInRecord);
+    console.log("own Record", OwnCheckInRecord);
 
     await updateOwnRecordElement(totalCheckInTime)
   }

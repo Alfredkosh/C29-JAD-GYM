@@ -18,12 +18,11 @@ async function getUsername() {
     }
   });
   let result;
-console.log("Hi");
 
   if (httpResponse.status == 200) {
     result = await httpResponse.json();
 
-      console.log("name", result);
+      // console.log("name", result);
   
       document.querySelector(
         "#username-display"

@@ -46,9 +46,9 @@ public class CheckInRecordService {
         return checkInRecordRepository.getVisitor();
     }
 
-//    public List<CheckInRecordModel> getLiveCounts(Integer userID) {
-//        return checkInRecordRepository.getAllFlows(userID);
-//    }
+    public List<CheckInRecordModel> getLiveCounts(Integer userId) {
+        return checkInRecordRepository.getAllFlows(userId);
+    }
 
     public List<CheckInRecordModel> getOwnRecord(Integer userId) {
         return checkInRecordRepository.getCheckInTime(userId);

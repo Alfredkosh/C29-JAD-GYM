@@ -1,5 +1,6 @@
 package c29.jad.models;
 
+
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.Setter;
@@ -34,7 +35,6 @@ public class CheckInRecordModel {
     @UpdateTimestamp
     @Column(name="updated_at")
     private Date updatedAt;
-
 
     public int getId() {
         return id;
@@ -79,6 +79,10 @@ public class CheckInRecordModel {
     public void setCheckInAt(Date checkInAt) {this.checkInAt = checkInAt;}
 
     public String getCheckOutAt() {
+        if (checkInAt == null) {
+            return null; // Or any other appropriate value when the date is null
+        }
+
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String formattedDate = sdf.format(checkOutAt);
         return formattedDate;
@@ -88,20 +92,16 @@ public class CheckInRecordModel {
         this.checkOutAt = checkOutAt;
     }
 
-    public String getCreatedAt() {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        String formattedDate = sdf.format(createdAt);
-        return formattedDate;
+    public Date getCreatedAt() {
+        return createdAt;
     }
 
     public void setCreatedAt(Date createdAt) {
         this.createdAt = createdAt;
     }
 
-    public String getUpdatedAt() {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        String formattedDate = sdf.format(updatedAt);
-        return formattedDate;
+    public Date getUpdatedAt() {
+        return updatedAt;
     }
 
     public void setUpdatedAt(Date updatedAt) {

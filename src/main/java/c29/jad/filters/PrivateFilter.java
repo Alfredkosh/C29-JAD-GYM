@@ -80,6 +80,8 @@ public class PrivateFilter extends OncePerRequestFilter {
                 "/auth/register",
                 "/auth/checkin",
                 "/record/checkin",
+                "/record/livecount",
+
 ////                "/admin",
 ////                "/admin*",
 ////                "/admin/*",
@@ -93,6 +95,7 @@ public class PrivateFilter extends OncePerRequestFilter {
                 "/auth/lastcheckindate",
                 "/auth/lastcheckindate*",
                 "/auth/lastcheckindate/*"
+
 
 
         );

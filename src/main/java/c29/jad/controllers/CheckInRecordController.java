@@ -49,6 +49,16 @@ public class CheckInRecordController {
         }
     }
 
+    @RequestMapping(value = "/livecount", method = RequestMethod.GET)
+    public ResponseEntity<Map<String, Object>> livecount (HttpServletRequest request) {
+        Integer userId = (Integer) request.getAttribute("userId");
+
+        System.out.println(userId);
+
+            List<CheckInRecordModel> peopleAmount = checkInRecordService.getLiveCounts(userId);
+
+            return new ResponseEntity<>(Map.of("PeopleAmount", peopleAmount), HttpStatus.OK);
+        }
 
 
 }

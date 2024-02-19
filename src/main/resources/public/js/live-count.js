@@ -1,14 +1,16 @@
 window.addEventListener('load', async () => {
-    await getLiveCount();
-} )
-
-async function getLiveCount() {
     const token = localStorage.getItem("token")
-    console.log(token)
-    if (!token) {
-        window.location.replace("/login");
-    }
-    const res = await fetch("/admin/livecount", {
+  if (token) {
+    const payload = parseJwt(token)
+    const userId = payload.userId
+    await getLiveCount(token);
+} else {
+    window.location.href = "/login"
+  }
+  })
+
+async function getLiveCount(token) {
+    const res = await fetch("/record/livecount", {
         headers: {
             Authorization: `Bearer ${token}`
         }
@@ -16,7 +18,7 @@ async function getLiveCount() {
     const data = await res.json()
     if (res.ok) {
         const visitors = data.PeopleAmount;
-        console.log(visitors);
+        console.log("Amount =", visitors);
 
 
         let gymRoomId1 = 0;
@@ -66,7 +68,18 @@ async function getLiveCount() {
 
 
     } else {
-        alert("Fail to fetch getAllVisitor")
+        alert("Fail to fetch getLiveCount")
     }
 
 }
+
+function parseJwt (token) {
+    var base64Url = token.split('.')[1];
+    var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+    var jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function(c) {
+        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+    }).join(''));
+  
+    return JSON.parse(jsonPayload);
+  }
+  
