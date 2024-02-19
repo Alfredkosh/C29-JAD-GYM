@@ -47,6 +47,22 @@ public class AdminController {
         return new ResponseEntity<>(Map.of("numberOfPeople", numberOfPeople), HttpStatus.OK);
     }
 
+//    @RequestMapping(value = "/livecount", method = RequestMethod.GET)
+//    public ResponseEntity<Map<String, Object>> livecount (HttpServletRequest request){
+//      Integer userID = (Integer) request.getAttribute("userID");
+//
+//        System.out.println(userID);
+////
+//        List<CheckInRecordModel> peopleAmount = checkInRecordService.getLiveCounts(userID);
+////        int usersNumber = checkInRecords.size();
+////
+////        Map<String, Object> response = new HashMap<>();
+////        response.put("Users number", usersNumber);
+////        response.put("Check-In Records", checkInRecords);
+//
+//        return new ResponseEntity<>(Map.of("PeopleAmount", peopleAmount), HttpStatus.OK);
+//    }
+
 
     @RequestMapping(value = "/newcourse", method = RequestMethod.POST)
     public ResponseEntity<Map<String, Object>> addCourse(@RequestBody CourseListForm courseListForm){

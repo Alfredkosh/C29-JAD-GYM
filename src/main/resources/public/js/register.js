@@ -1,9 +1,14 @@
-// import QRCode from "qrcode";
-
-window.addEventListener("load", () => {
-    register();
-    checkUsernameAvailable();
-    checkEmailAvailable();
+window.addEventListener("load", async () => {
+  const token = localStorage.getItem("token")
+  if (token) {
+    const payload = parseJwt(token)
+    const userId = payload.userId
+  register(token);
+} else {
+  window.location.href = "/login"
+}
+  checkUsernameAvailable();
+  checkEmailAvailable();
     enableSubmitButton();
 });
 
@@ -82,7 +87,7 @@ function checkEmailAvailable() {
   });
 }
 
-async function register() {
+async function register(token) {
   document
     .querySelector("#register-form")
     .addEventListener("submit", async (e) => {
@@ -108,25 +113,13 @@ async function register() {
       console.log(body);
       const res = await fetch("/auth/register", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { 
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+          },
         body: JSON.stringify(body),
       });
       if (res.ok) {
-
-        // const qrCodeData = {
-        //   fullname,
-        //   username,
-        //   id,
-        //   // Include any other relevant data for the QR code
-        // };
-        // const qrCodeString = JSON.stringify(qrCodeData);
-        // const qrCodeElement = document.createElement("canvas");
-        // await QRCode.toCanvas(qrCodeElement, qrCodeString);
-        
-        // // Append the generated QR code to the document
-        // const qrCodeContainer = document.getElementById("qr-code-container");
-        // qrCodeContainer.innerHTML = ""; // Clear previous QR codes
-        // qrCodeContainer.appendChild(qrCodeElement);
 
         Swal.fire({
           icon: "success",
@@ -134,7 +127,7 @@ async function register() {
           showConfirmButton: true,
         }).then(() => {
           console.log("Swal.fire() resolved successfully");
-          window.location.replace("/admin");
+          window.location.replace("/adminpage");
         });
       } else {
         console.log("fail to register");
@@ -147,4 +140,14 @@ async function register() {
     });
 
 
+}
+
+function parseJwt (token) {
+  var base64Url = token.split('.')[1];
+  var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+  var jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function(c) {
+      return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+  }).join(''));
+
+  return JSON.parse(jsonPayload);
 }

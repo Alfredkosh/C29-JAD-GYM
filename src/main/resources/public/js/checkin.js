@@ -73,6 +73,7 @@ async function updateLastCheckInRecordElement(lastCheckIn) {
                                                                      <p>${lastCheckIn}</p>`
 
 }
+
 async function getLastCheckInDate(token) {
   const res = await fetch("/auth/lastcheckindate", {
     headers: {
