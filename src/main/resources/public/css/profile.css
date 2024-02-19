@@ -83,7 +83,7 @@ p.footer a:hover{
 }
 .main {
 	display: flex;
-    margin-right: 20px;
+    margin-right: -115px;
 
 	justify-content: center;
 }
@@ -163,7 +163,7 @@ p.footer a:hover{
     padding-top: 30px;
 }
 .login-pic {
-    width: 21%;
+    width: 15%;
     margin: 0px auto 0;
     padding: 11px;
     border: 2px solid #fff;
@@ -279,13 +279,13 @@ li.button a span.iconfour {
 .twitt-left {
     float: left;
     width: 49%;
-    background: #f99104;
+    background: #ac8b71;
 
 }
 .twitt-right {
     float: right;
     width: 49%;
-    background: #f99104;
+    background: #ac8b71;
 
 }
 
