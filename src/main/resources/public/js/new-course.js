@@ -19,7 +19,7 @@ async function newCourse(token) {
       const name = courseForm.name.value;
       const tutor = courseForm.tutor.value;
       const maxPeopleLimit = courseForm.maxPeopleLimit.value;
-      const location = courseForm.location.value;
+      const gymRoomId = courseForm.gymRoomId.value;
       const openDatetime = courseForm.openDatetime.value;
       const endDatetime = courseForm.endDatetime.value;
 
@@ -27,7 +27,7 @@ async function newCourse(token) {
         name,
         tutor,
         maxPeopleLimit,
-        location,
+        gymRoomId,
         openDatetime,
         endDatetime,
       };

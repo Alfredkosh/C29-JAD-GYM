@@ -10,15 +10,24 @@ async function getAllCourse() {
         const rows = data.data
         console.log(message)
         console.log(rows)
+
+        const gymRoomMap = {
+            // Define your mapping here
+            1: "Hysan Place - Causeway Bay",
+            2: "MOKO - Mongkok",
+            // ...
+        };
+
         const courseContainerElem = document.querySelector("#table-group")
         let html = "";
         for(let row of rows) {
+            const gymRoomName = gymRoomMap[row.gymRoomId] || "Unknown";
             html += `<tr>
                                    <td><strong>${row.name}</strong></td>
                                    <td>${row.tutor}</td>
                                    <td>${row.openDatetime}</td>
                                    <td>${row.endDatetime}</td>
-                                   <td>${row.gymRoomId}</td>
+                                   <td>${gymRoomName}</td>
                                    <td>${row.maxPeopleLimit}</td>
                                    <td><a href="#" class="btn btn-outline-dark rounded-pill">Register</a></td>
                                  </tr>`
