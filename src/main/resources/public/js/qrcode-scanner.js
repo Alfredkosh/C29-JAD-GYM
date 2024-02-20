@@ -11,7 +11,7 @@ function success(result) {
   
   document.getElementById("result").innerHTML = `
   <label>QRcode check-in</label>
-  <input type="hidden" name="userId" placeholder="result">
+  <input type="hidden" name="userId" placeholder="result" value="${result}">
   <h2> ID : <a href="${result}">${result}</a></h2>
   <br>
   <br>
@@ -21,11 +21,6 @@ function success(result) {
    <option value="1">Hysan Place - Causeway Bay</option>
    <option value="2">MOKO - Mongkok</option>
   </select>
-  <br>
-  <br>
-  <label>Check In Date</label>
-  <input type="datetime-local" name="checkInAt" placeholder="Check In Date"
-      required>
   <br>
   <br>
   <input type="submit" value="Submit">

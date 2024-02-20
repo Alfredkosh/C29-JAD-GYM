@@ -19,12 +19,10 @@ window.addEventListener("load", async () => {
         const checkInForm = e.target;
         const userId = checkInForm.userId.value;
         const gymRoomId = checkInForm.gymRoomId.value;
-        const checkInAt = checkInForm.checkInAt.value;
-      
+
         const body = {
           userId,
           gymRoomId,
-          checkInAt,
         };
         console.log(body);
         const res = await fetch("/record/checkin", {
