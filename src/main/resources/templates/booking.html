@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>GYM - GYM Studio</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="author" content="">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <link rel="stylesheet" type="text/css" href="/css/vendor.css">
+  <link rel="stylesheet" type="text/css" href="/fonts/icomoon.css">
+
+  <link href="https://cdn.staticfile.org/twitter-bootstrap/5.3.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdn.staticfile.org/Swiper/11.0.5/swiper-bundle.min.css">
+
+
+  <link rel="stylesheet" type="text/css" href="/css/booking.css">
+</head>
+
+<body>
+
+<div class="preloader-wrapper">
+  <div class="preloader">
+  </div>
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top py-4">
+  <div class="container-fluid">
+    <div class="main-logo">
+      <a href="/index">
+        <img src="/images/main-logo.png" alt="logo">
+      </a>
+    </div>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end align-items-center flex-grow-1 pe-3 gap-4">
+          <li class="nav-item text-uppercase">
+            <a href="/index" class="nav-link active">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdownPages" data-bs-toggle="dropdown"
+               aria-haspopup="true" aria-expanded="false">Pages</a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownPages">
+              <li>
+                <a href="/about" class="dropdown-item text-uppercase">About Us </a>
+              </li>
+              <li>
+                <a href="/classes" class="dropdown-item text-uppercase">Class Schedule </a>
+              </li>
+              <li>
+                <a href="/contact" class="dropdown-item text-uppercase">Contact </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item text-uppercase">
+            <a href="/gym" class="nav-link">Gym</a>
+          </li>
+          <li class="nav-item text-uppercase">
+            <a href="/contact" class="nav-link">Contact</a>
+          </li>
+          <div id="username-display">
+            <li class="nav-item text-uppercase" id="username-display">
+              <a href="/login" class="item-anchor btn btn-outline-primary rounded-pill">Login</a>
+            </li>
+          </div>
+          <div id="logout-area"></div>
+          <li class="user-items">
+            <div class="search-bar">
+              <a href="#" class="search-button search-toggle" data-selector=".primary-nav">
+                <i class="icon icon-search"></i>
+              </a>
+              <form role="search" method="get" class="search-box" action="index.html">
+                <input class="search-field search-input" placeholder="Search" type="search">
+              </form>
+            </div>
+            <a href="#" class="shopping-cart">
+              <i class="icon icon-shopping-cart"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+     <!-- [ Main Content ] start -->
+    <!--<div class="main-content">-->
+    <!--    <div class="contact-w3" >-->
+
+<section class="input-part">
+    <div id="main_cont">
+        <div id="navbar">
+            <a href="/classes">All Appointments </a>
+        </div>
+        <div id="main_body">
+          <h4>Book your class</h4>
+          <div>
+            <!-- <label for="slot-select">Choose a Slot:</label> -->
+            <select name="class" id="class-select">
+              <option value="">Choose a class </option>
+              <option value="gym">Gym</option>
+              <option value="yoga">Yoga</option>
+              <option value="dance">Dance</option>
+              <option value="personalTrainer">Personal Trainer</option>
+              <option value="bodyPump">Body Pump</option>
+            </select>
+          </div>
+
+
+          <div><h4>Date and Time</h4>
+            <input id="inputDate" type="date" placeholder="Select the appointment date"  />
+          </div>
+
+            <div>
+                <!-- <label for="slot-select">Choose a Slot:</label> -->
+                <select name="slot" id="slot-select">
+                    <option value="timeslot">Choose a timeslot </option>
+                    <option value="9-11">9 AM to 11 AM</option>
+                    <option value="11-1">11 AM to 1 PM</option>
+                    <option value="1-3">1 PM to 3 PM</option>
+                    <option value="3-5">3 PM to 5 PM</option>
+                    <option value="5-7">5 PM to 7 PM</option>
+                    <option value="7-9">7 PM to 9 PM</option>
+                </select>
+            </div>
+
+          <div>
+            <h4>Gym Room</h4>
+            <!-- <label for="slot-select">Choose a Slot:</label> -->
+            <select name="place" id="place-select">
+              <option value="">Choose a place </option>
+              <option value="Mongkok">Moko - Mongkok</option>
+              <option value="Causeway Bay">Hyson Place - Causeway Bay</option>
+            </select>
+          </div>
+
+            <div>
+                <button id="book_appointment">Book A Class</button>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+    
+    
+
+        <!-- [ Main Content ] end -->
+
+  <footer id="footer" class="padding-large">
+    <div class="container">
+      <div class="footer-content row">
+        <div class="col-md-4">
+          <div class="footer-menu">
+            <ul class="d-flex list-unstyled justify-content-md-start justify-content-center">
+              <li>
+                <a href="#">Home</a>
+              </li>
+              <li>
+                <a href="#">Privacy Policy</a>
+              </li>
+              <li>
+                <a href="#">Terms</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="footer-logo align-center">
+            <img src="images/main-logo.png" alt="logo">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="social-links">
+            <ul class="d-flex list-unstyled justify-content-md-end justify-content-center">
+              <li>
+                <a href="#">
+                  <i class="icon icon-facebook"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="icon icon-twitter"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="icon icon-youtube"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <div id="footer-bottom">
+    <div class="container">
+
+    </div>
+  </div>
+  <script src="js/jquery-1.11.0.min.js"></script>
+  <script src="https://cdn.staticfile.org/twitter-bootstrap/5.3.1/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.staticfile.org/Swiper/11.0.5/swiper-bundle.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/script.js"></script>
+  <script type="module" src="/js/loggedIn.js"></script>
+  <script type="module" src="/js/bookingModel.js"></script>
+  <script type="module" src="/js/appointment.js"></script>
+  <script type="module" src="/js/bookingRoutes.js"></script>
+</body>
+
+</html>
