@@ -39,6 +39,10 @@ public class CheckInRecordService {
 
     }
 
+    public void updateCheckOutTime(Integer userId, Integer gymRoomId) {
+        checkInRecordRepository.updateCheckOutTime(userId,gymRoomId);
+    }
+
     public List<CheckInRecordModel> getAllRecords() {
         return checkInRecordRepository.getVisitor();
     }

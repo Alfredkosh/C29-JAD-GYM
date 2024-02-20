@@ -40,7 +40,7 @@ public class CheckInRecordController {
     }
 
     @RequestMapping(value = "/checkin", method = RequestMethod.POST)
-    public ResponseEntity<Map<String, Object>> checked(@RequestBody CheckInRecordForm checkInRecordForm){
+    public ResponseEntity<Map<String, Object>> checkedin(@RequestBody CheckInRecordForm checkInRecordForm){
         try {
             CheckInRecordModel checkIn = checkInRecordService.checkIn(checkInRecordForm);
             return new ResponseEntity<>(Map.of("message", "Check In Successful"), HttpStatus.OK);
@@ -48,6 +48,16 @@ public class CheckInRecordController {
             return new ResponseEntity<>(Map.of("message", e.getMessage()), HttpStatus.UNAUTHORIZED);
         }
     }
+
+    @RequestMapping(value = "/checkout", method = RequestMethod.POST)
+    public ResponseEntity<Map<String, Object>> checkedOut(@RequestBody CheckInRecordForm checkInRecordForm){
+            checkInRecordService.updateCheckOutTime(checkInRecordForm.getUserId(), checkInRecordForm.getGymRoomId());
+            return new ResponseEntity<>(Map.of("message", "Check Out Successful"), HttpStatus.OK);
+
+    }
+
+
+
 
     @RequestMapping(value = "/livecount", method = RequestMethod.GET)
     public ResponseEntity<Map<String, Object>> livecount (HttpServletRequest request) {

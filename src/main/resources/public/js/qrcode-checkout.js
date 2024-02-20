@@ -8,21 +8,19 @@ window.addEventListener("load", async () => {
   }
 });
 
-async function QrCodeCheckIn() {
+async function QrCodeCheckOut() {
   const token = localStorage.getItem("token");
-
   const form = document.querySelector("#qrcode-check-in-out");
-
-  const checkInForm = form;
-  const userId = checkInForm.userId.value;
-  const gymRoomId = checkInForm.gymRoomId.value;
+  const checkOutForm = form;
+  const userId = checkOutForm.userId.value;
+  const gymRoomId = checkOutForm.gymRoomId.value;
 
   const body = {
     userId,
     gymRoomId,
   };
   console.log(body);
-  const res = await fetch("/record/checkin", {
+  const res = await fetch("/record/checkout", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -33,20 +31,20 @@ async function QrCodeCheckIn() {
   if (res.ok) {
     Swal.fire({
       icon: "success",
-      title: "Check-in success",
+      title: "Check-out success",
       showConfirmButton: true,
     }).then(() => {
-      console.log("Swal.fire() resolved successfully");
+      console.log("Swal.fire() check-out successfully");
       window.location.replace("/admin");
     });
   } else {
     console.log("fail to register");
     Swal.fire({
       icon: "error",
-      title: "Fail to check-in",
+      title: "Fail to check-out",
       text: "Please try again!",
     }).then(() => {
-      console.log("Swal.fire() fail to check-in");
+      console.log("Swal.fire() fail to check-out");
       window.location.replace("/checkin");
     });
   }

@@ -1,11 +1,12 @@
 package c29.jad.repositories;
 
 import c29.jad.models.CheckInRecordModel;
+import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-import java.util.Date;
 import java.util.List;
 
 
@@ -17,12 +18,25 @@ public interface CheckInRecordRepository extends JpaRepository<CheckInRecordMode
             """, nativeQuery = true)
     List<CheckInRecordModel> getVisitor ();
 
+    @Transactional
+    @Modifying
+    @Query(value = """
+            UPDATE check_in_records SET check_out_at = current_timestamp WHERE user_id = :userId AND gym_room_id = :gymRoomId \s
+            AND check_in_at = (
+                        SELECT MAX(check_in_at)\s
+                        FROM check_in_records\s
+                        WHERE user_id = :userId\s
+                        AND gym_room_id = :gymRoomId
+                    )
+            """, nativeQuery = true)
+    void updateCheckOutTime (@Param("userId") Integer userId, @Param("gymRoomId") Integer gymRoomId);
+
+//    List<CheckInRecordModel> findByGymRoomId(int gymRoomId);
+
     @Query(value = """
             SELECT * from check_in_records
             """, nativeQuery = true)
     List<CheckInRecordModel> getAllFlows ();
-
-//    List<CheckInRecordModel> findByGymRoomId(int gymRoomId);
 
 
     @Query(value = """
