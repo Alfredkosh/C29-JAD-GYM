@@ -26,13 +26,13 @@ public class CheckInRecordService {
             newCheckInRecord.setGymRoomId((checkInRecordForm.getGymRoomId()));
         }
 
-        if(checkInRecordForm.getCheckInDate() != null){
-            newCheckInRecord.setCheckInDate((checkInRecordForm.getCheckInDate()));
-        }
-
-//        if(checkInRecordForm.getCheckInAt() != null){
-//            newCheckInRecord.setCheckInAt((checkInRecordForm.getCheckInAt()));
+//        if(checkInRecordForm.getCheckInDate() != null){
+//            newCheckInRecord.setCheckInDate((checkInRecordForm.getCheckInDate()));
 //        }
+
+        if(checkInRecordForm.getCheckInAt() != null){
+            newCheckInRecord.setCheckInAt((checkInRecordForm.getCheckInAt()));
+        }
 //        if(checkInRecordForm.getCheckOutAt() != null){
 //            newCheckInRecord.setCheckOutAt((checkInRecordForm.getCheckOutAt()));
 //        }

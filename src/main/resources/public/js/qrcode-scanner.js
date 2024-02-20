@@ -11,6 +11,7 @@ function success(result) {
   
   document.getElementById("result").innerHTML = `
   <label>QRcode check-in</label>
+  <input type="hidden" name="userId" placeholder="result">
   <h2> ID : <a href="${result}">${result}</a></h2>
   <br>
   <br>
@@ -23,7 +24,7 @@ function success(result) {
   <br>
   <br>
   <label>Check In Date</label>
-  <input type="datetime-local" name="checkInDate" placeholder="Check In Date"
+  <input type="datetime-local" name="checkInAt" placeholder="Check In Date"
       required>
   <br>
   <br>
