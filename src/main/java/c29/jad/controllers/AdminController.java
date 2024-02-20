@@ -71,4 +71,15 @@ public class AdminController {
     }
 
 
+//    @RequestMapping(value = "/qrcodecheckin", method = RequestMethod.POST)
+//    public ResponseEntity<Map<String, Object>> qrCodeCheckIn(@RequestBody CheckInRecordForm checkInRecordForm){
+//        try{
+//            CheckInRecordModel newCheckIn = checkInRecordService.newCheckIn(checkInRecordForm);
+//            return new ResponseEntity<>(Map.of("message", "New course added", "course", newCheckIn), HttpStatus.OK);
+//        } catch (AuthenticationException e) {
+//            return new ResponseEntity<>(Map.of("message",  e.getMessage()), HttpStatus.UNAUTHORIZED);
+//        }
+//    }
+
+
 }

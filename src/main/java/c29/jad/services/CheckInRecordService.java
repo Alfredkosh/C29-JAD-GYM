@@ -30,12 +30,12 @@ public class CheckInRecordService {
             newCheckInRecord.setCheckInDate((checkInRecordForm.getCheckInDate()));
         }
 
-        if(checkInRecordForm.getCheckInAt() != null){
-            newCheckInRecord.setCheckInAt((checkInRecordForm.getCheckInAt()));
-        }
-        if(checkInRecordForm.getCheckOutAt() != null){
-            newCheckInRecord.setCheckOutAt((checkInRecordForm.getCheckOutAt()));
-        }
+//        if(checkInRecordForm.getCheckInAt() != null){
+//            newCheckInRecord.setCheckInAt((checkInRecordForm.getCheckInAt()));
+//        }
+//        if(checkInRecordForm.getCheckOutAt() != null){
+//            newCheckInRecord.setCheckOutAt((checkInRecordForm.getCheckOutAt()));
+//        }
 
         return checkInRecordRepository.saveAndFlush(newCheckInRecord);
 
@@ -46,8 +46,8 @@ public class CheckInRecordService {
         return checkInRecordRepository.getVisitor();
     }
 
-    public List<CheckInRecordModel> getLiveCounts(Integer userId) {
-        return checkInRecordRepository.getAllFlows(userId);
+    public List<CheckInRecordModel> getLiveCounts() {
+        return checkInRecordRepository.getAllFlows();
     }
 
     public List<CheckInRecordModel> getOwnRecord(Integer userId) {

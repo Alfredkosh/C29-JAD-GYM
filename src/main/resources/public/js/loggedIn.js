@@ -33,7 +33,7 @@ async function getUsername() {
     document.querySelector(
       "#logout-area"
     ).innerHTML = `<li class="nav-item text-uppercase" id="username-display">
-      <div  id="logoutBtn" class="item-anchor btn btn-outline-primary rounded-pill">Log out</div>
+      <a href="/index" id="logoutBtn" class="item-anchor btn btn-outline-primary rounded-pill">Log out</av>
     </li>`;
 
     document.querySelector("#username-display .item-anchor").addEventListener("click", () => {

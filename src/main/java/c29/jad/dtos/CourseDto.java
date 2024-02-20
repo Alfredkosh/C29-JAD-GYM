@@ -3,6 +3,7 @@ package c29.jad.dtos;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.TimeZone;
 
 public class CourseDto {
     private int id;
@@ -63,9 +64,13 @@ public class CourseDto {
     }
 
     public String getOpenDatetime() {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        String formattedDate = sdf.format(openDatetime);
-        return formattedDate;
+        String fromTimeZone = "GMT+8";
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+        Date openDatetime = new Date();
+        format.setTimeZone(TimeZone.getTimeZone(fromTimeZone));
+        String chinaDate = format.format(openDatetime);
+        return chinaDate;
+
     }
 
     public void setOpenDatetime(Date openDatetime) {
@@ -73,9 +78,12 @@ public class CourseDto {
     }
 
     public String getEndDatetime() {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        String formattedDate = sdf.format(endDatetime);
-        return formattedDate;
+        String fromTimeZone = "GMT+8";
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+        Date endDatetime = new Date();
+        format.setTimeZone(TimeZone.getTimeZone(fromTimeZone));
+        String chinaDate = format.format(endDatetime);
+        return chinaDate;
     }
 
     public void setEndDatetime(Date endDatetime) {

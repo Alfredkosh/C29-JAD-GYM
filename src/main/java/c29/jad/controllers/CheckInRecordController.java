@@ -55,7 +55,7 @@ public class CheckInRecordController {
 
         System.out.println(userId);
 
-            List<CheckInRecordModel> peopleAmount = checkInRecordService.getLiveCounts(userId);
+            List<CheckInRecordModel> peopleAmount = checkInRecordService.getLiveCounts();
 
             return new ResponseEntity<>(Map.of("PeopleAmount", peopleAmount), HttpStatus.OK);
         }

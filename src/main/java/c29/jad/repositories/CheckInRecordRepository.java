@@ -18,9 +18,9 @@ public interface CheckInRecordRepository extends JpaRepository<CheckInRecordMode
     List<CheckInRecordModel> getVisitor ();
 
     @Query(value = """
-            SELECT * from check_in_records WHERE gym_room_id = :id
+            SELECT * from check_in_records
             """, nativeQuery = true)
-    List<CheckInRecordModel> getAllFlows (@Param("id") Integer id);
+    List<CheckInRecordModel> getAllFlows ();
 
 //    List<CheckInRecordModel> findByGymRoomId(int gymRoomId);
 

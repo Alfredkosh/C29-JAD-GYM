@@ -54,7 +54,7 @@ async function login() {
           }).then(() => {
             console.log("Swal.fire() resolved successfully");
             if(isAdmin){
-              window.location.href = "/admin";
+              window.location.href = "/adminpage";
             } else{
               window.location.href = "/profile";
             }

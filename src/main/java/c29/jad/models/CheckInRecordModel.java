@@ -12,6 +12,7 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.TimeZone;
 
 @Entity
 @Table(name="check_in_records")
@@ -19,7 +20,7 @@ public class CheckInRecordModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @Column(name="user_id ")
+    @Column(name="user_id")
     private Integer userId;
     @Column(name="gym_room_id")
     private Integer gymRoomId;
@@ -60,10 +61,12 @@ public class CheckInRecordModel {
         this.gymRoomId = gymRoomId;
     }
 
-    public String getCheckInDate() {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        String formattedDate = sdf.format(checkInDate);
-        return formattedDate;
+    public String getCheckInDate() {String fromTimeZone = "GMT+8";
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+        Date checkInDate = new Date();
+        format.setTimeZone(TimeZone.getTimeZone(fromTimeZone));
+        String chinaDate = format.format(checkInDate);
+        return chinaDate;
     }
 
     public void setCheckInDate(Date checkInDate) {
@@ -71,9 +74,12 @@ public class CheckInRecordModel {
     }
 
     public String getCheckInAt() {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        String formattedDate = sdf.format(checkInAt);
-        return formattedDate;
+        String fromTimeZone = "GMT+8";
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+        Date checkInAt = new Date();
+        format.setTimeZone(TimeZone.getTimeZone(fromTimeZone));
+        String chinaDate = format.format(checkInAt);
+        return chinaDate;
     }
 
     public void setCheckInAt(Date checkInAt) {this.checkInAt = checkInAt;}
@@ -83,9 +89,13 @@ public class CheckInRecordModel {
             return null; // Or any other appropriate value when the date is null
         }
 
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        String formattedDate = sdf.format(checkOutAt);
-        return formattedDate;
+        String fromTimeZone = "GMT+8";
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+        Date checkOutAt = new Date();
+        format.setTimeZone(TimeZone.getTimeZone(fromTimeZone));
+        String chinaDate = format.format(checkOutAt);
+        return chinaDate;
+
     }
 
     public void setCheckOutAt(Date checkOutAt) {
