@@ -66,7 +66,6 @@ public class CourseDto {
     public String getOpenDatetime() {
         String fromTimeZone = "GMT+8";
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm");
-        Date openDatetime = new Date();
         format.setTimeZone(TimeZone.getTimeZone(fromTimeZone));
         String chinaDate = format.format(openDatetime);
         return chinaDate;
@@ -80,7 +79,6 @@ public class CourseDto {
     public String getEndDatetime() {
         String fromTimeZone = "GMT+8";
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm");
-        Date endDatetime = new Date();
         format.setTimeZone(TimeZone.getTimeZone(fromTimeZone));
         String chinaDate = format.format(endDatetime);
         return chinaDate;

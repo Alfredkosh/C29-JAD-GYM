@@ -43,8 +43,8 @@ public class CheckInRecordService {
         checkInRecordRepository.updateCheckOutTime(userId,gymRoomId);
     }
 
-    public List<CheckInRecordModel> getAllRecords() {
-        return checkInRecordRepository.getVisitor();
+    public List<CheckInRecordModel> getAllRecords(Date startDate, Date endDate) {
+        return checkInRecordRepository.getVisitor(startDate, endDate);
     }
 
     public List<CheckInRecordModel> getLiveCounts() {

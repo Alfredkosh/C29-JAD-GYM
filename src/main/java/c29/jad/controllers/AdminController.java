@@ -33,18 +33,25 @@ public class AdminController {
 
 
 
-    @RequestMapping(value = "/visitor", method = RequestMethod.GET)
-    public ResponseEntity<Map<String, Object>> visitor (HttpServletRequest request){
-//        Integer gymRoomId = new CheckInRecordForm().getGymRoomId();
+//    @RequestMapping(value = "/visitor", method = RequestMethod.GET)
+//    public ResponseEntity<Map<String, Object>> visitor (HttpServletRequest request){
+////        Integer gymRoomId = new CheckInRecordForm().getGymRoomId();
+////
+//        List<CheckInRecordModel> numberOfPeople = checkInRecordService.getAllRecords();
+////        int usersNumber = checkInRecords.size();
+////
+////        Map<String, Object> response = new HashMap<>();
+////        response.put("Users number", usersNumber);
+////        response.put("Check-In Records", checkInRecords);
 //
-        List<CheckInRecordModel> numberOfPeople = checkInRecordService.getAllRecords();
-//        int usersNumber = checkInRecords.size();
-//
-//        Map<String, Object> response = new HashMap<>();
-//        response.put("Users number", usersNumber);
-//        response.put("Check-In Records", checkInRecords);
+//        return new ResponseEntity<>(Map.of("numberOfPeople", numberOfPeople), HttpStatus.OK);
+//    }
 
-        return new ResponseEntity<>(Map.of("numberOfPeople", numberOfPeople), HttpStatus.OK);
+    @RequestMapping(value = "/visitor", method = RequestMethod.POST)
+    public ResponseEntity<Map<String, Object>> visitor(@RequestBody CheckInRecordForm checkInRecordForm){
+        List<CheckInRecordModel> numberOfPeople = checkInRecordService.getAllRecords(checkInRecordForm.getStartDate(), checkInRecordForm.getEndDate());
+        Integer size = numberOfPeople.size();
+        return new ResponseEntity<>(Map.of("message", "Selected successfully", "NumberOfPeople", size), HttpStatus.OK);
     }
 
 

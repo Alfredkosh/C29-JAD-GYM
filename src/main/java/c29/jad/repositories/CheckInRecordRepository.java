@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
+import java.util.Date;
 import java.util.List;
 
 
@@ -14,9 +15,9 @@ public interface CheckInRecordRepository extends JpaRepository<CheckInRecordMode
     List<CheckInRecordModel> findByUserId(int userId);
 
     @Query(value = """
-            SELECT * from check_in_records WHERE check_out_at BETWEEN '2024-02-01 00:00:00' AND '2024-02-29 23:59:59'
+            SELECT * from check_in_records WHERE check_in_date BETWEEN :startDate AND :endDate
             """, nativeQuery = true)
-    List<CheckInRecordModel> getVisitor ();
+    List<CheckInRecordModel> getVisitor (@Param("startDate") Date startDate, @Param("endDate") Date endDate);
 
     @Transactional
     @Modifying
@@ -34,7 +35,7 @@ public interface CheckInRecordRepository extends JpaRepository<CheckInRecordMode
 //    List<CheckInRecordModel> findByGymRoomId(int gymRoomId);
 
     @Query(value = """
-            SELECT * from check_in_records
+            SELECT * from check_in_records WHERE check_out_at IS NULL
             """, nativeQuery = true)
     List<CheckInRecordModel> getAllFlows ();
 

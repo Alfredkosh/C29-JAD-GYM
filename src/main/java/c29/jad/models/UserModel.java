@@ -4,8 +4,10 @@ import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.TimeZone;
 
 @Entity
 @Table(name="users")
@@ -33,7 +35,7 @@ public class UserModel {
     @Column(name="icon")
     private String icon;
     @Column(name="expired_date")
-    private String expiredDate;
+    private Date expiredDate;
     @Column(name="status")
     private boolean status;
 
@@ -136,10 +138,12 @@ public class UserModel {
     }
 
     public String getExpiredDate() {
-        return expiredDate;
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        String chinaDate = format.format(expiredDate);
+        return chinaDate;
     }
 
-    public void setExpiredDate(String expiredDate) {
+    public void setExpiredDate(Date expiredDate) {
         this.expiredDate = expiredDate;
     }
 

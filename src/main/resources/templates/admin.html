@@ -126,7 +126,7 @@
                                     <form id="new-course">
                                         <br>
                                         <br>
-                                        <h2>Create New Course</h2>
+                                        <h1>Create New Course</h1>
                                         <label>Class Name</label>
                                         <input type="text" name="name" placeholder="Class name" required>
                                         <div class="row">
@@ -172,9 +172,12 @@
             </div>
         </div>
         <div class="col-sm-6 main">
-    
-            <div class="w3-agileits">
-    
+
+            
+            
+            <div  class="w3-agileits">
+
+               
                 <div class="login-top right">
     
                     <div id="hk">
@@ -208,6 +211,31 @@
                 </div>
                 <div class="clear"> </div>
             </div>
+
+            <div>Please select requested months 請選擇查詢人數月份</div>
+
+            <form id="monthly-visitor">
+                <div class="row1">
+                <label>From</label>
+                <input type="date" name="startDate" placeholder="End datetime"
+                    required>
+
+                </div>
+
+                <div class="row1">
+                <label>To</label>
+                <input type="date" name="endDate" placeholder="End datetime"
+                    required>
+
+                </div>
+
+                <input type="submit" value="Submit">
+
+            </form>
+
+
+
+
         </div>
     </div>
 
@@ -291,7 +319,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="/js/plugins.js"></script>
     <script src="/js/script.js"></script>
-    <script src="/js/visitor.js"></script>
+    <script src="/js/visitor-monthly-count.js"></script>
     <script src="/js/new-course.js"></script>
     <script type="module" src="/js/loggedIn.js"></script>
 

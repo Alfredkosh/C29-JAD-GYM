@@ -13,6 +13,10 @@ public class CheckInRecordForm {
     private Date checkInAt;
     private Date checkOutAt;
 
+    private Date startDate;
+
+    private Date endDate;
+
     @Override
     public String toString() {
         return "CheckInRecordForm{" +
@@ -20,6 +24,22 @@ public class CheckInRecordForm {
                 ", gymRoomId=" + gymRoomId +
                 ", checkInDate='" + checkInDate + '\'' +
                 '}';
+    }
+
+    public Date getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
+    }
+
+    public Date getEndDate() {
+        return endDate;
+    }
+
+    public void setEndDate(Date endDate) {
+        this.endDate = endDate;
     }
 
     public Integer getUserId() {
@@ -39,6 +59,7 @@ public class CheckInRecordForm {
     }
 
     public Date getCheckInDate() {
+
         return checkInDate;
     }
 

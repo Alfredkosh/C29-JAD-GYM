@@ -61,10 +61,8 @@ public class CheckInRecordModel {
         this.gymRoomId = gymRoomId;
     }
 
-    public String getCheckInDate() {String fromTimeZone = "GMT+8";
-        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm");
-        Date checkInDate = new Date();
-        format.setTimeZone(TimeZone.getTimeZone(fromTimeZone));
+    public String getCheckInDate() {
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
         String chinaDate = format.format(checkInDate);
         return chinaDate;
     }
@@ -76,7 +74,7 @@ public class CheckInRecordModel {
     public String getCheckInAt() {
         String fromTimeZone = "GMT+8";
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm");
-        Date checkInAt = new Date();
+//        Date checkInAt = new Date();
         format.setTimeZone(TimeZone.getTimeZone(fromTimeZone));
         String chinaDate = format.format(checkInAt);
         return chinaDate;
@@ -91,7 +89,7 @@ public class CheckInRecordModel {
 
         String fromTimeZone = "GMT+8";
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm");
-        Date checkOutAt = new Date();
+//        Date checkOutAt = new Date();
         format.setTimeZone(TimeZone.getTimeZone(fromTimeZone));
         String chinaDate = format.format(checkOutAt);
         return chinaDate;

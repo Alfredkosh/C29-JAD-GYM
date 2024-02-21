@@ -12,13 +12,15 @@ window.addEventListener("load", async () => {
   }
 })
 
-async function updateProfileElement(username, userId) {
+async function updateProfileElement(username, userId, expiredDate) {
     console.log({
         userId,
-        username
+        username,
+        expiredDate,
     })
   document.querySelector(".client-name").innerHTML = username
   document.querySelector(".client-id").innerHTML = `Member Id: ${userId}`
+  document.querySelector(".expiry-id").innerHTML = `Expiry date: ${expiredDate}`
 
 }
 
@@ -28,13 +30,17 @@ async function getUserProfile(token) {
       Authorization: `Bearer ${token}`
     }
   })
+  
   if (res.ok) {
     const data = await res.json()
     const userProfile = data.data
     const userId = userProfile.id
     const username = userProfile.username
+    const expiredDate = userProfile.expiredDate
 
-    await updateProfileElement(username, userId)
+    console.log(userProfile)
+
+    await updateProfileElement(username, userId, expiredDate)
   }
 }
 

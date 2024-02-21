@@ -23,8 +23,8 @@ function success(result) {
   </select>
   <br>
   <br>
-    <div onclick="QrCodeCheckIn()">CHECK-IN</div> <br>
-    <div onclick="QrCodeCheckOut()">CHECK-OUT </div> 
+    <div onclick="QrCodeCheckIn()" id="outlook">CHECK-IN</div> <br>
+    <div onclick="QrCodeCheckOut()" id="outlook">CHECK-OUT</div> 
   `;
   scanner.clear();
   document.getElementById("reader").remove();
