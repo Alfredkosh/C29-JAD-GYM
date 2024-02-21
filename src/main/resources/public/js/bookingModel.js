@@ -1,6 +1,6 @@
-const mongoose=require("mongoose");
+const booking=require("booking");
 
-const bookingSchema=mongoose.Schema({
+const bookingSchema=booking.Schema({
     userId:{type:String,require:true},
     trainerId:{type:String,require:true},
     userEmail:{type:String,require:true},
@@ -8,9 +8,9 @@ const bookingSchema=mongoose.Schema({
     bookingSlot:{type:String,require:true}
 },{timestamps:true})
 
-const Bookingmodel=mongoose.model("booking",bookingSchema)
+const bookingModel=booking.model("booking",bookingSchema)
 
-module.exports={Bookingmodel}
+module.exports={bookingModel}
 // let x=new Date();
 
 // console.log(x);

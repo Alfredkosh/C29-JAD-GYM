@@ -845,7 +845,8 @@ td:last-child {
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 button,
 .button {
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
+  margin-left: 10px;
 }
 
 input,
@@ -1002,7 +1003,7 @@ fieldset[disabled] a.btn {
 }
 
 .btn.btn-medium {
-  padding: 1.1em 3.0em;
+  padding: 0.5em 1.0em;
   font-size: 1.0em;
 }
 

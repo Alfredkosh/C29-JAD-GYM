@@ -1,0 +1,38 @@
+#addFriendsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+#addFriendsContainer-inner {
+  text-align: center;
+}
+
+#friends-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+#friends-input input {
+  margin-right: 10px;
+}
+
+#friends-list {
+  list-style-type: none;
+  padding: 0;
+  margin-top: auto;
+}
+
+.friend {
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+}
+
+.remove-button {
+  margin-left: 10px;
+}

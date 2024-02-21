@@ -69,7 +69,7 @@ bookingRoutes.post("/create", authenticate, async (req, res) => {//create new bo
         const mailOptions = {
             from: 'navy@tecky.io',
             to: `${data.userEmail}`,
-            subject: 'Booking Confirmation from Rapid fit',
+            subject: 'Booking Confirmation',
             text: `Your Booking is confirmed on ${data.bookingDate} date at ${data.bookingSlot} slot.`
         };
         transporter.sendMail(mailOptions, (error, info) => {
