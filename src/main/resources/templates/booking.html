@@ -25,6 +25,7 @@
 </head>
 
 <body>
+<!--<th:block th:insert="~{common/footer :: .footer}"></th:block>-->
 
 <div class="preloader-wrapper">
   <div class="preloader">
@@ -35,17 +36,19 @@
   <div class="container-fluid">
     <div class="main-logo">
       <a href="/index">
-        <img src="/images/main-logo.png" alt="logo">
+        <img src="images/main-logo.png" alt="logo">
       </a>
     </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
             aria-controls="offcanvasNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+         aria-labelledby="offcanvasNavbarLabel">
       <div class="offcanvas-header">
         <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
-        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                aria-label="Close"></button>
       </div>
       <div class="offcanvas-body">
         <ul class="navbar-nav justify-content-end align-items-center flex-grow-1 pe-3 gap-4">
@@ -63,12 +66,15 @@
                 <a href="/classes" class="dropdown-item text-uppercase">Class Schedule </a>
               </li>
               <li>
+                <a href="/gym" class="dropdown-item text-uppercase">Gym</a>
+              </li>
+              <li>
                 <a href="/contact" class="dropdown-item text-uppercase">Contact </a>
               </li>
             </ul>
           </li>
           <li class="nav-item text-uppercase">
-            <a href="/gym" class="nav-link">Gym</a>
+            <a href="/register" class="nav-link">Register</a>
           </li>
           <li class="nav-item text-uppercase">
             <a href="/contact" class="nav-link">Contact</a>
@@ -84,13 +90,11 @@
               <a href="#" class="search-button search-toggle" data-selector=".primary-nav">
                 <i class="icon icon-search"></i>
               </a>
-              <form role="search" method="get" class="search-box" action="index.html">
+              <form role="search" method="get" class="search-box" action="/index">
                 <input class="search-field search-input" placeholder="Search" type="search">
               </form>
             </div>
-            <a href="#" class="shopping-cart">
-              <i class="icon icon-shopping-cart"></i>
-            </a>
+
           </li>
         </ul>
       </div>
@@ -107,58 +111,101 @@
         <div id="navbar">
             <a href="/classes">All Appointments </a>
         </div>
+
         <div id="main_body">
-          <h4>Book your class</h4>
-          <div>
-            <!-- <label for="slot-select">Choose a Slot:</label> -->
-            <select name="class" id="class-select">
-              <option value="">Choose a class </option>
-              <option value="gym">Gym</option>
-              <option value="yoga">Yoga</option>
-              <option value="dance">Dance</option>
-              <option value="personalTrainer">Personal Trainer</option>
-              <option value="bodyPump">Body Pump</option>
-            </select>
-          </div>
-
-
-          <div><h4>Date and Time</h4>
-            <input id="inputDate" type="date" placeholder="Select the appointment date"  />
-          </div>
-
-            <div>
-                <!-- <label for="slot-select">Choose a Slot:</label> -->
-                <select name="slot" id="slot-select">
-                    <option value="timeslot">Choose a timeslot </option>
-                    <option value="9-11">9 AM to 11 AM</option>
-                    <option value="11-1">11 AM to 1 PM</option>
-                    <option value="1-3">1 PM to 3 PM</option>
-                    <option value="3-5">3 PM to 5 PM</option>
-                    <option value="5-7">5 PM to 7 PM</option>
-                    <option value="7-9">7 PM to 9 PM</option>
-                </select>
+          <div class="row">
+            <div class="col-3">
+              <div class="listContainer">
+                <h4>Book your class</h4>
+                <div class="dropdown">
+                  <span class="selLabel">Select Class</span>
+                  <input type="hidden" name="cd-dropdown">
+                  <ul class="dropdown-list">
+                    <li data-value="1">
+                      <span>Gym</span>
+                    </li>
+                    <li data-value="2">
+                      <span>Yoga</span>
+                    </li>
+                    <li data-value="3">
+                      <span>Dance</span>
+                    </li>
+                    <li data-value="4">
+                      <span>Personal Trainer</span>
+                    </li>
+                    <li data-value="5">
+                      <span>Body Pump</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
-
-          <div>
-            <h4>Gym Room</h4>
-            <!-- <label for="slot-select">Choose a Slot:</label> -->
-            <select name="place" id="place-select">
-              <option value="">Choose a place </option>
-              <option value="Mongkok">Moko - Mongkok</option>
-              <option value="Causeway Bay">Hyson Place - Causeway Bay</option>
-            </select>
-          </div>
-
-            <div>
-                <button id="book_appointment">Book A Class</button>
+            <div class="col-3">
+              <div><h4>Date</h4>
+                <input id="inputDate" type="date" placeholder="Select the appointment date"  />
+              </div>
             </div>
+            <div class="col-3 time-col">
+              <h4>Time</h4>
 
-        </div>
+              <div class="listContainer">
+  
+                <div class="dropdown2">
+                  <span class="selLabel2">Select Timeslot </span>
+                  <input type="hidden" name="cd-dropdown">
+                  <ul class="dropdown2-list">
+                    <li data-value="1">
+                      <span>9 AM to 11 AM</span>
+                    </li>
+                    <li data-value="2">
+                      <span>11 AM to 1 PM</span>
+                    </li>
+                    <li data-value="3">
+                      <span>1 PM to 3 PM</span>
+                    </li>
+                    <li data-value="4">
+                      <span>3 PM to 5 PM</span>
+                    </li>
+                    <li data-value="5">
+                      <span>5 PM to 7 PM</span>
+                    </li>
+                    <li data-value="6">
+                      <span>7 PM to 9 PM</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-3">
+              <h4>Gym Room</h4>
+              <div class="listContainer">
+  
+                <div class="dropdown3">
+                  <span class="selLabel3">Select Place </span>
+                  <input type="hidden" name="cd-dropdown">
+                  <ul class="dropdown3-list">
+                    <li data-value="1">
+                      <span>Moko - Mongkok</span>
+                    </li>
+                    <li data-value="2">
+                      <span>Hyson Place - Causeway Bay</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-4">
+              <button id="book_appointment">Book A Class</button>
+            </div>
+          </div>
+        <div>
+
     </div>
-</section>
 
-    
-    
+</section>
 
         <!-- [ Main Content ] end -->
 
@@ -222,6 +269,7 @@
   <script src="js/plugins.js"></script>
   <script src="js/script.js"></script>
   <script type="module" src="/js/loggedIn.js"></script>
+  <script type="module" src="/js/booking.js"></script>
   <script type="module" src="/js/bookingModel.js"></script>
   <script type="module" src="/js/appointment.js"></script>
   <script type="module" src="/js/bookingRoutes.js"></script>

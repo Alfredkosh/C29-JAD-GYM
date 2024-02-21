@@ -7,18 +7,26 @@ btnBook.addEventListener("click",()=>{
     let name=sessionStorage.getItem("name");
     let trainerId=sessionStorage.getItem("trainerId");
 
-window.addEventListener("load", async () => {
-  const token = localStorage.getItem("token")
-  if (token) {
-    const payload = parseJwt(token)
-    const userId = payload.userId
-    await generateQrCode(userId)
-    await getUserProfile(token)
-    await getUserVisitTime(token)
-    await getLastCheckInDate(token)
-  } else {
-    window.location.href = "/login"
-  }
+
+    if(!token){
+        const payload = parseJwt(token)
+        const userId = payload.userId
+        await bookAnAppointment(token)
+
+
+        alert("Please Login First to Book an Appointment")
+        window.location.href="/login"
+    }else if(date==""||slot==""){
+        alert("Please fill all the fields")
+    }else{
+       let obj={
+        trainerId:trainerId,
+        bookingDate:date,
+        bookingSlot:slot
+       }
+       bookAnAppointment(obj,token,name);
+    }
+
 })
 
 async function bookAnAppointment(obj,token,name){
@@ -37,22 +45,12 @@ async function bookAnAppointment(obj,token,name){
         if(out.msg=="This Slot is Not Available."){
          alert("This Slot is Not Available.")
         }else if(out.msg=="new booking created successfully"){
-         alert("Hi, ${userID} Your booking is confirmed on ${obj.bookingDate}")
+         alert("`Hi, ${name} Your booking is confirmed on ${obj.bookingDate}`")
         }else{
          alert("Something went wrong")
         }
      } catch (error) {
          console.log("err",error)
-         alert("Something went wrong!")
+         alert("Something went wrong")
      }
-}
-
-function parseJwt (token) {
-  var base64Url = token.split('.')[1];
-  var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-  var jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function(c) {
-      return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-  }).join(''));
-
-  return JSON.parse(jsonPayload);
 }
