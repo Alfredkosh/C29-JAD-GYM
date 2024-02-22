@@ -45,7 +45,7 @@ jobs:
       - name: Executing remote ssh
         uses: appleboy/ssh-action@master
         with:
-          host: gymzone.click
+          host: 13.49.179.99
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           username: ubuntu
           script: |
