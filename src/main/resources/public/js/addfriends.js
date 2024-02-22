@@ -30,7 +30,7 @@ function addFriend() {
         var username = response.username;
 
         // Display the userID and username
-        alert("User ID: " + userId + "\nUsername: " + username);
+        alert("User ID: " + userId + "Username: " + username);
       }
     };
     xhr.send();
