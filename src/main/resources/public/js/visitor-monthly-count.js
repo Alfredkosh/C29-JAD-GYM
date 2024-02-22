@@ -40,10 +40,9 @@ async function monthlyVisitors(token) {
         //   title: "Here is the selected flow",
         //   showConfirmButton: true,
         // }).then(() => {
-        // const visitors = data.NumberOfPeople;
-        const numberOfPeople = data.NumberOfPeople;
+        const visitors = data.NumberOfPeople;
 
-        console.log(numberOfPeople);
+        console.log(visitors);
 
 
         let gymRoomId1 = 0;
@@ -57,49 +56,49 @@ async function monthlyVisitors(token) {
 
         console.log(gymRoomId1)
         
-// //
-//         let gymRoomId2 = 0;
+//
+        let gymRoomId2 = 0;
 
-//         for(let visitor of visitors){
-//           if (visitor.gymRoomId == 2) {
-//               gymRoomId2 = gymRoomId2 + 1
-//             }
+        for(let visitor of visitors){
+          if (visitor.gymRoomId == 2) {
+              gymRoomId2 = gymRoomId2 + 1
+            }
   
-//           };
+          };
   
-//           console.log(gymRoomId2)
+          console.log(gymRoomId2)
 
-//         const AllVisitor = visitors.length;
+        const AllVisitor = visitors.length;
 
-//         console.log(AllVisitor)
+        console.log(AllVisitor)
 
-//         const gymRoom1 = document.querySelector("#hk")
+        const gymRoom1 = document.querySelector("#hk")
 
-//         gymRoom1.innerHTML = `<div class="agileits-social">
-//         <h3>Gym - Causeway Bay</h3>
-//     </div>
-//     <div class="send-w3layouts">
-//         <h3>人流</h3>
-//         ${gymRoomId1}
-//      </div>`
+        gymRoom1.innerHTML = `<div class="agileits-social">
+        <h3>Gym - Causeway Bay</h3>
+    </div>
+    <div class="send-w3layouts">
+        <h3>人流</h3>
+        ${gymRoomId1}
+     </div>`
 
-//      const gymRoom2 = document.querySelector("#mk")
+     const gymRoom2 = document.querySelector("#mk")
 
-//      gymRoom2.innerHTML = `<div class="agileits-social">
-//                           <h3>Gym - Mongkok</h3>
-//                       </div>
-//                       <div class="send-w3layouts">
-//                           <h3>人流</h3>
-//                           ${gymRoomId2}
-//                       </div>`
+     gymRoom2.innerHTML = `<div class="agileits-social">
+                          <h3>Gym - Mongkok</h3>
+                      </div>
+                      <div class="send-w3layouts">
+                          <h3>人流</h3>
+                          ${gymRoomId2}
+                      </div>`
 
-//       const totalNumber = document.querySelector("#totalNo")
+      const totalNumber = document.querySelector("#totalNo")
 
-//       totalNumber.innerHTML = `<p>總人流</p>
-//                                            <br>
-//                                           ${AllVisitor}`
+      totalNumber.innerHTML = `<p>總人流</p>
+                                           <br>
+                                          ${AllVisitor}`
 
-//           console.log("Swal.fire() resolved successfully");
+          console.log("Swal.fire() resolved successfully");
           // window.location.replace("/admin");
         // });
       } else {

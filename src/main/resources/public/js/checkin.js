@@ -135,10 +135,6 @@ function htmlEncode(value) {
     .html();
 }
 
-function htmlEncode(value) {
-    return $("<div/>").text(value).html();
-}
-
 async function loadFriendsList() {
     const res = await fetch("/profile");
     if (res.ok) {

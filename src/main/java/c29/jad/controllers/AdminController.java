@@ -50,8 +50,8 @@ public class AdminController {
     @RequestMapping(value = "/visitor", method = RequestMethod.POST)
     public ResponseEntity<Map<String, Object>> visitor(@RequestBody CheckInRecordForm checkInRecordForm){
         List<CheckInRecordModel> numberOfPeople = checkInRecordService.getAllRecords(checkInRecordForm.getStartDate(), checkInRecordForm.getEndDate());
-        Integer size = numberOfPeople.size();
-        return new ResponseEntity<>(Map.of("message", "Selected successfully", "NumberOfPeople", size), HttpStatus.OK);
+//        Integer size = numberOfPeople.size();
+        return new ResponseEntity<>(Map.of("message", "Selected successfully", "NumberOfPeople", numberOfPeople), HttpStatus.OK);
     }
 
 
