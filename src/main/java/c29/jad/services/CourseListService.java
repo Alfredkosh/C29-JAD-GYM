@@ -41,10 +41,6 @@ public class CourseListService {
         return courseListRepository.saveAndFlush(newCourseList);
     }
 
-//    public CourseListService(CourseListRepository courseListRepository) {
-//        this.courseListRepository = courseListRepository;
-//    }
-
     public int getNextAvailableGymRoomId() {
         // Retrieve the minimum available gym_room_id that is greater than 0
         Optional<Integer> nextGymRoomId = courseListRepository.findNextAvailableGymRoomId();
