@@ -172,7 +172,3 @@ function parseJwt (token) {
 //xhr.open("GET", "http://localhost:8080/auth/friendslist", true);
 //xhr.setRequestHeader("Authorization", "Bearer <your-access-token>");
 //xhr.send();
-<<<<<<< HEAD
-
-=======
->>>>>>> 0d8d5292b64fee83a82452da926299e4b1889349
