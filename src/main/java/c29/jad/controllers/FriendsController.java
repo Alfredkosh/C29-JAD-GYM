@@ -28,7 +28,7 @@ public class FriendsController {
         if (userId == null) {
             return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
         }
-        friendsListService.Addfriend(userId, targetUserId);
+        friendsListService.addFriend(userId, targetUserId);
 //        String data = friendsListService.getUsernameById(userId);
         return new ResponseEntity<>("Add friend successful", HttpStatus.OK);
     }
