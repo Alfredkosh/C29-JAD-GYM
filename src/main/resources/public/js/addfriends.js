@@ -18,12 +18,13 @@ async function addFriend() {
   }
 
   const res = await fetch("/friends/friend", {
+    method: "POST",
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${token}`
     },
     body: JSON.stringify({
-      user_id: friendName
+      userId: friendName
     })
   })
   const data = await res.json();
