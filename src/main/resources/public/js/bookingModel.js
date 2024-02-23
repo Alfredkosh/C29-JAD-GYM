@@ -1,16 +1,15 @@
-const booking=require("booking");
 
-const bookingSchema=booking.Schema({
-    userId:{type:String,require:true},
-    trainerId:{type:String,require:true},
-    userEmail:{type:String,require:true},
-    bookingDate:{type:String,require:true},//mm/dd/yyyy
-    bookingSlot:{type:String,require:true}
-},{timestamps:true})
+// const bookingSchema=booking.Schema({
+//     userId:{type:String,require:true},
+//     trainerId:{type:String,require:true},
+//     userEmail:{type:String,require:true},
+//     bookingDate:{type:String,require:true},//mm/dd/yyyy
+//     bookingSlot:{type:String,require:true}
+// },{timestamps:true})
 
-const bookingModel=booking.model("booking",bookingSchema)
+// const bookingModel=booking.model("booking",bookingSchema)
 
-module.exports={bookingModel}
+// module.exports={bookingModel}
 // let x=new Date();
 
 // console.log(x);

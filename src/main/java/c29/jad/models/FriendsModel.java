@@ -10,19 +10,19 @@ public class FriendsModel {
     private int id;
 
     @Column(name = "user_a_id")
-    private Integer userAId;
+    private int userAId;
 
     @Column(name = "user_b_id")
-    private Integer userBId;
+    private int userBId;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="user_a_id", updatable = false, insertable = false)
     private UserModel userA;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="user_b_id", updatable = false, insertable = false)
     private UserModel userB;
-
+    
     public int getId() {
         return id;
     }
@@ -31,19 +31,19 @@ public class FriendsModel {
         this.id = id;
     }
 
-    public Integer getUserAId() {
+    public int getUserAId() {
         return userAId;
     }
 
-    public void setUserAId(Integer userAId) {
+    public void setUserAId(int userAId) {
         this.userAId = userAId;
     }
 
-    public Integer getUserBId() {
+    public int getUserBId() {
         return userBId;
     }
 
-    public void setUserBId(Integer userBId) {
+    public void setUserBId(int userBId) {
         this.userBId = userBId;
     }
 
@@ -62,4 +62,5 @@ public class FriendsModel {
     public void setUserB(UserModel userB) {
         this.userB = userB;
     }
+
 }
