@@ -26,13 +26,10 @@ public class GymRoomModel {
     private String locationEmail;
     @Column(name="location_max_people")
     private Integer locationMaxPeople;
-
-    @CreationTimestamp
-    @Column(name="created_at")
-    private Date createdAt;
-    @UpdateTimestamp
-    @Column(name="updated_at")
-    private Date updatedAt;
+    @Column(name="latitude")
+    private String latitude;
+    @Column(name="longitude")
+    private String longitude;
 
     @OneToMany(mappedBy = "gymRoom")
     private List<CourseListModel> courseLists;
@@ -45,21 +42,6 @@ public class GymRoomModel {
         this.courseLists = courseLists;
     }
 
-    public Date getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(Date createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public Date getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(Date updatedAt) {
-        this.updatedAt = updatedAt;
-    }
 
     public int getId() {
         return id;
@@ -115,5 +97,21 @@ public class GymRoomModel {
 
     public void setLocationMaxPeople(Integer locationMaxPeople) {
         this.locationMaxPeople = locationMaxPeople;
+    }
+
+    public String getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(String latitude) {
+        this.latitude = latitude;
+    }
+
+    public String getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(String longitude) {
+        this.longitude = longitude;
     }
 }

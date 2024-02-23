@@ -1,3 +1,4 @@
+
 package c29.jad.services;
 
 import c29.jad.models.FriendsModel;
@@ -24,4 +25,7 @@ public class FriendsListService {
 
 //    public List<FriendsModel> getProfileById(Integer userId) {
 //        return friendsListRepository.findByUserId(userId);
-}
+
+    }
+
+
