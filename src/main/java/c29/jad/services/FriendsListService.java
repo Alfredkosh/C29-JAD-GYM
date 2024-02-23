@@ -20,9 +20,13 @@ public class FriendsListService {
     }
 //    public List<FriendsModel> getProfileById(Integer userId) {
 //        return friendsListRepository.findByUserId(userId);
+<<<<<<< HEAD
     }
 
 
 
 
 
+=======
+}
+>>>>>>> 9a5c25a24516106854812c4be446095c30602522

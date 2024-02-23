@@ -22,8 +22,10 @@ public class GymRoomModel {
     private String locationAddress;
     @Column(name="location_contact")
     private String locationContact;
+    @Column(name="location_email")
+    private String locationEmail;
     @Column(name="location_max_people")
-    private int locationMaxPeople;
+    private Integer locationMaxPeople;
 
     @CreationTimestamp
     @Column(name="created_at")
@@ -99,11 +101,19 @@ public class GymRoomModel {
         this.locationContact = locationContact;
     }
 
-    public int getLocationMaxPeople() {
+    public String getLocationEmail() {
+        return locationEmail;
+    }
+
+    public void setLocationEmail(String locationEmail) {
+        this.locationEmail = locationEmail;
+    }
+
+    public Integer getLocationMaxPeople() {
         return locationMaxPeople;
     }
 
-    public void setLocationMaxPeople(int locationMaxPeople) {
+    public void setLocationMaxPeople(Integer locationMaxPeople) {
         this.locationMaxPeople = locationMaxPeople;
     }
 }

@@ -45,6 +45,7 @@ public class FriendsController {
 
 
 
+<<<<<<< HEAD
     @RequestMapping(value = "/data", method = RequestMethod.GET)
     public ResponseEntity<String> getData(HttpServletRequest request) {
         Integer userId = (Integer) request.getAttribute("userId");
@@ -55,6 +56,19 @@ public class FriendsController {
         String data = FriendsListService.getUsernameById(userId);
         return new ResponseEntity<>(data, HttpStatus.OK);
         }
+=======
+//    @RequestMapping(value = "/data", method = RequestMethod.GET)
+//    public ResponseEntity<List<FriendsModel>> getData(HttpServletRequest request) {
+//        Integer userId = (Integer) request.getAttribute("userId");
+//
+//        if (userId == null) {
+//            return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+//        }
+//        String data = FriendsListService.getUsernameById(userId);
+//        return new ResponseEntity<>(data, HttpStatus.OK);
+//    }
+
+>>>>>>> 9a5c25a24516106854812c4be446095c30602522
 
     @GetMapping("/getUserDetails")
     public ResponseEntity<Map<String, Object>> getUserDetails(@RequestParam("friendName") String friendName) {
