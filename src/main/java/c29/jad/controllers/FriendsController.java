@@ -46,7 +46,7 @@ public class FriendsController {
 
 
     @RequestMapping(value = "/data", method = RequestMethod.GET)
-    public ResponseEntity<List<FriendsModel>> getData(HttpServletRequest request) {
+    public ResponseEntity<String> getData(HttpServletRequest request) {
         Integer userId = (Integer) request.getAttribute("userId");
 
         if (userId == null) {
@@ -54,8 +54,7 @@ public class FriendsController {
         }
         String data = FriendsListService.getUsernameById(userId);
         return new ResponseEntity<>(data, HttpStatus.OK);
-    }
-
+        }
 
     @GetMapping("/getUserDetails")
     public ResponseEntity<Map<String, Object>> getUserDetails(@RequestParam("friendName") String friendName) {
@@ -87,7 +86,7 @@ public class FriendsController {
             }
         }
 
-        private boolean isNumber(String str) {
+    private boolean isNumber(String str) {
             try {
                 Integer.parseInt(str);
                 return true;
@@ -95,4 +94,4 @@ public class FriendsController {
                 return false;
             }
         }
-    }
+}
