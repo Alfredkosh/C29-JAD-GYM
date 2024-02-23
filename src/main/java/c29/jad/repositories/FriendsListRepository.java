@@ -5,7 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-
 import java.util.List;
 
 public interface FriendsListRepository extends JpaRepository<FriendsModel, Integer> {
@@ -17,6 +16,6 @@ public interface FriendsListRepository extends JpaRepository<FriendsModel, Integ
 //
 //    List<FriendsModel> findByUserId(Integer userId);
 
-    @Query(value = "SELECT user_id FROM friends_list WHERE userId = :user_id", nativeQuery = true)
-    List<FriendsModel> findUsernameById(@Param("username") String username);
-}
+    @Query(value = "SELECT * FROM friends_list WHERE user_id = :user_id", nativeQuery = true)
+    List<FriendsModel> findByUserId(@Param("user_id") Integer userId);
+    }

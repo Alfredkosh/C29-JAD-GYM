@@ -216,4 +216,4 @@ xhr.send();
 //xhr.open("GET", "http://localhost:8080/auth/friendslist", true);
 //xhr.setRequestHeader("Authorization", "Bearer <your-access-token>");
 //xhr.send();
->>>>>>> 204f8801cbce9b96f20414117624bb4037ef2365
+
