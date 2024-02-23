@@ -9,6 +9,8 @@ public class GymRoomForm {
     private String locationContact;
     private String locationEmail;
     private Integer locationMaxPeople;
+    private String latitude;
+    private String longitude;
 
     @Override
     public String toString() {
@@ -67,5 +69,21 @@ public class GymRoomForm {
 
     public void setLocationMaxPeople(Integer locationMaxPeople) {
         this.locationMaxPeople = locationMaxPeople;
+    }
+
+    public String getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(String latitude) {
+        this.latitude = latitude;
+    }
+
+    public String getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(String longitude) {
+        this.longitude = longitude;
     }
 }
