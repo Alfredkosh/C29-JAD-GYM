@@ -1,37 +1,38 @@
-//package c29.jad.controllers;
-//
-//import c29.jad.services.FriendsListService;
-//import jakarta.servlet.http.HttpServletRequest;
-//import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.http.HttpStatus;
-//import org.springframework.http.ResponseEntity;
-//import org.springframework.stereotype.Controller;
-//import org.springframework.web.bind.annotation.*;
-//import java.sql.*;
-//import java.util.HashMap;
-//import java.util.Map;
-//
-//@Controller
-//@RestController
-//@RequestMapping(value = "friends")
-//public class FriendsController {
-//
-//    // PostgreSQL database configuration
-//    private static final String DB_URL = "jdbc:postgresql://localhost:5432/c29_gympj";
-//    private static final String DB_USERNAME = "postgres";
-//    private static final String DB_PASSWORD = "postgres";
-//
-//    @Autowired
-//    FriendsListService friendsListService;
-//
-//<<<<<<< HEAD
-//=======
-//
-//
-//
-//
-//
-//>>>>>>> 0d8d5292b64fee83a82452da926299e4b1889349
+package c29.jad.controllers;
+
+import c29.jad.forms.CheckInRecordForm;
+import c29.jad.forms.FriendsForm;
+import c29.jad.services.FriendsListService;
+import jakarta.servlet.http.HttpServletRequest;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
+
+import java.sql.*;
+import java.util.HashMap;
+import java.util.Map;
+
+@Controller
+@RestController
+@RequestMapping(value = "friends")
+public class FriendsController {
+    @Autowired
+    FriendsListService friendsListService;
+
+    @RequestMapping(value = "/friend", method = RequestMethod.POST)
+    public ResponseEntity<String> addFrriend(HttpServletRequest request, @RequestBody FriendsForm friendsForm) {
+        Integer userId = (Integer) request.getAttribute("userId");
+        Integer targetUserId = friendsForm.getUserId();
+        if (userId == null) {
+            return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+        }
+        friendsListService.Addfriend(userId, targetUserId);
+//        String data = friendsListService.getUsernameById(userId);
+        return new ResponseEntity<>("Add friend successful", HttpStatus.OK);
+    }
+
 //    @RequestMapping(value = "/data", method = RequestMethod.GET)
 //    public ResponseEntity<String> getData(HttpServletRequest request) {
 //        Integer userId = (Integer) request.getAttribute("userId");
@@ -39,18 +40,11 @@
 //        if (userId == null) {
 //            return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
 //        }
-//<<<<<<< HEAD
 //
 //        String data = friendsListService.getUsernameById(userId);
 //        return new ResponseEntity<>(data, HttpStatus.OK);
 //    }
-//=======
-//        String data = FriendsListService.getUsernameById(userId);
-//        return new ResponseEntity<>(data, HttpStatus.OK);
-//        }
-//
-//>>>>>>> 0d8d5292b64fee83a82452da926299e4b1889349
-//
+
 //    @GetMapping("/getUserDetails")
 //    public ResponseEntity<Map<String, Object>> getUserDetails(@RequestParam("friendName") String friendName) {
 //        if (!isNumber(friendName)) {
@@ -79,13 +73,15 @@
 //            return ResponseEntity.status(500).build();
 //        }
 //    }
-//
-//    private boolean isNumber(String str) {
-//        try {
-//            Integer.parseInt(str);
-//            return true;
-//        } catch (NumberFormatException e) {
-//            return false;
-//        }
-//    }
-//}
+
+    private boolean isNumber(String str) {
+        try {
+            Integer.parseInt(str);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
+
+}
+

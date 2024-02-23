@@ -5,35 +5,30 @@ function isNumber(str) {
         return pattern.test(str);  // returns a boolean
     }
 
-function addFriend() {
-  var friendName = document.getElementById("friend-name").value;
+async function addFriend() {
+  let friendName = document.getElementById("friend-name").value;
 
   if (!isNumber(friendName)) {
     alert("The value is not a number");
     return;
   }
+  const token = localStorage.getItem("token")
+  if (!token) {
+    window.location.href = "/login"
+  }
 
-  if (friendName.trim() !== "") {
-    friends.push(friendName);
-    saveFriends();
-    renderFriends();
+  const res = await fetch("/friends/friend", {
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`
+    },
+    body: JSON.stringify({
+      user_id: friendName
+    })
+  })
+  const data = await res.json();
+  if (res.ok) {
 
-    document.getElementById("friend-name").value = "";
-
-    // Call the Java method with AJAX
-    var xhr = new XMLHttpRequest();
-    xhr.open("GET", "/addFriend?friendName=" + friendName, true);
-    xhr.onreadystatechange = function() {
-         if (xhr.readyState === 4 && xhr.status === 200) {
-             var response = JSON.parse(xhr.responseText);
-             var username = response.username;
-
-             // Update the user detail element with the retrieved username
-             userDetail.textContent = "Username: " + username;
-         }
-     };
-
-    xhr.send();
   }
 }
 

@@ -27,6 +27,8 @@ INSERT INTO course_lists (name, tutor, tutor_icon, max_people_limit, open_dateti
 INSERT INTO class_reservations (register_email, confirm_msg, user_id, course_id) VALUES ('james@tecky.io', 'Please click thee link to complete the reservation', 1, 1);
 --
 
-INSERT INTO friends_lists (user_id, username) VALUES (1, 'James');
-INSERT INTO friends_lists (user_id, username) VALUES (2, 'Alfred');
+INSERT INTO friends_lists (user_a_id, user_b_id) VALUES (1, 2);
+INSERT INTO friends_lists (user_a_id, user_b_id) VALUES (1, 3);
+
+INSERT INTO friends_lists (user_a_id, user_b_id) VALUES (2, 3);
 --
