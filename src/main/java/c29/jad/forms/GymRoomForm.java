@@ -7,7 +7,8 @@ public class GymRoomForm {
     private String locationName;
     private String locationAddress;
     private String locationContact;
-    private int locationMaxPeople;
+    private String locationEmail;
+    private Integer locationMaxPeople;
 
     @Override
     public String toString() {
@@ -52,11 +53,19 @@ public class GymRoomForm {
         this.locationContact = locationContact;
     }
 
-    public int getLocationMaxPeople() {
+    public String getLocationEmail() {
+        return locationEmail;
+    }
+
+    public void setLocationEmail(String locationEmail) {
+        this.locationEmail = locationEmail;
+    }
+
+    public Integer getLocationMaxPeople() {
         return locationMaxPeople;
     }
 
-    public void setLocationMaxPeople(int locationMaxPeople) {
+    public void setLocationMaxPeople(Integer locationMaxPeople) {
         this.locationMaxPeople = locationMaxPeople;
     }
 }
