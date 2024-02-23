@@ -38,6 +38,17 @@ async function getAllCourse() {
     } else {
         alert("Fail to fetch getAllCourse")
     }
-    
+
+
+
+    $(document).ready(function () {
+        $('a.close').click(function (event) {
+            event.preventDefault();
+            $('.popup').hide("slow");
+        });
+    });
+
+
+
 }
 

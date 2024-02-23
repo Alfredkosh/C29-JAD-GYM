@@ -33,17 +33,19 @@
     <div class="container-fluid">
       <div class="main-logo">
         <a href="/index">
-          <img src="/images/main-logo.png" alt="logo">
+          <img src="images/main-logo.png" alt="logo">
         </a>
       </div>
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
-        aria-controls="offcanvasNavbar">
+              aria-controls="offcanvasNavbar">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+           aria-labelledby="offcanvasNavbarLabel">
         <div class="offcanvas-header">
           <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
-          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                  aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-end align-items-center flex-grow-1 pe-3 gap-4">
@@ -52,7 +54,7 @@
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="dropdownPages" data-bs-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">Pages</a>
+                 aria-haspopup="true" aria-expanded="false">Pages</a>
               <ul class="dropdown-menu" aria-labelledby="dropdownPages">
                 <li>
                   <a href="/about" class="dropdown-item text-uppercase">About Us </a>
@@ -61,39 +63,47 @@
                   <a href="/classes" class="dropdown-item text-uppercase">Class Schedule </a>
                 </li>
                 <li>
+                  <a href="/gym" class="dropdown-item text-uppercase">Gym</a>
+                </li>
+                <li>
                   <a href="/contact" class="dropdown-item text-uppercase">Contact </a>
                 </li>
               </ul>
             </li>
             <li class="nav-item text-uppercase">
-              <a href="/gym" class="nav-link">Gym</a>
+              <a href="/register" class="nav-link">Register</a>
             </li>
             <li class="nav-item text-uppercase">
               <a href="/contact" class="nav-link">Contact</a>
             </li>
-            <div id="username-display"></div>
+            <div id="username-display">
+              <li class="nav-item text-uppercase" id="username-display">
+                <a href="/login" class="item-anchor btn btn-outline-primary rounded-pill">Login</a>
+              </li>
+            </div>
             <div id="logout-area"></div>
-     
-          </div>
-         
             <li class="user-items">
               <div class="search-bar">
-                <a href="#" class="search-button search-toggle" data-selector="primary-nav">
+                <a href="#" class="search-button search-toggle" data-selector=".primary-nav">
                   <i class="icon icon-search"></i>
                 </a>
-                <form role="search" method="get" class="search-box" action="index.html">
+                <form role="search" method="get" class="search-box" action="/index">
                   <input class="search-field search-input" placeholder="Search" type="search">
                 </form>
               </div>
-              <a href="#" class="shopping-cart">
-                <i class="icon icon-shopping-cart"></i>
-              </a>
+  
             </li>
           </ul>
         </div>
       </div>
     </div>
   </nav>
+
+
+
+
+
+
 
   <section id="hero-section" class="text-center jarallax mt-5 py-5">
     <img src="/images/dance-banner3.jpg" alt="dancer" class="jarallax-img">
@@ -307,6 +317,45 @@
       </div>
     </div>
   </footer>
+
+
+
+
+
+
+
+
+  <div class="popup"> <a href="#" class="close"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+    x="0px" y="0px" width="10px" height="10px" viewBox="215.186 215.671 80.802 80.8"
+    enable-background="new 215.186 215.671 80.802 80.8" xml:space="preserve">
+        <polygon fill="#FFFFFF" points="280.486,296.466 255.586,271.566 230.686,296.471 215.19,280.964 240.086,256.066 215.186,231.17
+	230.69,215.674 255.586,240.566 280.475,215.671 295.985,231.169 271.089,256.064 295.987,280.96 "
+        />
+       </svg></a>
+
+<!--    <div class="valid">-->
+<!--      <svg version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"-->
+<!--           x="0px" y="0px" width="15px" height="15px" viewBox="222.744 227.408 67.744 58.526"-->
+<!--           enable-background="new 222.744 227.408 67.744 58.526" xml:space="preserve">-->
+<!--            <path fill="#39BA6F" d="M250.062,285.934c-9.435-11.111-15.731-18.195-27.318-28.935l5.793-5.357-->
+<!--	c6.778,3.28,11.076,5.774,18.693,11.204c14.32-16.25,23.783-24.495,41.372-35.438l1.886,4.335-->
+<!--	C275.983,244.402,265.359,258.502,250.062,285.934z" />-->
+<!--        </svg>-->
+<!--    </div>-->
+    <h1>Big Sale!</h1>
+
+
+    <p>Join Our Class Today 50% off !!</p>
+<!--    <div class="bottom-popup"><a class="start" href="#">START</a>-->
+
+    </div>
+  </div>
+
+
+
+
+
+
 
   <script src="/js/jquery-1.11.0.min.js"></script>
   <script src="https://cdn.staticfile.org/twitter-bootstrap/5.3.1/js/bootstrap.bundle.min.js"

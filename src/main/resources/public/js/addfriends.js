@@ -24,15 +24,15 @@ function addFriend() {
     var xhr = new XMLHttpRequest();
     xhr.open("GET", "/addFriend?friendName=" + friendName, true);
     xhr.onreadystatechange = function() {
-      if (xhr.readyState === 4 && xhr.status === 200) {
-        var response = JSON.parse(xhr.responseText);
-        var userId = response.userId;
-        var username = response.username;
+         if (xhr.readyState === 4 && xhr.status === 200) {
+             var response = JSON.parse(xhr.responseText);
+             var username = response.username;
 
-        // Display the userID and username
-        alert("User ID: " + userId + "Username: " + username);
-      }
-    };
+             // Update the user detail element with the retrieved username
+             userDetail.textContent = "Username: " + username;
+         }
+     };
+
     xhr.send();
   }
 }
@@ -64,6 +64,9 @@ function loadFriends() {
   }
 }
 
+ // Load friends from localStorage on page load
+ loadFriends();
+
 function renderFriends() {
   var friendsList = document.getElementById("friends-list");
   friendsList.innerHTML = "";
@@ -76,15 +79,38 @@ function renderFriends() {
     var removeButton = document.createElement("button");
     removeButton.classList.add("remove-button");
     removeButton.textContent = "Remove";
-    removeButton.onclick = (function(index) {
-      return function() {
+    removeButton.onclick = (function (index) {
+      return function () {
         confirmRemoveFriend(index);
       };
     })(i);
 
     friendItem.appendChild(removeButton);
+
+    var userDetail = document.createElement("span");
+    userDetail.classList.add("user-detail");
+    userDetail.textContent = "Loading..."; // Placeholder text while loading user details
+
+    // Append the user detail element to the friend item
+    friendItem.appendChild(userDetail);
+
+    // Append the friend item to the friends list
     friendsList.appendChild(friendItem);
+
+    // Call the Java method with AJAX to retrieve user details
+    var friendName = friends[i];
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "/getUserDetails?friendName=" + friendName, true);
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+        var response = JSON.parse(xhr.responseText);
+        var userId = response.userId;
+        var username = response.username;
+
+        // Update the user detail element with the retrieved data
+        userDetail.textContent = "User ID: " + userId + " Username: " + username;
+      }
+    };
+    xhr.send();
   }
 }
-
-loadFriends();

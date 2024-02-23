@@ -130,90 +130,45 @@ function parseJwt (token) {
 
 
 
-<<<<<<< HEAD
-//function htmlEncode(value) {
-//  return $('<div/>').text(value)
-//    .html();
-//}
-//
-//async function loadFriendsList() {
-//    const res = await fetch("/profile");
-//    if (res.ok) {
-//        const data = await res.json();
-//        const friendsList = data.friends;
-//        renderFriendsList(friendsList);
-//    }
-//}
-//
-//function renderFriendsList(friendsList) {
-//    const friendsListElement = document.getElementById("friends-list");
-//    friendsListElement.innerHTML = "";
-//
-//    friendsList.forEach((friend) => {
-//        const friendElement = document.createElement("li");
-//        friendElement.textContent = friend;
-//        friendsListElement.appendChild(friendElement);
-//    });
-//}
-//
-//
-//var xhr = new XMLHttpRequest();
-//xhr.onreadystatechange = function() {
-//  if (xhr.readyState === 4) {
-//    if (xhr.status === 200) {
-//      // Handle successful response
-//    } else if (xhr.status === 401) {
-//      // Handle unauthorized access
-//    } else {
-//      // Handle other status codes
-//    }
-//  }
-//};
-//
-//xhr.open("GET", "http://localhost:8080/auth/friendslist", true);
-//xhr.setRequestHeader("Authorization", "Bearer <your-access-token>");
-//xhr.send();
-=======
-// function htmlEncode(value) {
-//   return $('<div/>').text(value)
-//     .html();
-// }
+function htmlEncode(value) {
+  return $('<div/>').text(value)
+    .html();
+}
 
-// async function loadFriendsList() {
-//     const res = await fetch("/profile");
-//     if (res.ok) {
-//         const data = await res.json();
-//         const friendsList = data.friends;
-//         renderFriendsList(friendsList);
-//     }
-// }
+async function loadFriendsList() {
+    const res = await fetch("/profile");
+    if (res.ok) {
+        const data = await res.json();
+        const friendsList = data.friends;
+        renderFriendsList(friendsList);
+    }
+}
 
-// function renderFriendsList(friendsList) {
-//     const friendsListElement = document.getElementById("friends-list");
-//     friendsListElement.innerHTML = "";
+function renderFriendsList(friendsList) {
+    const friendsListElement = document.getElementById("friends-list");
+    friendsListElement.innerHTML = "";
 
-//     friendsList.forEach((friend) => {
-//         const friendElement = document.createElement("li");
-//         friendElement.textContent = friend;
-//         friendsListElement.appendChild(friendElement);
-//     });
-// }
+    friendsList.forEach((friend) => {
+        const friendElement = document.createElement("li");
+        friendElement.textContent = friend;
+        friendsListElement.appendChild(friendElement);
+    });
+}
 
 
-// var xhr = new XMLHttpRequest();
-// xhr.onreadystatechange = function() {
-//   if (xhr.readyState === 4) {
-//     if (xhr.status === 200) {
-//       // Handle successful response
-//     } else if (xhr.status === 401) {
-//       // Handle unauthorized access
-//     } else {
-//       // Handle other status codes
-//     }
-//   }
-// };
+var xhr = new XMLHttpRequest();
+xhr.onreadystatechange = function() {
+  if (xhr.readyState === 4) {
+    if (xhr.status === 200) {
+      // Handle successful response
+    } else if (xhr.status === 401) {
+      // Handle unauthorized access
+    } else {
+      // Handle other status codes
+    }
+  }
+};
 
-// xhr.open("GET", "http://localhost:8080/auth/friendslist", true);
-// xhr.setRequestHeader("Authorization", "Bearer <your-access-token>");
-// xhr.send();
->>>>>>> c646eaf643b0815785845fe195167b7929f23fcd
+xhr.open("GET", "http://localhost:8080/auth/friendslist", true);
+xhr.setRequestHeader("Authorization", "Bearer <your-access-token>");
+xhr.send();

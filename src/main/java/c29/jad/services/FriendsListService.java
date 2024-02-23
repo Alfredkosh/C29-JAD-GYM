@@ -18,8 +18,8 @@ public class FriendsListService {
 
         return result.getUsername();
     }
-    public List<FriendsModel> getProfileById(Integer userId) {
-        return friendsListRepository.findByUserId(userId);
+//    public List<FriendsModel> getProfileById(Integer userId) {
+//        return friendsListRepository.findByUserId(userId);
     }
 
 

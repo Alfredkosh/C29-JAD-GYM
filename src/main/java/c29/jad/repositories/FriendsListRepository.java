@@ -10,12 +10,12 @@ import java.util.List;
 public interface FriendsListRepository extends JpaRepository<FriendsModel, Integer> {
     FriendsModel findUsernameById(Integer id);
 
-    boolean existsByUsername(String username);
+//    boolean existsByUsername(String username);
+//
+//    List<FriendsModel> findByUsername(String username);
+//
+//    List<FriendsModel> findByUserId(Integer userId);
 
-    List<FriendsModel> findByUsername(String username);
-
-    List<FriendsModel> findByUserId(Integer userId);
-
-    @Query(value = "SELECT * FROM users WHERE username = :username AND password = :password", nativeQuery = true)
-    List<FriendsModel> findByUsernameAndPassword(@Param("username") String username, @Param("password") String password);
+    @Query(value = "SELECT user_id FROM friends_list WHERE userId = :user_id", nativeQuery = true)
+    List<FriendsModel> findUsernameById(@Param("username") String username);
 }
