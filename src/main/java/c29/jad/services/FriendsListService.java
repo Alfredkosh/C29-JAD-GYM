@@ -14,11 +14,11 @@ public class FriendsListService {
     FriendsListRepository friendsListRepository;
 
 
-    public String getUsernameById(Integer userId) {
-        FriendsModel result =  friendsListRepository.findUsernameById(userId);
-
-        return result.getUsername();
-    }
+//    public String getUsernameById(Integer userId) {
+//        FriendsModel result =  friendsListRepository.findUsernameById(userId);
+//
+//        return result.getUsername();
+//    }
 
 
 

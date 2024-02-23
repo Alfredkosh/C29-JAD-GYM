@@ -8,7 +8,11 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface FriendsListRepository extends JpaRepository<FriendsModel, Integer> {
-    FriendsModel findUsernameById(Integer id);
+
+}
+//    FriendsModel findUsernameById(Integer id);{
+//    }
+//}
 
 //    boolean existsByUsername(String username);
 //

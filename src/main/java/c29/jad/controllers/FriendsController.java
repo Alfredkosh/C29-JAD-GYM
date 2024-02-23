@@ -42,23 +42,16 @@ public class FriendsController {
     @Autowired
     FriendsListService FriendsListService;
 
-<<<<<<< HEAD
-=======
-
-
-
-
-
-    @RequestMapping(value = "/data", method = RequestMethod.GET)
-    public ResponseEntity<String> getData(HttpServletRequest request) {
-        Integer userId = (Integer) request.getAttribute("userId");
-
-        if (userId == null) {
-            return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
-        }
-        String data = FriendsListService.getUsernameById(userId);
-        return new ResponseEntity<>(data, HttpStatus.OK);
-        }
+//    @RequestMapping(value = "/data", method = RequestMethod.GET)
+//    public ResponseEntity<String> getData(HttpServletRequest request) {
+//        Integer userId = (Integer) request.getAttribute("userId");
+//
+//        if (userId == null) {
+//            return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+//        }
+//        String data = FriendsListService.getUsernameById(userId);
+//        return new ResponseEntity<>(data, HttpStatus.OK);
+//        }
 
 
     @GetMapping("/getUserDetails")
