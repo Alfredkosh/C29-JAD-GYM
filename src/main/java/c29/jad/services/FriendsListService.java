@@ -20,6 +20,17 @@ public class FriendsListService {
 //        return result.getUsername();
 //    }
 
+    public void addFriend(Integer ownerId, Integer userId) {
+        List<FriendsModel> friendsModels = friendsListRepository.findFriends(ownerId, userId);
+        if (friendsModels.size() == 0) {
+            FriendsModel friendsModel = new FriendsModel();
+            friendsModel.setUserAId(ownerId);
+            friendsModel.setUserBId(userId);
+            friendsListRepository.save(friendsModel);
+            return;
+        }
+        System.out.print("Already friends");
+    }
 
 
 

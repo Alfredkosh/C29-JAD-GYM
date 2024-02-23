@@ -296,13 +296,13 @@ body {
   .selected-listItem p span {
     font-weight: bold;
   }
-  /* dropdown list */
-  .dropdown {
+  /* .dropdown {
     margin: 20px auto;
     width: 300px;
     position: relative;
     perspective: 800px;
-  }
+  } */
+
   .dropdown.active .selLabel:after {
     content: '\25B2';
   }

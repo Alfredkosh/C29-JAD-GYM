@@ -96,7 +96,9 @@ public class PrivateFilter extends OncePerRequestFilter {
                 "/auth/lastcheckindate",
                 "/auth/lastcheckindate*",
                 "/auth/lastcheckindate/*",
-                "/gym/details"
+                "/gym/details",
+                "/friends/friend"
+
 
 
 
