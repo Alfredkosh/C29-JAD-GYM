@@ -33,6 +33,9 @@ public class FriendsListService {
     }
 
 
+    public List<FriendsModel> getFriends(Integer userId) {
+        return friendsListRepository.findFriends(userId);
+    }
 
 //    public List<FriendsModel> getProfileById(Integer userId) {
 //        return friendsListRepository.findByUserId(userId);

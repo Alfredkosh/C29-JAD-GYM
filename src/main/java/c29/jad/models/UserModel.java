@@ -7,6 +7,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.List;
 import java.util.TimeZone;
 
 @Entity
@@ -41,6 +42,12 @@ public class UserModel {
 
     @Column(name="is_admin")
     private boolean isAdmin;
+
+//    @OneToMany(mappedBy="userA", cascade={CascadeType.ALL})
+//    private List<FriendsModel> friendsModelA;
+//
+//    @OneToMany(mappedBy="userB", cascade={CascadeType.ALL})
+//    private List<FriendsModel> friendsModelB;
 
     @CreationTimestamp
     @Column(name="created_at")

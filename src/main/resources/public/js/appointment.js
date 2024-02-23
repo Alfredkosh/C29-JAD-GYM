@@ -1,28 +1,41 @@
 let btnBook = document.getElementById("book_appointment");
 
 btnBook.addEventListener("click", async () => {
+  let friends = document.getElementById("selectedFriend").value;
+  let classId = document.getElementById("book-your-class").value;
   let date = document.getElementById("inputDate").value;
-  let slot = document.getElementById("slot-select").value;
-  let token = sessionStorage.getItem("token");
-  let name = sessionStorage.getItem("name");
-  let trainerId = sessionStorage.getItem("trainerId");
 
-  if (!token) {
-    alert("Please Login First to Book an Appointment");
-    window.location.href = "/login";
-  } else if (date === "" || slot === "") {
-    alert("Please fill all the fields");
-  } else {
-    let obj = {
-      trainerId: trainerId,
-      bookingDate: date,
-      bookingSlot: slot,
-    };
-    await bookAnAppointment(obj, token, name);
+  const obj = {
+    friends,
+    classId,
+    date
   }
+  console.log(obj)
+  // let date = document.getElementById("inputDate").value;
+  // let slot = document.getElementById("slot-select").value;
+
+  // let token = sessionStorage.getItem("token");
+  // let name = sessionStorage.getItem("name");
+  // let trainerId = sessionStorage.getItem("trainerId");
+
+  // if (!token) {
+  //   alert("Please Login First to Book an Appointment");
+  //   window.location.href = "/login";
+  // } else if (date === "" || slot === "") {
+  //   alert("Please fill all the fields");
+  // } else {
+  //   let obj = {
+  //     trainerId: trainerId,
+  //     bookingDate: date,
+  //     bookingSlot: slot,
+  //     friends
+  //   };
+  //   await bookAnAppointment(obj, token, name);
+  // }
 });
 
 async function bookAnAppointment(obj, token, name) {
+  console.log(obj)
   try {
     let res = await fetch(`${baseUrl}/booking/create`, {
       method: "POST",
