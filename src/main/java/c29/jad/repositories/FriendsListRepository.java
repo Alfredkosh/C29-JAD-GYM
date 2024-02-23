@@ -8,6 +8,7 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface FriendsListRepository extends JpaRepository<FriendsModel, Integer> {
+    FriendsModel findUsernameById(Integer id);
 
     @Query(value = """
             Select * from friends_lists where user_a_id = :userId or user_b_id = :userId
@@ -20,16 +21,6 @@ public interface FriendsListRepository extends JpaRepository<FriendsModel, Integ
     )
     List<FriendsModel> findFriends(@Param("ownerId") Integer ownerId, @Param("userId") Integer userId );
 }
-//    FriendsModel findUsernameById(Integer id);{
-//    }
-//}
-
-//    @Query(value = """
-//            Select * from friends_lists where (user_a_id = :ownerId and user_b_id = :userId) or (user_b_id = :ownerId and user_a_id = :userId)
-//            """, nativeQuery = true
-//    )
-//    List<FriendsModel> findFriends(@Param("ownerId") Integer ownerId, @Param("userId") Integer userId );
-//}
 
 //    boolean existsByUsername(String username);
 
