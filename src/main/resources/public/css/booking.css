@@ -231,6 +231,8 @@ body {
     font-size: 15px;
     border-radius: 10px;
 }
+
+
 #book_appointment{
   width: 100%;
   height: 100%;
@@ -239,6 +241,7 @@ body {
     border-radius: 10px;
     background-color: rgb(216,189,154);
     color: #fff;
+
 }
 #book_appointment:hover{
     background-color: rgb(195,155,102);
@@ -296,12 +299,13 @@ body {
   .selected-listItem p span {
     font-weight: bold;
   }
-  /* .dropdown {
+
+  .bookdropdown {
     margin: 20px auto;
     width: 300px;
     position: relative;
     perspective: 800px;
-  } */
+  }
 
   .dropdown.active .selLabel:after {
     content: '\25B2';
