@@ -3328,7 +3328,7 @@ h3 {
 
 .right-map-w3-agile {
     position: relative;
-    margin-right: 160px;
+    /* margin-right: 160px; */
 }
 
 .right-map-w3-agile:first-child {

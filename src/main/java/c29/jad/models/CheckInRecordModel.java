@@ -1,6 +1,7 @@
 package c29.jad.models;
 
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.Setter;
@@ -8,6 +9,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 import lombok.Getter;
 
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -28,6 +30,7 @@ public class CheckInRecordModel {
     private Date checkInDate;
     @Column(name="check_in_at")
     private Date checkInAt;
+
     @Column(name="check_out_at")
     private Date checkOutAt;
     @CreationTimestamp
@@ -83,7 +86,7 @@ public class CheckInRecordModel {
     public void setCheckInAt(Date checkInAt) {this.checkInAt = checkInAt;}
 
     public String getCheckOutAt() {
-        if (checkInAt == null) {
+        if (checkOutAt == null) {
             return null; // Or any other appropriate value when the date is null
         }
 
