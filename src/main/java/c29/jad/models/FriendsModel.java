@@ -9,12 +9,20 @@ public class FriendsModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "username")
-    private String username;
+    @Column(name = "user_a_id")
+    private int userAId;
 
-    @Column(name = "user_id")
-    private Integer userId;
+    @Column(name = "user_b_id")
+    private int userBId;
 
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name="user_a_id", updatable = false, insertable = false)
+    private UserModel userA;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name="user_b_id", updatable = false, insertable = false)
+    private UserModel userB;
+    
     public int getId() {
         return id;
     }
@@ -23,19 +31,36 @@ public class FriendsModel {
         this.id = id;
     }
 
-    public String getUsername() {
-        return username;
+    public int getUserAId() {
+        return userAId;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUserAId(int userAId) {
+        this.userAId = userAId;
     }
 
-    public Integer getUserId() {
-        return userId;
+    public int getUserBId() {
+        return userBId;
     }
 
-    public void setUserId(Integer userId) {
-        this.userId = userId;
+    public void setUserBId(int userBId) {
+        this.userBId = userBId;
     }
+
+    public UserModel getUserA() {
+        return userA;
+    }
+
+    public void setUserA(UserModel userA) {
+        this.userA = userA;
+    }
+
+    public UserModel getUserB() {
+        return userB;
+    }
+
+    public void setUserB(UserModel userB) {
+        this.userB = userB;
+    }
+
 }

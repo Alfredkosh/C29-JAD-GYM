@@ -29,7 +29,7 @@ async function getAllCourse() {
                                    <td>${row.endDatetime}</td>
                                    <td>${gymRoomName}</td>
                                    <td>${row.maxPeopleLimit}</td>
-                                   <td><a href="#" class="btn btn-outline-dark rounded-pill">Register</a></td>
+                                   <td><a href="/booking" class="btn btn-outline-dark rounded-pill">Register</a></td>
                                  </tr>`
         }
         courseContainerElem.innerHTML = html
