@@ -1,5 +1,6 @@
 package c29.jad.repositories;
 
+import c29.jad.dtos.LiveCountDto;
 import c29.jad.models.CheckInRecordModel;
 import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -35,9 +36,10 @@ public interface CheckInRecordRepository extends JpaRepository<CheckInRecordMode
 //    List<CheckInRecordModel> findByGymRoomId(int gymRoomId);
 
     @Query(value = """
-            SELECT * from check_in_records WHERE check_out_at IS NULL
+            select gym_room_id as gymRoomId,  count(gym_room_id) as count from check_in_records \s
+            where check_out_at is null group by gym_room_id order by gym_room_id;
             """, nativeQuery = true)
-    List<CheckInRecordModel> getAllFlows ();
+    List<LiveCountDto> getAllFlows ();
 
 
     @Query(value = """

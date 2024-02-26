@@ -1,5 +1,6 @@
 package c29.jad.services;
 
+import c29.jad.dtos.LiveCountDto;
 import c29.jad.forms.CheckInRecordForm;
 import c29.jad.models.CheckInRecordModel;
 import c29.jad.repositories.CheckInRecordRepository;
@@ -47,7 +48,7 @@ public class CheckInRecordService {
         return checkInRecordRepository.getVisitor(startDate, endDate);
     }
 
-    public List<CheckInRecordModel> getLiveCounts() {
+    public List<LiveCountDto> getLiveCounts() {
         return checkInRecordRepository.getAllFlows();
     }
 

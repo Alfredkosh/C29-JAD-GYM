@@ -1,8 +1,10 @@
 package c29.jad.controllers;
 
+import c29.jad.dtos.LiveCountDto;
 import c29.jad.forms.CheckInRecordForm;
 import c29.jad.models.CheckInRecordModel;
 import c29.jad.repositories.CheckInRecordRepository;
+import c29.jad.responses.ApiResponse;
 import c29.jad.services.CheckInRecordService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
@@ -60,14 +62,14 @@ public class CheckInRecordController {
 
 
     @RequestMapping(value = "/livecount", method = RequestMethod.GET)
-    public ResponseEntity<Map<String, Object>> livecount (HttpServletRequest request) {
+    public ResponseEntity<ApiResponse> livecount (HttpServletRequest request) {
         Integer userId = (Integer) request.getAttribute("userId");
 
         System.out.println(userId);
 
-            List<CheckInRecordModel> peopleAmount = checkInRecordService.getLiveCounts();
-
-            return new ResponseEntity<>(Map.of("PeopleAmount", peopleAmount), HttpStatus.OK);
+            List<LiveCountDto> peopleAmount = checkInRecordService.getLiveCounts();
+            var res = new ApiResponse("success", peopleAmount);
+            return new ResponseEntity<>(res, HttpStatus.OK);
         }
 
 

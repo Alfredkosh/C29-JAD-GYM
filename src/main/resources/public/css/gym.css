@@ -1,0 +1,11 @@
+.nearest-size{
+    display: flex !important;
+    justify-content: center !important;
+}
+
+.location-size{
+}
+#HPCB {
+    display: flex;
+    justify-content: space-around;
+}
