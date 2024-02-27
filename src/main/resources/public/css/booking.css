@@ -9,7 +9,7 @@
     text-decoration: none;
     outline: none;
     border: none;
-    text-transform: capitalize;
+    text-transform: math-auto;
     -webkit-transition: all .2s linear;
     transition: all .2s linear;
 }
@@ -249,6 +249,131 @@ body {
     border: 1px solid #fff;
     cursor: pointer;
 }
+
+
+/* pop up booking success */
+
+
+
+.confirmPopUp{
+  position: fixed;
+  top: -100vh;
+  left: 0;
+  z-index: 9999999;
+  background: rgba(0,0,0, 0.75);
+  width: 100vw;
+  height: 100vh;
+  opacity: 0;
+
+    -webkit-transition: opacity  0.35s ease;
+    -moz-transition: opacity 0.35s ease;
+    -o-transition: opacity 0.35s ease;
+    transition: opacity 0.35s ease;
+}
+.confirmPopUp .confirmPopUpContainer{
+  width: 100%;
+  max-width: 500px;
+  position: fixed; /* To avoid scroll to target */
+  left: 50%;
+  top: -100vh;
+    -webkit-transition: top  0.35s ease;
+    -moz-transition: top 0.35s ease;
+    -o-transition: top 0.35s ease;
+    transition: top 0.35s ease;
+
+  /* Trick to properly center the element by using negative
+  1/2 length of element as margin left and top */
+  margin-left: -250px;
+  background-color: #ffffff;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  border-radius: 2px;
+  z-index: 9999999;
+}
+.confirmPopUpContent{
+  padding:0 0 0px 44px;
+  font-size:30px;
+  text-align: center;
+  color: #444444;
+  margin: 0;
+}
+.confirmPopUp img{
+  width: 100%;
+  display: block;
+}
+.confirmPopUp article{
+    padding: 0 0 0px 25px;
+    font-size: 30px;
+	height: 300px;
+  background-color: #ac8b71;
+}
+
+/* The cancel button on popup dialog */
+.confirmPopUp a.closePopUp{
+  font-family: verdana;
+  color: #e74c3c;
+  position: absolute;
+  top: 0.2em;
+  right: 0.375em;
+  margin: 0;
+  padding: 5px;
+  font-weight: bold;
+  font-size: 1.5em;
+  text-decoration: none;
+}
+/* The cancel button on popup dialog */
+.confirmPopUp a:hover{
+  color: #c0392b;
+}
+/* When popup is targeted, by clicking on link with #popup in HTML */
+.confirmPopUp:target{
+  opacity: 1;
+  top: 0;
+}
+.confirmPopUp .closeConfirmPopUpOutSide{
+  position: absolute;
+  left:0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999991;
+}
+.confirmPopUp:target .confirmPopUpContainer{
+  top: 50px;
+    -webkit-transition: top  0.35s ease;
+    -moz-transition: top 0.35s ease;
+    -o-transition: top 0.35s ease;
+    transition: top 0.35s ease;
+}
+
+@media  (max-width: 796px) {
+  .confirmPopUp .confirmPopUpContainer{
+    width: 90%;
+    max-width: none;
+    left: 5%;
+    margin-left: 0;
+  }
+  .confirmPopUp ul{
+    padding: 0 1em 0 1em;
+  }
+  .confirmPopUp:target .confirmPopUpContainer{
+    top: 25px;
+    -webkit-transition: top  0.35s ease;
+    -moz-transition: top 0.35s ease;
+    -o-transition: top 0.35s ease;
+    transition: top 0.35s ease;
+  }
+}
+
+
+
+
+/* pop up booking success end */
+
+
+
+
+
 #navbar{
     text-align: center;
     font-size: 30px;
@@ -802,7 +927,7 @@ body {
         -ms-user-select: none;
             user-select: none;
     width: 100%;
-    font-size: 14px;
+    font-size: 12px;
     line-height: 60px;
     padding: 0 30px;
     display: block;

@@ -16,7 +16,17 @@ btnBook.addEventListener("click", async () => {
     gymRoomName,
     time
   }
-  console.log(obj)
+  console.log(obj);
+  // Create the confirm booking button with the date
+  const confirmButton = document.createElement("button");
+  confirmButton.textContent = `Confirm Booking for ${obj.date}`;
+
+  // Add an event listener to the confirm button
+  confirmButton.addEventListener("click", () => {
+
+    console.log("Booking confirmed for", date);
+  });
+
 
 
 });
