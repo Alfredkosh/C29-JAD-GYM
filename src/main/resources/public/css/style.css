@@ -1006,6 +1006,11 @@ fieldset[disabled] a.btn {
   font-size: 1.0em;
 }
 
+.btn.btn-medium2 {
+border-radius: 10px;
+  font-size: 1.0em;
+}
+
 .btn.btn-large {
   padding: 1.5em 5.5em;
   font-size: 1.3em;

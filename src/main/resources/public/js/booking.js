@@ -72,6 +72,8 @@ $(document).ready(function () {
   });
 
   $(".dropdown2-list li").click(function () {
+    const selectedValue = $(this).data("value");
+    $("#selectedTime").val(selectedValue);
     $(".selLabel2").text($(this).text());
     $(".dropdown2").removeClass("active");
     $(".selected-listItem p span").text($(".selLabel2").text());
@@ -84,6 +86,8 @@ $(document).ready(function () {
   });
 
   $(".dropdown3-list li").click(function () {
+    const selectedValue = $(this).data("value");
+    $("#selectedGym").val(selectedValue);
     $(".selLabel3").text($(this).text());
     $(".dropdown3").removeClass("active");
     $(".selected-listItem p span").text($(".selLabel3").text());

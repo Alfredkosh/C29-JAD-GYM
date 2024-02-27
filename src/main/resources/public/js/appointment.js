@@ -1,37 +1,24 @@
+let baseUrl=`https://gymzone.click/booking`
 let btnBook = document.getElementById("book_appointment");
 
 btnBook.addEventListener("click", async () => {
   let friends = document.getElementById("selectedFriend").value;
   let classId = document.getElementById("book-your-class").value;
   let date = document.getElementById("inputDate").value;
+  let gymRoomName = document.getElementById("selectedGym").value;
+  let time = document.getElementById("selectedTime").value;
+  
 
   const obj = {
     friends,
     classId,
-    date
+    date,
+    gymRoomName,
+    time
   }
   console.log(obj)
-  // let date = document.getElementById("inputDate").value;
-  // let slot = document.getElementById("slot-select").value;
 
-  // let token = sessionStorage.getItem("token");
-  // let name = sessionStorage.getItem("name");
-  // let trainerId = sessionStorage.getItem("trainerId");
 
-  // if (!token) {
-  //   alert("Please Login First to Book an Appointment");
-  //   window.location.href = "/login";
-  // } else if (date === "" || slot === "") {
-  //   alert("Please fill all the fields");
-  // } else {
-  //   let obj = {
-  //     trainerId: trainerId,
-  //     bookingDate: date,
-  //     bookingSlot: slot,
-  //     friends
-  //   };
-  //   await bookAnAppointment(obj, token, name);
-  // }
 });
 
 async function bookAnAppointment(obj, token, name) {
@@ -55,7 +42,7 @@ async function bookAnAppointment(obj, token, name) {
     if (out.msg == "This Slot is Not Available.") {
       alert("This Slot is Not Available.");
     } else if (out.msg == "new booking created successfully") {
-      alert(`Hi, ${name} Your booking is confirmed on ${obj.bookingDate}`);
+      alert(`Hi, ${usernameDisplay} Your booking is confirmed on ${obj.date}`);
     } else {
       alert("Something went wrong");
     }

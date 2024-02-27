@@ -134,17 +134,75 @@
 <div id="addFriendsContainer">
     <div id="friends-input">
         <input type="text" id="friend-name" placeholder="Enter friend's ID">
-        <button onclick="addFriend()" class="btn btn-full btn-medium btn-primary">Add Friend</button>
+        <button onclick="addFriend()" class="btn btn-full btn-medium2 btn-primary">Add Friend</button>
     </div>
     <br>
     <br>
 </div>
-
 <div>
     <ul id="friends-list"></ul>
 </div>
 
 <!--add new friends in profile end -->
+
+
+
+<!--course schedule -->
+
+
+<div class='schedule-container'>
+    <h1>
+        <p id="date"></p>
+    </h1>
+
+    <script>
+        const currentDate = new Date();
+        const weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        const weekdayIndex = currentDate.getDay();
+        const currentWeekday = weekdays[weekdayIndex];
+
+        const dateElement = document.getElementById("date");
+        dateElement.textContent = currentDate.toDateString();
+
+        const weekdayElement = document.getElementById("weekday");
+        weekdayElement.textContent = currentWeekday;
+    </script>
+
+    <ul>
+        <li>
+            <div class='frame'>
+                <div class='hour'>
+                    1
+                </div>
+                <div class='task'>
+                    Yoga
+                </div>
+                <div class='full-time'>
+                    7:00 AM to 9:00 AM
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class='frame'>
+                <div class='hour'>
+                    2
+                </div>
+                <div class='task'>
+                    Gym
+                </div>
+                <div class='full-time'>
+                    9:00 AM to 11:00 AM
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+
+
+
+
+
+<!--course schedule end -->
 
 
 

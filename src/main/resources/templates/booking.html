@@ -97,8 +97,7 @@
 </nav>
 
      <!-- [ Main Content ] start -->
-    <!--<div class="main-content">-->
-    <!--    <div class="contact-w3" >-->
+
 
 <section class="input-part">
     <div id="main_cont">
@@ -111,6 +110,7 @@
             <div class="col-4 time-col">
               <div class="listContainer ">
                 <h4>Book your class</h4>
+                <div class="bookdropdown">
                 <div class="dropdown">
                   <span class="selLabel">Select Class</span>
                   <input type="hidden" name="cd-dropdown" id="book-your-class" >
@@ -133,6 +133,7 @@
                   </ul>
                 </div>
               </div>
+                </div>
             </div>
             <div class="col-4">
               <div><h4>Date</h4>
@@ -146,7 +147,7 @@
   
                 <div class="dropdown2">
                   <span class="selLabel2">Select Timeslot </span>
-                  <input type="hidden" name="cd-dropdown">
+                  <input type="hidden" id="selectedTime" name="selectedTime">
                   <ul class="dropdown2-list">
                     <li data-value="1">
                       <span>9 AM to 11 AM</span>
@@ -178,7 +179,7 @@
   
                 <div class="dropdown3">
                   <span class="selLabel3">Select Place </span>
-                  <input type="hidden" name="cd-dropdown">
+                  <input type="hidden" id="selectedGym" name="selectedGym">
                   <ul class="dropdown3-list">
                     <li data-value="1">
                       <span>Moko - Mongkok</span>
@@ -210,20 +211,14 @@
     
         </div>
 
-<!--          <input type="text" name="text" placeholder="Input other member ID who is accompanied with"/>-->
           <br>
-
 
 
           <div class="row">
             <div class="col-4">
               <button id="book_appointment" >Book A Class</button>
+            </div>
 
-<!--              <script>-->
-<!--                function myFunction() {-->
-<!--                alert("Booking Successful");-->
-<!--                }-->
-<!--              </script>-->
 
             </div>
           </div>

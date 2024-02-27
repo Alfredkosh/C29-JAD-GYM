@@ -21,18 +21,3 @@ public interface FriendsListRepository extends JpaRepository<FriendsModel, Integ
     )
     List<FriendsModel> findFriends(@Param("ownerId") Integer ownerId, @Param("userId") Integer userId );
 }
-
-//    boolean existsByUsername(String username);
-
-//public interface FriendsListRepository extends JpaRepository<FriendsModel, Integer> {
-//    FriendsModel findUsernameById(Integer id);
-//
-////    boolean existsByUsername(String username);
-////
-////    List<FriendsModel> findByUsername(String username);
-////
-////    List<FriendsModel> findByUserId(Integer userId);
-//
-//    @Query(value = "SELECT user_id FROM friends_list WHERE userId = :user_id", nativeQuery = true)
-//    List<FriendsModel> findUsernameById(@Param("username") String username);
-//}
