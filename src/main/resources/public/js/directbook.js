@@ -1,5 +1,4 @@
 window.addEventListener("load", async () => {
-    console.log("Book")
     // Get the current URL
     const url = new URL(window.location.href);
 
@@ -19,7 +18,6 @@ window.addEventListener("load", async () => {
     window.location.href = "/login"
   }
   });
-
 
   
 
@@ -114,7 +112,54 @@ window.addEventListener("load", async () => {
     <div>
 
 </div>
-`
+`;
+let userId;
+const drop4 = document.querySelector("#dropdown4-list");
+
+const friendsRes = await fetch("/friends/friend", {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+
+  const friendsData = await friendsRes.json();
+
+  if (friendsRes.ok) {
+    console.log(friendsData);
+    let html = "";
+
+    for (const item of friendsData) {
+      const userAId = item.userAId;
+      const userBId = item.userBId;
+    
+      const userAName = item.userAName;
+      const userBName = item.userBName;
+    
+      const selectedUserId = userId === userAId ? userBId : userAId;
+      const selectedUserName = userId === userAId ? userBName : userAName;
+    
+      console.log({
+        userId,
+        userAId,
+        userBId,
+        userAName,
+        userBName,
+        selectedUserId,
+        selectedUserName
+      })
+
+      html += `<li data-value="${selectedUserId}">
+      <span>${selectedUserName}</span>
+    </li>`;}
+    drop4.innerHTML = html
+$(".dropdown4-list li").click(function () {
+      const selectedValue = $(this).data("value");
+      $("#selectedFriend").val(selectedValue);
+      $(".selLabel4").text($(this).text());
+      $(".dropdown4").removeClass("active");
+      $(".selected-listItem p span").text($(".selLabel4").text());
+    }); 
+  }
 
     } else {
         alert("Fail to fetch getAllCourse")
