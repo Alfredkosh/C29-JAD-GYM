@@ -60,33 +60,12 @@ public class AdminController {
     @RequestMapping(value = "/newcourse", method = RequestMethod.POST)
     public ResponseEntity<Map<String, Object>> addCourse(@RequestBody CourseListForm courseListForm){
         try{
-            // Retrieve the minimum available gym_room_id that is greater than 0
-//            int gymRoomId = courseListService.getNextAvailableGymRoomId();
-//            if (gymRoomId == 0) {
-//                // Handle the case where there are no available gym_room_id values
-//                return new ResponseEntity<>(Map.of("message", "No available gym_room_id"), HttpStatus.INTERNAL_SERVER_ERROR);
-//            }
-
-            // Set the retrieved gym_room_id for the new course
-//            courseListForm.setGymRoomId(gymRoomId);
-
             CourseListModel newCourse = courseListService.newCourse(courseListForm);
             return new ResponseEntity<>(Map.of("message", "New course added", "course", newCourse), HttpStatus.OK);
         } catch (AuthenticationException e) {
             return new ResponseEntity<>(Map.of("message",  e.getMessage()), HttpStatus.UNAUTHORIZED);
         }
     }
-
-
-//    @RequestMapping(value = "/qrcodecheckin", method = RequestMethod.POST)
-//    public ResponseEntity<Map<String, Object>> qrCodeCheckIn(@RequestBody CheckInRecordForm checkInRecordForm){
-//        try{
-//            CheckInRecordModel newCheckIn = checkInRecordService.newCheckIn(checkInRecordForm);
-//            return new ResponseEntity<>(Map.of("message", "New course added", "course", newCheckIn), HttpStatus.OK);
-//        } catch (AuthenticationException e) {
-//            return new ResponseEntity<>(Map.of("message",  e.getMessage()), HttpStatus.UNAUTHORIZED);
-//        }
-//    }
 
 
 }

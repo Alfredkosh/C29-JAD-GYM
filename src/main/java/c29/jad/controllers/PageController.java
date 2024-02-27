@@ -84,6 +84,11 @@ public class PageController {
         return "admin";
     }
 
+    @RequestMapping(value = "/directbook/**", method = RequestMethod.GET)
+    public String directbook(Model model){
+        return "directbook";
+    }
+
 
     @RequestMapping(value = "/booking", method = RequestMethod.GET)
     public String booking(Model model){
