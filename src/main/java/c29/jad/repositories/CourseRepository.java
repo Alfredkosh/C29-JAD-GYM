@@ -3,6 +3,8 @@ package c29.jad.repositories;
 import c29.jad.models.CourseListModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface CourseRepository extends JpaRepository<CourseListModel, Integer> {
+import java.util.List;
 
+public interface CourseRepository extends JpaRepository<CourseListModel, Integer> {
+    List<CourseListModel> findAllByOrderByOpenDatetimeAsc();
 }

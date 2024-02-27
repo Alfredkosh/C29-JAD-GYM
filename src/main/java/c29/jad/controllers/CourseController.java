@@ -9,6 +9,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -31,5 +32,17 @@ public class CourseController {
     }
 
 
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    public ResponseEntity<Map<String, Object>> getCourseById(@PathVariable("id") Integer id) {
+        CourseListModel course = courseService.getCourseById(id);
+
+        if (course == null) {
+            return ResponseEntity.notFound().build();
+        }
+
+        CourseDto courseDto = CourseMapper.INSTANCE.toCourseDto(course);
+        return new ResponseEntity<>(Map.of("message", "Successful", "data", courseDto), HttpStatus.OK);
+
+    }
 
 }

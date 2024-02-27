@@ -28,8 +28,8 @@ async function newCourse(token) {
         tutor,
         maxPeopleLimit,
         gymRoomId,
-        openDatetime,
-        endDatetime,
+        openDatetime: convertToUTC(openDatetime),
+        endDatetime: convertToUTC(endDatetime),
       };
       console.log(body);
       const res = await fetch("/admin/newcourse", {
@@ -57,6 +57,25 @@ async function newCourse(token) {
         });
       }
     });
+}
+function convertToUTC(datetimeInput) {
+  const date = new Date(datetimeInput);
+
+  const utcYear = date.getUTCFullYear();
+  const utcMonth = date.getUTCMonth() + 1; // Months are zero-based, so we add 1
+  const utcDay = date.getUTCDate();
+  const utcHours = date.getUTCHours();
+  const utcMinutes = date.getUTCMinutes();
+  const utcSeconds = date.getUTCSeconds();
+
+  const utcDatetimeString = `${utcYear}-${padZero(utcMonth)}-${padZero(utcDay)}T${padZero(utcHours)}:${padZero(utcMinutes)}:${padZero(utcSeconds)}Z`;
+
+  return utcDatetimeString;
+}
+
+// Function to pad single-digit numbers with leading zeros
+function padZero(num) {
+  return num.toString().padStart(2, '0');
 }
 
 function parseJwt (token) {

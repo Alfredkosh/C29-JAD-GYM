@@ -98,6 +98,8 @@ public class PrivateFilter extends OncePerRequestFilter {
                 "/auth/lastcheckindate/*",
                 "/gym/details",
                 "/friends/friend"
+//
+
 
 
 
