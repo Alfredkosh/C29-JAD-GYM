@@ -47,6 +47,12 @@ public interface CheckInRecordRepository extends JpaRepository<CheckInRecordMode
             """, nativeQuery = true)
     List<CheckInRecordModel> getCheckInTime (@Param("id") Integer id);
 
+
+    @Query(value = """
+            SELECT * from check_in_records WHERE user_id = :id and check_out_at is Null
+            """, nativeQuery = true)
+    List<CheckInRecordModel> findCheckInData (@Param("id") Integer id);
+
     @Query(value = """
             SELECT check_in_records.check_in_date from check_in_records WHERE user_id = :id
             """, nativeQuery = true)
