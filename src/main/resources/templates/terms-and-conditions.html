@@ -20,12 +20,9 @@
   <link rel="stylesheet" type="text/css" href="/css/style.css">
   <link rel="stylesheet" href="https://cdn.staticfile.org/Swiper/11.0.5/swiper-bundle.min.css">
 
-
-  <link rel="stylesheet" type="text/css" href="/css/booking.css">
 </head>
 
 <body>
-<!--<th:block th:insert="~{common/footer :: .footer}"></th:block>-->
 
 <div class="preloader-wrapper">
   <div class="preloader">
@@ -36,19 +33,17 @@
   <div class="container-fluid">
     <div class="main-logo">
       <a href="/index">
-        <img src="images/main-logo.png" alt="logo">
+        <img src="/images/main-logo.png" alt="logo">
       </a>
     </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
             aria-controls="offcanvasNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
-         aria-labelledby="offcanvasNavbarLabel">
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
       <div class="offcanvas-header">
         <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
-        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
-                aria-label="Close"></button>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body">
         <ul class="navbar-nav justify-content-end align-items-center flex-grow-1 pe-3 gap-4">
@@ -66,7 +61,7 @@
                 <a href="/classes" class="dropdown-item text-uppercase">Class Schedule </a>
               </li>
               <li>
-                <a href="/gym" class="dropdown-item text-uppercase">Gym</a>
+                <a href="/gym" class="dropdown-item text-uppercase">Gym </a>
               </li>
               <li>
                 <a href="/contact" class="dropdown-item text-uppercase">Contact </a>
@@ -86,45 +81,57 @@
   </div>
 </nav>
 
-     <!-- [ Main Content ] start -->
+  <div id="terms-text">
+  <h3>Welcome to Power Fitness, where your fitness and well-being are our top priorities. We also prioritize your privacy, and we have created this Privacy Policy to explain how we collect, use, and protect your personal information. By using our services or accessing our website, you agree to the practices described in this policy. Please read it carefully and feel free to contact us with any questions or concerns. </h3>
+  </br>
+  Personal Information We Collect</br>
+When you sign up for a membership, purchase products, or participate in our programs, we may collect the following information:
+</br>
+Name</br>
+Contact details (e.g., email address, phone number)</br>
+Payment information</br>
+Health and fitness information</br>
+Usage of our facilities and services</br>
+We may also collect information about your device and usage of our website through cookies or similar technologies.</br>
+</br>
 
+How We Use Your Information</br>
+We use the collected information for various purposes, including:</br>
+</br>
 
-<section class="input-part">
-    <div id="main_cont"></div>
+Providing and managing your membership</br>
+Processing transactions</br>
+Personalizing your experience</br>
+Communicating with you about our services, promotions, and events</br>
+Complying with legal obligations</br>
+Improving our products and services</br>
+Sharing Your Information</br>
+We do not sell or rent your personal information to third parties. We may share your information with trusted partners and vendors to perform services on our behalf, such as payment processing or marketing. We will also share information if required by law or to protect our rights and the rights of others.</br>
+</br>
 
+Your Choices</br>
+You have the right to access, update, or delete your personal information at any time. Please contact us to make these requests or to opt-out of marketing communications.</br>
+</br>
 
-</section>
+Security</br>
+We take reasonable measures to protect your personal information from unauthorized access, use, or disclosure. However, no method of transmission or storage is 100% secure, so we cannot guarantee absolute security.</br>
+</br>
 
+Changes to This Policy</br>
+We may update this Privacy Policy from time to time to reflect changes in our practices or applicable laws. Any changes will be posted on this page, and we encourage you to review this policy regularly.</br>
+</br>
 
-<div class="row">
-  <div class="col-4">
-    <a href="#confirmPopUp"><button id="book_appointment" >Confirm Booking </button></a>
-  </div>
-  <!-- POP UP -->
-  <aside id="confirmPopUp" class="confirmPopUp">
-    <div class="confirmPopUpContainer">
-      <header>
-        <a href="#!" class="closeConfirmPopUp">
-
-          <?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'><svg height="20px" id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="20px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M443.6,387.1L312.4,255.4l131.5-130c5.4-5.4,5.4-14.2,0-19.6l-37.4-37.6c-2.6-2.6-6.1-4-9.8-4c-3.7,0-7.2,1.5-9.8,4  L256,197.8L124.9,68.3c-2.6-2.6-6.1-4-9.8-4c-3.7,0-7.2,1.5-9.8,4L68,105.9c-5.4,5.4-5.4,14.2,0,19.6l131.5,130L68.4,387.1  c-2.6,2.6-4.1,6.1-4.1,9.8c0,3.7,1.4,7.2,4.1,9.8l37.4,37.6c2.7,2.7,6.2,4.1,9.8,4.1c3.5,0,7.1-1.3,9.8-4.1L256,313.1l130.7,131.1  c2.7,2.7,6.2,4.1,9.8,4.1c3.5,0,7.1-1.3,9.8-4.1l37.4-37.6c2.6-2.6,4.1-6.1,4.1-9.8C447.7,393.2,446.2,389.7,443.6,387.1z"/></svg>
-        </a>
-        <div class="confirmPopUpContent">Booking Successful !</div>
-      </header>
-      <article>
-        You may check the class schedule in your profile.
-        <br>
-        <div class="profilebutton">
-        <button class="raise"><a href="/profile">Go to Profile</a></button></div>
-      </article>
-    </div>
-    <a href="#!" class="closeConfirmPopUpOutSide"></a>
-  </aside>
-
-  </div>
-
-
-        <!-- [ Main Content ] end -->
-
+Contact Us</br>
+If you have any questions or concerns about this Privacy Policy, please contact us at:</br>
+</br>
+Email:  info@powerfitness.com</br>
+</br>
+Phone: +852 2345 6789</br>
+</br>
+Address: 1103, 11/F, 國際交易中心33 Wang Chiu Rd, Kowloon Bay</br>
+</br>
+Thank you for choosing Power Fitness. We are committed to protecting your privacy and providing you with the best possible experience at our facilities.</p></br>
+  </div>>
   <footer id="footer" class="padding-large">
     <div class="container">
       <div class="footer-content row">
@@ -174,7 +181,9 @@
   </footer>
   <div id="footer-bottom">
     <div class="container">
-
+      <div class="copyright align-center">
+        
+      </div>
     </div>
   </div>
   <script src="js/jquery-1.11.0.min.js"></script>
@@ -184,9 +193,7 @@
   <script src="https://cdn.staticfile.org/Swiper/11.0.5/swiper-bundle.min.js"></script>
   <script src="js/plugins.js"></script>
   <script src="js/script.js"></script>
-  <script type="module" src="/js/directbook.js"></script>
   <script type="module" src="/js/loggedIn.js"></script>
-  <!-- <script type="module" src="/js/booking.js"></script> -->
 </body>
 
 </html>
