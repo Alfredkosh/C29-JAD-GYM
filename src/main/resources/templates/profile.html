@@ -1,272 +1,278 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:https="http://www.w3.org/1999/xhtml">
-
-<head>
+  <head>
     <title>GYM - GYM Studio</title>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="author" content="">
-    <meta name="keywords" content="">
-    <meta name="description" content="">
-    <link rel="stylesheet" type="text/css" href="/css/vendor.css">
-    <link rel="stylesheet" type="text/css" href="/css/profile.css">
-    <link rel="stylesheet" type="text/css" href="/fonts/icomoon.css">
-    <link rel="stylesheet" type="text/css" href="/css/addfriends.css">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="author" content="" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" type="text/css" href="/css/vendor.css" />
+    <link rel="stylesheet" type="text/css" href="/css/profile.css" />
+    <link rel="stylesheet" type="text/css" href="/fonts/icomoon.css" />
+    <link rel="stylesheet" type="text/css" href="/css/addfriends.css" />
 
-    <link href="https://cdn.staticfile.org/twitter-bootstrap/5.3.1/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link
+      href="https://cdn.staticfile.org/twitter-bootstrap/5.3.1/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
 
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
-    <link rel="stylesheet" href="https://cdn.staticfile.org/Swiper/11.0.5/swiper-bundle.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.staticfile.org/Swiper/11.0.5/swiper-bundle.min.css"
+    />
+  </head>
 
-</head>
-
-<body>
-
+  <body>
     <div class="preloader-wrapper">
-      <div class="preloader">
-      </div>
+      <div class="preloader"></div>
     </div>
-  
+
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top py-4">
       <div class="container-fluid">
         <div class="main-logo">
           <a href="/index">
-            <img src="images/main-logo.png" alt="logo">
+            <img src="images/main-logo.png" alt="logo" />
           </a>
         </div>
-        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
-                aria-controls="offcanvasNavbar">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasNavbar"
+          aria-controls="offcanvasNavbar"
+        >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
-             aria-labelledby="offcanvasNavbarLabel">
+        <div
+          class="offcanvas offcanvas-end"
+          tabindex="-1"
+          id="offcanvasNavbar"
+          aria-labelledby="offcanvasNavbarLabel"
+        >
           <div class="offcanvas-header">
             <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
-            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
-                    aria-label="Close"></button>
+            <button
+              type="button"
+              class="btn-close text-reset"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
           </div>
           <div class="offcanvas-body">
-            <ul class="navbar-nav justify-content-end align-items-center flex-grow-1 pe-3 gap-4">
+            <ul
+              class="navbar-nav justify-content-end align-items-center flex-grow-1 pe-3 gap-4"
+            >
               <li class="nav-item text-uppercase">
                 <a href="/index" class="nav-link active">Home</a>
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="dropdownPages" data-bs-toggle="dropdown"
-                   aria-haspopup="true" aria-expanded="false">Pages</a>
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="dropdownPages"
+                  data-bs-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  >Pages</a
+                >
                 <ul class="dropdown-menu" aria-labelledby="dropdownPages">
                   <li>
-                    <a href="/about" class="dropdown-item text-uppercase">About Us </a>
+                    <a href="/about" class="dropdown-item text-uppercase"
+                      >About Us
+                    </a>
                   </li>
                   <li>
-                    <a href="/classes" class="dropdown-item text-uppercase">Class Schedule </a>
+                    <a href="/classes" class="dropdown-item text-uppercase"
+                      >Class Schedule
+                    </a>
                   </li>
                   <li>
                     <a href="/gym" class="dropdown-item text-uppercase">Gym</a>
                   </li>
                   <li>
-                    <a href="/contact" class="dropdown-item text-uppercase">Contact </a>
+                    <a href="/contact" class="dropdown-item text-uppercase"
+                      >Contact
+                    </a>
                   </li>
                 </ul>
               </li>
-              
-                    <div id="username-display">
 
-                      </div>
-                      <div id="logout-area"></div>
-                    <li class="user-items">
-                        <div class="search-bar">
-                            <a href="#" class="search-button search-toggle" data-selector=".primary-nav">
-                                <i class="icon icon-search"></i>
-                            </a>
-                            <form role="search" method="get" class="search-box" action="index.html">
-                                <input class="search-field search-input" placeholder="Search" type="search">
-                            </form>
-                        </div>
-                        <a href="#" class="shopping-cart">
-                            <i class="icon icon-shopping-cart"></i>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+              <div id="username-display"></div>
+              <div id="logout-area"></div>
+              <li class="user-items">
+                <div class="search-bar">
+                  <a
+                    href="#"
+                    class="search-button search-toggle"
+                    data-selector=".primary-nav"
+                  >
+                    <i class="icon icon-search"></i>
+                  </a>
+                  <form
+                    role="search"
+                    method="get"
+                    class="search-box"
+                    action="index.html"
+                  >
+                    <input
+                      class="search-field search-input"
+                      placeholder="Search"
+                      type="search"
+                    />
+                  </form>
+                </div>
+                <a href="#" class="shopping-cart">
+                  <i class="icon icon-shopping-cart"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
-    </div>
-</nav>
+      </div>
+    </nav>
 
-<body>
-<br>
-<br>
-<div class="content">
-
-    <div class="main">
-
+    <div class="content">
+      <div class="main">
         <div class="profile-middle">
-            <div class="profile-img">
-                <div class="login-pic"><img class="qr-code" src="https://chart.googleapis.com/chart?cht=qr&chl=Hello+World&chs=160x160&chld=L|0" alt=" " /></div>
-                <h3 class="client-name">David Chan</h3>
-                <p class="client-id">Member ID: </p>
-                <p class="expiry-id">Expiry date: </p>
+          <div class="profile-img">
+            <div class="login-pic">
+              <img
+                class="qr-code"
+                src="https://chart.googleapis.com/chart?cht=qr&chl=Hello+World&chs=160x160&chld=L|0"
+                alt=" "
+              />
             </div>
-            <div class="twitt-left">
-                <h5>Total Check-in times</h5>
-                <p>25</p>
-            </div>
-            <div class="twitt-right">
-                <h5>Latest Check-in Date</h5>
-                <p>11-02-2024</p>
-            </div>
-            <div class="clear"></div>
+            <h3 class="client-name">David Chan</h3>
+            <p class="client-id">Member ID:</p>
+            <p class="expiry-id">Expiry date:</p>
+          </div>
+          <div class="twitt-left">
+            <h5>Total Check-in times</h5>
+            <p>25</p>
+          </div>
+          <div class="twitt-right">
+            <h5>Latest Check-in Date</h5>
+            <p>11-02-2024</p>
+          </div>
+          <div class="clear"></div>
         </div>
-        <div class="clear"> </div>
+        <div class="clear"></div>
         <div id="qrcode"></div>
         <canvas id="canvas"></canvas>
+      </div>
     </div>
 
-</div>
-
-<!--add new friends in profile-->
-
-
-<h2 class="row">Friends List</h2>
-<div id="addFriendsContainer">
-    <div id="friends-input">
-        <input type="text" id="friend-name" placeholder="Enter friend's ID">
-        <button onclick="addFriend()" class="btn btn-full btn-medium2 btn-primary">Add Friend</button>
-    </div>
-    <br>
-    <br>
-</div>
-<div>
-    <ul id="friends-list"></ul>
-</div>
-
-<!--add new friends in profile end -->
-
-
-
-<!--course schedule -->
-
-
-<div class='schedule-container'>
-    <h1>
-        <p id="date"></p>
-    </h1>
-
-    <script>
-        const currentDate = new Date();
-        const weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-        const weekdayIndex = currentDate.getDay();
-        const currentWeekday = weekdays[weekdayIndex];
-
-        const dateElement = document.getElementById("date");
-        dateElement.textContent = currentDate.toDateString();
-
-        const weekdayElement = document.getElementById("weekday");
-        weekdayElement.textContent = currentWeekday;
-    </script>
-
-    <ul>
-        <li>
-            <div class='frame'>
-                <div class='hour'>
-                    1
-                </div>
-                <div class='task'>
-                    Yoga
-                </div>
-                <div class='full-time'>
-                    7:00 AM to 9:00 AM
-                </div>
-            </div>
-        </li>
-        <li>
-            <div class='frame'>
-                <div class='hour'>
-                    2
-                </div>
-                <div class='task'>
-                    Gym
-                </div>
-                <div class='full-time'>
-                    9:00 AM to 11:00 AM
-                </div>
-            </div>
-        </li>
-    </ul>
-</div>
-
-
-
-
-
-<!--course schedule end -->
-
-
-
-<footer id="footer" class="padding-large">
+    <!--add new friends in profile-->
     <div class="container">
-        <div class="footer-content row">
-            <div class="col-md-4">
-                <div class="footer-menu">
-                    <ul class="d-flex list-unstyled justify-content-md-start justify-content-center">
-                        <li>
-                            <a href="/index">Home</a>
-                        </li>
-                        <li>
-                            <a href="#">Privacy Policy</a>
-                        </li>
-                        <li>
-                            <a href="#">Terms</a>
-                        </li>
-                    </ul>
-                </div>
+      <div class="row">
+        <div class="col-6 addFriendList">
+          <h2 class="row">Friends List</h2>
+          <div id="addFriendsContainer">
+            <div id="friends-input">
+              <input
+                type="text"
+                id="friend-name"
+                placeholder="Enter friend's ID"
+              />
+              <button
+                onclick="addFriend()"
+                class="btn btn-full btn-medium2 btn-primary"
+              >
+                Add Friend
+              </button>
             </div>
-            <div class="col-md-4">
-                <div class="footer-logo align-center">
-                    <img src="/images/main-logo.png" alt="logo">
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="social-links">
-                    <ul class="d-flex list-unstyled justify-content-md-end justify-content-center">
-                        <li>
-                            <a href="#">
-                                <i class="icon icon-facebook"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="icon icon-twitter"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="icon icon-youtube"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+            <br />
+            <br />
+          </div>
+          <div class="col-6 schedule-container">
+            <ul id="friend-list"></ul>
+          </div>
+
         </div>
+        <!--course schedule -->
+        <div class="col-6 schedule-container2">
+          <h1>
+            <p id="date"></p>
+          </h1>
+          <ul id="schedule-list"></ul>
+        </div>
+      </div>
     </div>
-</footer>
+    <!--course schedule end -->
 
+    <footer id="footer" class="padding-large">
+      <div class="container">
+        <div class="footer-content row">
+          <div class="col-md-4">
+            <div class="footer-menu">
+              <ul
+                class="d-flex list-unstyled justify-content-md-start justify-content-center"
+              >
+                <li>
+                  <a href="/index">Home</a>
+                </li>
+                <li>
+                  <a href="#">Privacy Policy</a>
+                </li>
+                <li>
+                  <a href="#">Terms</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="footer-logo align-center">
+              <img src="/images/main-logo.png" alt="logo" />
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="social-links">
+              <ul
+                class="d-flex list-unstyled justify-content-md-end justify-content-center"
+              >
+                <li>
+                  <a href="#">
+                    <i class="icon icon-facebook"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="icon icon-twitter"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="icon icon-youtube"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
 
-<!-- <script src="bundle.js"></script> -->
-<script src="/js/jquery-1.11.0.min.js"></script>
-<script src="https://cdn.staticfile.org/twitter-bootstrap/5.3.1/js/bootstrap.bundle.min.js"
-        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-        crossorigin="anonymous"></script>
-<script src="https://cdn.staticfile.org/Swiper/11.0.5/swiper-bundle.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="/js/plugins.js"></script>
-<script src="/js/script.js"></script>
-<script src="/js/addfriends.js"></script>
-<script type="module" src="/js/checkin.js"></script>
-<script type="module" src="/js/loggedIn.js"></script>
-</body>
-
+    <!-- <script src="bundle.js"></script> -->
+    <script src="/js/jquery-1.11.0.min.js"></script>
+    <script
+      src="https://cdn.staticfile.org/twitter-bootstrap/5.3.1/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.staticfile.org/Swiper/11.0.5/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/js/plugins.js"></script>
+    <script src="/js/script.js"></script>
+    <script src="/js/profile.js"></script>
+    <script src="/js/addfriends.js"></script>
+    <script type="module" src="/js/checkin.js"></script>
+    <script type="module" src="/js/loggedIn.js"></script>
+  </body>
 </html>

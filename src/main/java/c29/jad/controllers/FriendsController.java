@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import java.sql.*;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.web.bind.annotation.RestController;
 
@@ -28,14 +29,18 @@ public class FriendsController {
     FriendsListService friendsListService;
 
     @RequestMapping(value = "/friend", method = RequestMethod.POST)
-    public ResponseEntity<String> addFriend(HttpServletRequest request, @RequestBody FriendsForm friendsForm) {
-        Integer userId = (Integer) request.getAttribute("userId");
-        Integer targetUserId = friendsForm.getUserId();
-        if (userId == null) {
-            return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+    public ResponseEntity<Map<String, Object>> addFriend(HttpServletRequest request, @RequestBody FriendsForm friendsForm) {
+        try {
+            Integer userId = (Integer) request.getAttribute("userId");
+            Integer targetUserId = friendsForm.getUserId();
+            if (userId == null) {
+                return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+            }
+            friendsListService.addFriend(userId, targetUserId);
+            return new ResponseEntity<>(Map.of("data", "Add friend successful"), HttpStatus.OK);
+        } catch (Error e) {
+            return new ResponseEntity<>(Map.of("data", e.getMessage()), HttpStatus.BAD_REQUEST);
         }
-        friendsListService.addFriend(userId, targetUserId);
-        return new ResponseEntity<>("Add friend successful", HttpStatus.OK);
     }
 
 
