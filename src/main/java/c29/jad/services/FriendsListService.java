@@ -24,6 +24,7 @@ public class FriendsListService {
     public List<FriendsModel> getFriends(Integer userId) {
         return friendsListRepository.findFriends(userId);
     }
+
 }
 
 
