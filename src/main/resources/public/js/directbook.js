@@ -81,7 +81,7 @@ async function getCourseById(token, courseId) {
           <div class="listContainer">
 
             <div class="dropdown4">
-              <span class="selLabel4">Select Place </span>
+              <span class="selLabel4">Select Friend </span>
               <input type="hidden" id="selectedFriend" name="selectedFriend">
               <ul id="dropdown4-list" class="dropdown4-list">
                

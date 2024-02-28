@@ -116,3 +116,10 @@ function parseJwt (token) {
 
   return JSON.parse(jsonPayload);
 }
+
+
+
+
+
+
+

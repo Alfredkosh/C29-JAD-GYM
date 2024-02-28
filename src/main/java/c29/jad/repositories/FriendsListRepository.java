@@ -11,7 +11,7 @@ public interface FriendsListRepository extends JpaRepository<FriendsModel, Integ
     FriendsModel findUsernameById(Integer id);
 
     @Query(value = """
-            Select * from friends_lists where user_a_id = :userId or user_b_id = :userId
+            Select * from friends_lists where user_a_id = :userId or user_b_id = :userId order by id asc
             """, nativeQuery = true)
     List<FriendsModel> findFriends(@Param("userId") Integer userId);
 
@@ -20,4 +20,7 @@ public interface FriendsListRepository extends JpaRepository<FriendsModel, Integ
             """, nativeQuery = true
     )
     List<FriendsModel> findFriends(@Param("ownerId") Integer ownerId, @Param("userId") Integer userId );
+
+
+
 }
