@@ -44,13 +44,17 @@ async function QrCodeCheckIn() {
     Swal.fire({
       icon: "error",
       title: "Fail to check-in",
-      text: "Please try again!",
+      text: "Please try again! / User is already checked in",
     }).then(() => {
       console.log("Swal.fire() fail to check-in");
       window.location.replace("/checkin");
     });
   }
 }
+
+
+
+
 
 function parseJwt(token) {
   var base64Url = token.split(".")[1];

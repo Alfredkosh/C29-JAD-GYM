@@ -56,6 +56,11 @@ public class CheckInRecordService {
         return checkInRecordRepository.getCheckInTime(userId);
     }
 
+    public List<CheckInRecordModel> isUserCheckedIn(Integer userId) {
+        // Perform a check in the repository to determine if the user is checked in
+        return checkInRecordRepository.findCheckInData(userId);
+    }
+
     public List<String> getLastCheckInDate(Integer userId) {
         return checkInRecordRepository.getLastCheckIn(userId);
     }

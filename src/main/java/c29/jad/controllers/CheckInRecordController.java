@@ -43,6 +43,13 @@ public class CheckInRecordController {
 
     @RequestMapping(value = "/checkin", method = RequestMethod.POST)
     public ResponseEntity<Map<String, Object>> checkedin(@RequestBody CheckInRecordForm checkInRecordForm){
+        Integer userId = checkInRecordForm.getUserId();
+        List<CheckInRecordModel> checkedInAlready = checkInRecordService.isUserCheckedIn(userId);
+
+        if (!checkedInAlready.isEmpty()) {
+            return new ResponseEntity<>(Map.of("message", "User is already checked in"), HttpStatus.BAD_REQUEST);
+        }
+
         try {
             CheckInRecordModel checkIn = checkInRecordService.checkIn(checkInRecordForm);
             return new ResponseEntity<>(Map.of("message", "Check In Successful"), HttpStatus.OK);

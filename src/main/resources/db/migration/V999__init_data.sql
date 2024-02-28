@@ -24,16 +24,16 @@ INSERT INTO check_in_records (user_id, gym_room_id, check_in_date, check_in_at, 
 INSERT INTO check_in_records (user_id, gym_room_id, check_in_date, check_in_at, check_out_at) VALUES (1, 1, '2024-02-02', '2024-02-02T10:00:00Z+00:00', '2024-02-02T11:00:00Z+00:00');
 INSERT INTO check_in_records (user_id, gym_room_id, check_in_date, check_in_at, check_out_at) VALUES (2, 1, '2024-02-02', '2024-02-02T10:00:00Z+00:00', '2024-02-02T11:00:00Z+00:00');
 
-INSERT INTO check_in_records (user_id, gym_room_id, check_in_date, check_in_at, check_out_at) VALUES (3, 1, '2024-03-01', '2024-03-01T10:00:00Z+00:00', '2024-03-01T11:00:00Z+00:00');
-INSERT INTO check_in_records (user_id, gym_room_id, check_in_date, check_in_at, check_out_at) VALUES (4, 1, '2024-03-01', '2024-03-01T10:00:00Z+00:00', '2024-03-01T11:00:00Z+00:00');
-INSERT INTO check_in_records (user_id, gym_room_id, check_in_date, check_in_at, check_out_at) VALUES (5, 1, '2024-03-01', '2024-03-01T12:00:00Z+00:00', '2024-03-01T14:00:00Z+00:00');
-INSERT INTO check_in_records (user_id, gym_room_id, check_in_date, check_in_at, check_out_at) VALUES (6, 1, '2024-03-01', '2024-03-01T14:00:00Z+00:00', '2024-03-01T15:00:00Z+00:00');
-INSERT INTO check_in_records (user_id, gym_room_id, check_in_date, check_in_at, check_out_at) VALUES (7, 1, '2024-03-01', '2024-03-01T13:00:00Z+00:00', '2024-03-01T15:00:00Z+00:00');
-INSERT INTO check_in_records (user_id, gym_room_id, check_in_date, check_in_at, check_out_at) VALUES (8, 1, '2024-03-01', '2024-03-01T15:00:00Z+00:00', '2024-03-01T16:00:00Z+00:00');
-INSERT INTO check_in_records (user_id, gym_room_id, check_in_date, check_in_at, check_out_at) VALUES (5, 1, '2024-03-01', '2024-03-01T13:00:00Z+00:00', '2024-03-01T17:00:00Z+00:00');
-INSERT INTO check_in_records (user_id, gym_room_id, check_in_date, check_in_at, check_out_at) VALUES (1, 1, '2024-03-01', '2024-03-01T15:00:00Z+00:00', '2024-03-01T18:00:00Z+00:00');
-INSERT INTO check_in_records (user_id, gym_room_id, check_in_date, check_in_at, check_out_at) VALUES (2, 1, '2024-03-01', '2024-03-01T17:00:00Z+00:00', '2024-03-01T19:00:00Z+00:00');
-INSERT INTO check_in_records (user_id, gym_room_id, check_in_date, check_in_at, check_out_at) VALUES (4, 1, '2024-03-01', '2024-03-01T18:00:00Z+00:00', '2024-03-01T20:00:00Z+00:00');
+INSERT INTO check_in_records (user_id, gym_room_id, check_in_date, check_in_at, check_out_at) VALUES (3, 1, '2024-02-23', '2024-02-23T10:00:00Z+00:00', '2024-02-23T11:00:00Z+00:00');
+INSERT INTO check_in_records (user_id, gym_room_id, check_in_date, check_in_at, check_out_at) VALUES (4, 1, '2024-02-23', '2024-02-23T10:00:00Z+00:00', '2024-02-23T11:00:00Z+00:00');
+INSERT INTO check_in_records (user_id, gym_room_id, check_in_date, check_in_at, check_out_at) VALUES (5, 2, '2024-02-23', '2024-02-23T12:00:00Z+00:00', '2024-02-23T14:00:00Z+00:00');
+INSERT INTO check_in_records (user_id, gym_room_id, check_in_date, check_in_at, check_out_at) VALUES (6, 1, '2024-02-25', '2024-02-25T14:00:00Z+00:00', '2024-02-25T15:00:00Z+00:00');
+INSERT INTO check_in_records (user_id, gym_room_id, check_in_date, check_in_at, check_out_at) VALUES (7, 2, '2024-02-25', '2024-02-25T13:00:00Z+00:00', '2024-02-25T15:00:00Z+00:00');
+INSERT INTO check_in_records (user_id, gym_room_id, check_in_date, check_in_at, check_out_at) VALUES (8, 1, '2024-02-25', '2024-02-25T15:00:00Z+00:00', '2024-02-25T16:00:00Z+00:00');
+INSERT INTO check_in_records (user_id, gym_room_id, check_in_date, check_in_at, check_out_at) VALUES (5, 1, '2024-02-27', '2024-02-27T13:00:00Z+00:00', '2024-02-27T17:00:00Z+00:00');
+INSERT INTO check_in_records (user_id, gym_room_id, check_in_date, check_in_at, check_out_at) VALUES (1, 2, '2024-02-27', '2024-02-27T15:00:00Z+00:00', '2024-02-27T18:00:00Z+00:00');
+INSERT INTO check_in_records (user_id, gym_room_id, check_in_date, check_in_at, check_out_at) VALUES (2, 1, '2024-02-27', '2024-02-27T17:00:00Z+00:00', '2024-02-27T19:00:00Z+00:00');
+INSERT INTO check_in_records (user_id, gym_room_id, check_in_date, check_in_at, check_out_at) VALUES (4, 2, '2024-02-27', '2024-02-27T18:00:00Z+00:00', '2024-02-27T20:00:00Z+00:00');
 --
 
 INSERT INTO course_lists (name, tutor, tutor_icon, max_people_limit, open_datetime, end_datetime, gym_room_id) VALUES
