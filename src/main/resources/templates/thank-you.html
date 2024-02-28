@@ -61,32 +61,20 @@
                 <a href="/classes" class="dropdown-item text-uppercase">Class Schedule </a>
               </li>
               <li>
+                <a href="/gym" class="dropdown-item text-uppercase">Gym </a>
+              </li>
+              <li>
                 <a href="/contact" class="dropdown-item text-uppercase">Contact </a>
               </li>
             </ul>
           </li>
-          <li class="nav-item text-uppercase">
-            <a href="/gym" class="nav-link">Gym</a>
-          </li>
-          <li class="nav-item text-uppercase">
-            <a href="/contact" class="nav-link">Contact</a>
-          </li>
-          <li class="nav-item text-uppercase">
-            <a href="/login" class="item-anchor btn btn-outline-primary rounded-pill">Login</a>
-          </li>
-          <li class="user-items">
-            <div class="search-bar">
-              <a href="#" class="search-button search-toggle" data-selector=".primary-nav">
-                <i class="icon icon-search"></i>
-              </a>
-              <form role="search" method="get" class="search-box" action="index.html">
-                <input class="search-field search-input" placeholder="Search" type="search">
-              </form>
-            </div>
-            <a href="#" class="shopping-cart">
-              <i class="icon icon-shopping-cart"></i>
-            </a>
-          </li>
+          <div id="username-display">
+            <li class="nav-item text-uppercase" id="username-display">
+              <a href="/login" class="item-anchor btn btn-outline-primary rounded-pill">Login</a>
+            </li>
+          </div>
+          <div id="logout-area"></div>
+          
         </ul>
       </div>
     </div>
@@ -99,11 +87,6 @@
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-md-6">
-            <nav class="breadcrumb justify-content-center text-white mt-5">
-              <a class="breadcrumb-item text-white" href="#">Home</a>
-              <a class="breadcrumb-item text-white" href="#">Pages</a>
-              <span class="breadcrumb-item active" aria-current="page">Thank You</span>
-            </nav>
             <h1 class="text-white display-1">Thank You!</h1>
             <span class="text-white">We will get back to you as soon as possible.</span>
           </div>
@@ -126,10 +109,7 @@
                     <h3>Phones</h3>
                     <ul class="list-unstyled">
                       <li>
-                        <i class="icon icon-phone"></i>+1650-243-00023
-                      </li>
-                      <li>
-                        <i class="icon icon-phone"></i>+1650-243-00021
+                        <i class="icon icon-phone"></i>+852 2345 6789
                       </li>
                     </ul>
                   </div>
@@ -140,7 +120,7 @@
                     <ul class="list-unstyled">
                       <li>
                         <i class="icon icon-envelope"></i>
-                        <a href="mailto:info@yourcompany.com">info@yourcompany.com</a>
+                        <a href="mailto:info@yourcompany.com">info@powerfitness.com</a>
                       </li>
                     </ul>
                   </div>
@@ -151,7 +131,7 @@
                     <ul class="list-unstyled">
                       <li>
                         <i class="icon icon-location"></i>
-                        <span>North Melbourne VIC 3051, Australia</span>
+                        <span>1103, 11/F, 國際交易中心33 Wang Chiu Rd, Kowloon Bay</span>
                       </li>
                     </ul>
                   </div>
@@ -179,13 +159,13 @@
           <div class="footer-menu">
             <ul class="d-flex list-unstyled justify-content-md-start justify-content-center">
               <li>
-                <a href="#">Home</a>
+                <a href="/index">Home</a>
               </li>
               <li>
-                <a href="#">Privacy Policy</a>
+                <a href="/terms-and-conditions">Privacy Policy</a>
               </li>
               <li>
-                <a href="#">Terms</a>
+                <a href="/terms-and-conditions">Terms</a>
               </li>
             </ul>
           </div>
@@ -222,8 +202,7 @@
   <div id="footer-bottom">
     <div class="container">
       <div class="copyright align-center">
-        <p><a target="_blank" href="http://www.mobanwang.com/" title="网页模板">网页模板</a>
-        </p>
+        
       </div>
     </div>
   </div>

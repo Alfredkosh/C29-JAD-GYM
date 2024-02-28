@@ -74,19 +74,7 @@
             </li>
           </div>
           <div id="logout-area"></div>
-          <li class="user-items">
-            <div class="search-bar">
-              <a href="#" class="search-button search-toggle" data-selector=".primary-nav">
-                <i class="icon icon-search"></i>
-              </a>
-              <form role="search" method="get" class="search-box" action="index.html">
-                <input class="search-field search-input" placeholder="Search" type="search">
-              </form>
-            </div>
-            <a href="#" class="shopping-cart">
-              <i class="icon icon-shopping-cart"></i>
-            </a>
-          </li>
+          
         </ul>
       </div>
     </div>
@@ -149,15 +137,15 @@
             <div class="section-header">
               <h2 class="section-title"><span class="text-primary">預約</span> 及查詢</h2>
             </div>
-            <form name="contactform" action="contact.php" method="post" class="contact-form">
+            <form name="contactform" action="contact.php" method="post" class="contact-form" id="submit-contact">
               <div class="form-item">
                 <input type="text" minlength="2" name="name" placeholder="Name" class="u-full-width bg-light" required><br>
-                <input type="email" minlength="2" name="email" placeholder="Email" class="u-full-width bg-light" required><br>
-                <textarea class="u-full-width bg-light" name="message" placeholder="Message" style="height: 180px;" required></textarea>
+                <input type="text" minlength="2" name="email" placeholder="Email" class="u-full-width bg-light" required><br>
+                <input type="text" class="u-full-width bg-light" name="message" placeholder="Message" style="height: 180px;" required>
               </div>
               <label>
                 <input type="checkbox" required>
-                <span class="label-body">I agree all the <a href="#">terms and conditions</a>
+                <span class="label-body">I agree all the <a href="/terms-and-conditions">terms and conditions</a>
                 </span>
               </label>
               <button type="submit" name="submit" class="btn btn-full btn-medium btn-primary">Submit</button>
@@ -175,13 +163,13 @@
           <div class="footer-menu">
             <ul class="d-flex list-unstyled justify-content-md-start justify-content-center">
               <li>
-                <a href="#">Home</a>
+                <a href="/index">Home</a>
               </li>
               <li>
-                <a href="#">Privacy Policy</a>
+                <a href="/terms-and-conditions">Privacy Policy</a>
               </li>
               <li>
-                <a href="#">Terms</a>
+                <a href="/terms-and-conditions">Terms</a>
               </li>
             </ul>
           </div>
@@ -228,6 +216,7 @@
   <script src="js/plugins.js"></script>
   <script src="js/script.js"></script>
   <script type="module" src="/js/loggedIn.js"></script>
+  <script type="module" src="/js/contact.js"></script>
 </body>
 
 </html>

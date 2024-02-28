@@ -89,6 +89,11 @@ public class PageController {
         return "directbook";
     }
 
+    @RequestMapping(value = "/terms-and-conditions", method = RequestMethod.GET)
+    public String termsAndConditions(Model model){
+        return "terms-and-conditions";
+    }
+
 
     @RequestMapping(value = "/booking", method = RequestMethod.GET)
     public String booking(Model model){
