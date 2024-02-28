@@ -12,14 +12,14 @@ public class FriendsListService {
     FriendsListRepository friendsListRepository;
     public void addFriend(Integer ownerId, Integer userId) {
         List<FriendsModel> friendsModels = friendsListRepository.findFriends(ownerId, userId);
-        if (friendsModels.size() == 0) {
+        if (friendsModels.isEmpty()) {
             FriendsModel friendsModel = new FriendsModel();
             friendsModel.setUserAId(ownerId);
             friendsModel.setUserBId(userId);
             friendsListRepository.save(friendsModel);
             return;
         }
-        System.out.print("Already friends");
+        throw new InternalError("Already friends");
     }
     public List<FriendsModel> getFriends(Integer userId) {
         return friendsListRepository.findFriends(userId);

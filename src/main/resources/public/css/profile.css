@@ -152,6 +152,7 @@ p.footer a:hover{
 .profile-left form input[type="password"] {
     background: url(../images/key.png) no-repeat 13px 10px;
 }
+
 .profile-img{
     background: url(../images/banner.jpg) no-repeat bottom;
     background-size: cover;
@@ -164,7 +165,7 @@ p.footer a:hover{
 }
 .login-pic {
     width: 11%;
-    margin: 0px auto 0;
+    margin: 45px auto 0;
     padding: 11px;
     border: 2px solid #fff;
 }
@@ -686,17 +687,14 @@ margin-top: 50px;
 }
 .schedule-container h1 {
   border-bottom: 2px solid #2d3134;
-  padding: 0 20px 20px 20px;
   text-align: center;
   font-size: 35px;
   font-weight: bold;
-  margin: 48px 0;
   color: #000;
   letter-spacing: 2px;
   word-spacing: 2px;
 }
 .schedule-container ul {
-  padding: 0px 0px 0 20px;
   list-style-type: none;
 }
 .schedule-container ul li + li {
@@ -704,7 +702,7 @@ margin-top: 50px;
   padding: 20px 0px 0px 0px;
 }
 .schedule-container ul li {
-  padding: 0px 0px 20px 0px;
+
 }
 .schedule-container ul li .frame {
   display: table;
@@ -737,3 +735,95 @@ margin-top: 50px;
 }
 
 /* planner end */
+
+
+
+/* friend list schedule layout */
+   .secondHalfLayout {
+           display: flex;
+           justify-content: center;
+       }
+
+.addFriendList {
+    margin-right: -11em;
+    padding: 0em 0em 16em 21em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.addFriendList {
+    margin-right: -11em;
+    padding: 0em 0em 16em 21em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+   /* friend list schedule layout end */
+
+   /* schedule */
+
+.schedule-container2 {
+	margin-top: 50px;
+	  font-family: Helvetica, sans-serif;
+	  border-radius: 4px;
+	  background: white;
+	  margin: 0 auto;
+	  padding-bottom: 48em;
+	  width: 540px;
+	}
+	.schedule-container2 h1 {
+	  border-bottom: 2px solid #2d3134;
+	  text-align: center;
+	  font-size: 35px;
+	  font-weight: bold;
+	  color: #000;
+	  letter-spacing: 2px;
+	  word-spacing: 2px;
+	}
+	.schedule-container2 ul {
+	  list-style-type: none;
+	}
+	.schedule-container2 ul li + li {
+	  border-top: 2px solid #2d3134;
+	  padding: 20px 0px 0px 0px;
+	}
+	.schedule-container2 ul li {
+	
+	}
+	.schedule-container2 ul li .frame {
+	  display: table;
+	  width: 100%;
+	}
+	.schedule-container2 ul li .frame .hour,
+	.schedule-container2 ul li .frame .task,
+	.schedule-container2 ul li .frame .full-time {
+	  display: table-cell;
+	}
+	.schedule-container2 ul li .frame .hour {
+	
+	  border-radius: 50%;
+	  font-size: 20px;
+	  font-weight: bold;
+	  height: 22px;
+	  padding: 8px;
+	  text-align: center;
+	  width: 22px;
+	}
+	.schedule-container2 ul li .frame .task {
+	  font-size: 18px;
+	  padding: 0 10px 0 10px;
+	  text-align: left;
+	}
+	.schedule-container2 ul li .frame .full-time {
+	  min-width: 75px;
+	  padding: 0 20px 0 10px;
+	  text-align: right;
+	}
+	
+	/* schedule end */
