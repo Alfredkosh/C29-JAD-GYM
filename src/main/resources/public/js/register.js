@@ -127,7 +127,7 @@ async function register(token) {
           showConfirmButton: true,
         }).then(() => {
           console.log("Swal.fire() resolved successfully");
-          window.location.replace("/adminpage");
+          window.location.replace("/admin");
         });
       } else {
         console.log("fail to register");
