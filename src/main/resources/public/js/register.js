@@ -126,7 +126,7 @@ async function register(token) {
           title: "New user registered",
           showConfirmButton: true,
         }).then(() => {
-          console.log("Swal.fire() resolved successfully");
+          console.log("Swal.fire() resolved successfully 123");
           window.location.replace("/admin");
         });
       } else {
