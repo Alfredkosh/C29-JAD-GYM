@@ -27,8 +27,6 @@ public class UserModel {
     private Integer age;
     @Column(name="gender")
     private String gender;
-    @Column(name="grading")
-    private String grading;
     @Column(name="email")
     private String email;
     @Column(name="mobile_number")
@@ -53,15 +51,6 @@ public class UserModel {
     @UpdateTimestamp
     @Column(name="updated_at")
     private Date updatedAt;
-
-
-    public String getGrading() {
-        return grading;
-    }
-
-    public void setGrading(String grading) {
-        this.grading = grading;
-    }
 
     public boolean isAdmin() {
         return isAdmin;

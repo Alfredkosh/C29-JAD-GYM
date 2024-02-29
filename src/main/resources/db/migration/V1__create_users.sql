@@ -4,7 +4,7 @@ CREATE TABLE users(
      fullname varchar(64) not null,
      username varchar(64) not null,
      password varchar(255) not null,
-     grading varchar(255) not null,
+--     grading varchar(255) not null,
      age int,
      gender varchar(64) not null,
      email varchar(255),
