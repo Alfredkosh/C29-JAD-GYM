@@ -100,7 +100,7 @@ async function register(token) {
       const mobileNumber = registerForm.mobileNumber.value;
       const email = registerForm.email.value;
       const gender = registerForm.gender.value;
-      // const grading = registerForm.grading.value;
+      const expiredDate = registerForm.expiredDate.value;
 
       const body = {
         fullname,
@@ -110,7 +110,7 @@ async function register(token) {
         mobileNumber,
         email,
         gender,
-        // grading,
+        expiredDate,
       };
       console.log(body);
       const res = await fetch("/auth/register", {

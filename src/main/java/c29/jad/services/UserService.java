@@ -51,17 +51,10 @@ public class UserService {
             newUser.setGender((userForm.getGender()));
         }
 
-        // Create a Calendar instance
-        Calendar calendar = Calendar.getInstance();
+        if(userForm.getExpiredDate() != null){
+            newUser.setExpiredDate((userForm.getExpiredDate()));
+        }
 
-//        // Get the current date
-//        Date currentDate = calendar.getTime();
-
-        // Add one year to the current date
-        calendar.add(Calendar.YEAR, 1);
-        Date nextYearDate = calendar.getTime();
-
-        newUser.setExpiredDate(nextYearDate);
 
 
         newUser.setStatus(true);
