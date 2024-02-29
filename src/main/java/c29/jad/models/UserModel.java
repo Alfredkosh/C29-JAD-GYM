@@ -23,18 +23,16 @@ public class UserModel {
     private String username;
     @Column(name="password")
     private String password;
-    @Column(name="qrcode")
-    private String qrcode;
     @Column(name="age")
     private Integer age;
     @Column(name="gender")
     private String gender;
+    @Column(name="grading")
+    private String grading;
     @Column(name="email")
     private String email;
     @Column(name="mobile_number")
     private int mobileNumber;
-    @Column(name="icon")
-    private String icon;
     @Column(name="expired_date")
     private Date expiredDate;
     @Column(name="status")
@@ -55,6 +53,15 @@ public class UserModel {
     @UpdateTimestamp
     @Column(name="updated_at")
     private Date updatedAt;
+
+
+    public String getGrading() {
+        return grading;
+    }
+
+    public void setGrading(String grading) {
+        this.grading = grading;
+    }
 
     public boolean isAdmin() {
         return isAdmin;
@@ -96,13 +103,6 @@ public class UserModel {
         this.password = password;
     }
 
-    public String getQrcode() {
-        return qrcode;
-    }
-
-    public void setQrcode(String qrcode) {
-        this.qrcode = qrcode;
-    }
 
     public Integer getAge() {
         return age;
@@ -136,13 +136,6 @@ public class UserModel {
         this.mobileNumber = mobileNumber;
     }
 
-    public String getIcon() {
-        return icon;
-    }
-
-    public void setIcon(String icon) {
-        this.icon = icon;
-    }
 
     public String getExpiredDate() {
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");

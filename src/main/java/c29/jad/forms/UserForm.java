@@ -4,12 +4,12 @@ public class UserForm {
     private String fullname;
     private String username;
     private String password;
-    private String qrcode;
     private Integer age;
     private String gender;
+
+    private String grading;
     private String email;
     private Integer mobile_number;
-    private String icon;
     private String expired_date;
     private Boolean active;
 
@@ -19,15 +19,22 @@ public class UserForm {
                 "fullname='" + fullname + '\'' +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
-                ", qrcode='" + qrcode + '\'' +
                 ", age=" + age +
                 ", gender='" + gender + '\'' +
+                ", grading='" + grading + '\'' +
                 ", email='" + email + '\'' +
                 ", mobile_number=" + mobile_number +
-                ", icon='" + icon + '\'' +
                 ", expired_date='" + expired_date + '\'' +
                 ", active=" + active +
                 '}';
+    }
+
+    public String getGrading() {
+        return grading;
+    }
+
+    public void setGrading(String grading) {
+        this.grading = grading;
     }
 
     public String getFullname() {
@@ -52,14 +59,6 @@ public class UserForm {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public String getQrcode() {
-        return qrcode;
-    }
-
-    public void setQrcode(String qrcode) {
-        this.qrcode = qrcode;
     }
 
     public Integer getAge() {
@@ -96,14 +95,6 @@ public class UserForm {
 
     public void setMobile_number(Integer mobile_number) {
         this.mobile_number = mobile_number;
-    }
-
-    public String getIcon() {
-        return icon;
-    }
-
-    public void setIcon(String icon) {
-        this.icon = icon;
     }
 
     public String getExpired_date() {

@@ -12,9 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.naming.AuthenticationException;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
 @Service
 public class UserService {
@@ -52,6 +50,18 @@ public class UserService {
         if(userForm.getGender() != null){
             newUser.setGender((userForm.getGender()));
         }
+
+        // Create a Calendar instance
+        Calendar calendar = Calendar.getInstance();
+
+//        // Get the current date
+//        Date currentDate = calendar.getTime();
+
+        // Add one year to the current date
+        calendar.add(Calendar.YEAR, 1);
+        Date nextYearDate = calendar.getTime();
+
+        newUser.setExpiredDate(nextYearDate);
 
 
         newUser.setStatus(true);
