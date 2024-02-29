@@ -1,5 +1,7 @@
 package c29.jad.forms;
 
+import java.util.Date;
+
 public class UserForm {
     private String fullname;
     private String username;
@@ -10,7 +12,7 @@ public class UserForm {
     private String email;
     private Integer mobile_number;
     private String icon;
-    private String expired_date;
+    private Date expiredDate;
     private Boolean active;
 
     @Override
@@ -25,7 +27,7 @@ public class UserForm {
                 ", email='" + email + '\'' +
                 ", mobile_number=" + mobile_number +
                 ", icon='" + icon + '\'' +
-                ", expired_date='" + expired_date + '\'' +
+                ", expired_date='" + expiredDate + '\'' +
                 ", active=" + active +
                 '}';
     }
@@ -106,12 +108,12 @@ public class UserForm {
         this.icon = icon;
     }
 
-    public String getExpired_date() {
-        return expired_date;
+    public Date getExpiredDate() {
+        return expiredDate;
     }
 
-    public void setExpired_date(String expired_date) {
-        this.expired_date = expired_date;
+    public void setExpiredDate(Date expiredDate) {
+        this.expiredDate = expiredDate;
     }
 
     public Boolean getActive() {

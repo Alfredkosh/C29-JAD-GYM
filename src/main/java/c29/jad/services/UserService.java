@@ -53,6 +53,11 @@ public class UserService {
             newUser.setGender((userForm.getGender()));
         }
 
+        if(userForm.getExpiredDate() != null){
+            newUser.setExpiredDate((userForm.getExpiredDate()));
+        }
+
+
 
         newUser.setStatus(true);
         return userRepository.saveAndFlush(newUser);
