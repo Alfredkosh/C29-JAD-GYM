@@ -32,7 +32,7 @@ img{max-width:100%;}
 /*--start-body--*/
 body{
   position:relative;
-  font-family: 'Ubuntu', sans-serif;
+  /* font-family: 'Ubuntu', sans-serif; */
 
 }
 body h1 {
@@ -500,3 +500,26 @@ body h1 {
 	
 }
 /*--//responsive--*/
+
+
+
+.w3-agileitsResult{
+display:flex;
+justify-content:center;
+align-item:center;
+width:50%;
+padding:10px;
+color: #000 !important;
+}
+
+.w3-agileitsResult > *{
+    color: #000 !important;
+    }
+
+    
+
+
+.agileits-Result{
+color:#000;
+
+}

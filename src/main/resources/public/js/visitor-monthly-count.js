@@ -72,31 +72,17 @@ async function monthlyVisitors(token) {
 
         console.log(AllVisitor)
 
-        const gymRoom1 = document.querySelector("#hk")
+        const gymRoom1 = document.querySelector("#hk-people")
 
-        gymRoom1.innerHTML = `<div class="agileits-social">
-        <h3>Gym - Causeway Bay</h3>
-    </div>
-    <div class="send-w3layouts">
-        <h3>人流</h3>
-        ${gymRoomId1}
-     </div>`
+        gymRoom1.innerHTML = ` ${gymRoomId1}`
 
-     const gymRoom2 = document.querySelector("#mk")
+     const gymRoom2 = document.querySelector("#mk-people")
 
-     gymRoom2.innerHTML = `<div class="agileits-social">
-                          <h3>Gym - Mongkok</h3>
-                      </div>
-                      <div class="send-w3layouts">
-                          <h3>人流</h3>
-                          ${gymRoomId2}
-                      </div>`
+     gymRoom2.innerHTML = ` ${gymRoomId2}`
 
       const totalNumber = document.querySelector("#totalNo")
 
-      totalNumber.innerHTML = `<p>總人流</p>
-                                           <br>
-                                          ${AllVisitor}`
+      totalNumber.innerHTML = `${AllVisitor}`
 
           console.log("Swal.fire() resolved successfully");
           // window.location.replace("/admin");
